@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Details - Cyber Rakshak Institute</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Orbitron:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/eathicalhacking.css">
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container nav-container">
+            <div class="logo">
+                <i class="fas fa-shield-alt fa-2x" style="color: var(--secondary);"></i>
+                <div class="logo-text">Black<span>Hat</span> Zone</div>
+            </div>
+            
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                
+                <li class="nav-item">
+                    <a href="courses.html" class="nav-link">Courses <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown">
+                        <a href="allcourse.html" class="dropdown-item">All Course</a>
+                        <a href="CyberSecurityCourse.html" class="dropdown-item">Cyber Security Course</a>
+                        <a href="computercourse.html" class="dropdown-item">Computer Courses</a>
+                        <a href="workshop.html" class="dropdown-item">Workshops</a>
+                    </div>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="shop.html" class="nav-link">Shop <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown">
+                        <a href="hackingsoftware.html" class="dropdown-item">Hacking Software</a>
+                        <a href="windows-software.html" class="dropdown-item">Windows Software</a>
+                        <a href="hacking-tools.html" class="dropdown-item">Hacking Tools</a>
+                        <a href="hacking-gadgets.html" class="dropdown-item">Hacking Gadgets</a>
+                        <a href="iot-devices.html" class="dropdown-item">IoT Devices</a>
+                    </div>
+                </li>
+                
+                <li class="nav-item"><a href="live-class.html" class="nav-link">Live Class</a></li>
+                <li class="nav-item"><a href="Blog.html" class="nav-link">Blog</a></li>
+                <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                
+                <li class="nav-item">
+                    <a href="#" class="nav-link">More <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown">
+                        <a href="contact.html" class="dropdown-item">Contact Us</a>
+                        <a href="support.html" class="dropdown-item">Support</a>
+                        <a href="faq.html" class="dropdown-item">FAQs</a>
+                        <a href="careers.html" class="dropdown-item">Careers</a>
+                    </div>
+                </li>
+            </ul>
+            
+            <div class="nav-icons">
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation -->
+    <div class="overlay" id="overlay"></div>
+    
+    <div class="mobile-nav" id="mobileNav">
+        <button class="close-mobile-menu" id="closeMobileMenu">
+            <i class="fas fa-times"></i>
+        </button>
+        
+        <ul class="mobile-nav-list">
+            <li class="mobile-nav-item">
+                <a href="index.html" class="mobile-nav-link">Home</a>
+            </li>
+            
+            <li class="mobile-nav-item">
+                <button class="mobile-dropdown-btn">
+                    Courses <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="mobile-dropdown">
+                    <a href="allcourse.html" class="mobile-dropdown-item">All Course</a>
+                    <a href="CyberSecurityCourse.html" class="mobile-dropdown-item">Cyber Security Course</a>
+                    <a href="computercourse.html" class="mobile-dropdown-item">Computer Courses</a>
+                    <a href="workshop.html" class="mobile-dropdown-item">Workshops</a>
+                </div>
+            </li>
+            
+            <li class="mobile-nav-item">
+                <button class="mobile-dropdown-btn">
+                    Shop <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="mobile-dropdown">
+                    <a href="hackingsoftware.html" class="mobile-dropdown-item">Hacking Software</a>
+                    <a href="windows-software.html" class="mobile-dropdown-item">Windows Software</a>
+                    <a href="hacking-tools.html" class="mobile-dropdown-item">Hacking Tools</a>
+                    <a href="hacking-gadgets.html" class="mobile-dropdown-item">Hacking Gadgets</a>
+                    <a href="iot-devices.html" class="mobile-dropdown-item">IoT Devices</a>
+                </div>
+            </li>
+            
+            <li class="mobile-nav-item">
+                <a href="live-class.html" class="mobile-nav-link">Live Class</a>
+            </li>
+            
+            <li class="mobile-nav-item">
+                <a href="Blog.html" class="mobile-nav-link">Blog</a>
+            </li>
+            
+            <li class="mobile-nav-item">
+                <a href="about.html" class="mobile-nav-link">About</a>
+            </li>
+            
+            <li class="mobile-nav-item">
+                <button class="mobile-dropdown-btn">
+                    More <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="mobile-dropdown">
+                    <a href="contact.html" class="mobile-dropdown-item">Contact Us</a>
+                    <a href="support.html" class="mobile-dropdown-item">Support</a>
+                    <a href="faq.html" class="mobile-dropdown-item">FAQs</a>
+                    <a href="careers.html" class="mobile-dropdown-item">Careers</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Course Hero Section -->
+    <section class="course-hero">
+        <div class="container course-hero-content">
+            <div class="course-image">
+                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/2f4e7bc7-f434-4d39-8f9e-6278c8a46e17.png" alt="Ethical Hacking Masterclass">
+            </div>
+            
+            <div class="course-info">
+                <h1 class="course-title">Ethical Hacking Masterclass</h1>
+                
+                <div class="course-meta">
+                    <div class="meta-item">
+                        <i class="fas fa-clock"></i>
+                        <span>60+ Hours</span>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fas fa-video"></i>
+                        <span>50+ Lessons</span>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fas fa-layer-group"></i>
+                        <span>All Levels</span>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fas fa-certificate"></i>
+                        <span>Certificate</span>
+                    </div>
+                </div>
+                
+                <p>Learn ethical hacking from scratch with hands-on training and real-world scenarios. This comprehensive course will take you from beginner to advanced level in cybersecurity.</p>
+                
+                <div class="course-price">₹12999.99</div>
+                
+                <div class="course-actions">
+                    <a href="#" class="btn">Enroll Now</a>
+                    <a href="#" class="btn btn-outline">Add to Cart</a>
+                    <a href="#" class="btn btn-outline">Download Syllabus</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Course Details Section -->
+    <section class="course-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Course Overview</h2>
+                <p>What you'll learn in this comprehensive ethical hacking course</p>
+            </div>
+            
+            <div class="course-content">
+                <p>Our Ethical Hacking Masterclass is designed to provide you with the practical skills needed to become a professional ethical hacker. You'll learn how to identify vulnerabilities, exploit systems ethically, and implement security measures to protect against cyber threats.</p>
+                
+                <h3>What's Included:</h3>
+                <ul>
+                    <li>60+ hours of on-demand video</li>
+                    <li>50+ lessons covering all aspects of ethical hacking</li>
+                    <li>Hands-on labs and real-world scenarios</li>
+                    <li>Downloadable resources and cheat sheets</li>
+                    <li>Certificate of completion</li>
+                    <li>Lifetime access to course materials</li>
+                    <li>Access to private community of students</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Curriculum Section -->
+    <section class="course-section section-alt">
+        <div class="container">
+            <div class="section-title">
+                <h2>Course Curriculum</h2>
+                <p>Detailed breakdown of all modules and lessons</p>
+            </div>
+            
+            <div class="course-content">
+                <div class="accordion">
+                    <div class="accordion-header">
+                        <h3>Module 1: Introduction to Ethical Hacking</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <ul class="module-list">
+                            <li class="module-item">
+                                <i class="fas fa-play-circle"></i>
+                                <span>Understanding Ethical Hacking</span>
+                            </li>
+                            <li class="module-item">
+                                <i class="fas fa-play-circle"></i>
+                                <span>Legal and Ethical Aspects</span>
+                            </li>
+                            <li class="module-item">
+                                <i class="fas fa-play-circle"></i>
+                                <span>Setting Up Your Hacking Lab</span>
+                            </li>
+                            <li class="module-item">
+                                <i class="fas fa-play-circle"></i>
+                                <span>Essential Linux Commands</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="accordion">
+                    <div class="accordion-header">
+                        <h3>Module 2: Footprinting and Reconnaissance</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <ul class="module-list">
+                            <li class="module-item">
+                                <i class="fas fa-play-circle"></i>
+                                <span>Introduction to Footprinting</span>
+                            </li>
+                            <li class="module-item">
+                                <i class="fas fa-play-circle"></i>
+                                <span>Google Hacking Techniques</span>
+                            </li>
+                            <li class="module-item">
+                                <i class="fas fa-play-circle"></i>
+                                <span>WHOIS and DNS Analysis</span>
+                            </li>
+                            <li class="module-item">
+                                <i class="fas fa-play-circle"></i>
+                                <span>Network Scanning with Nmap</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="accordion">
+                    <div class="accordion-header">
+                        <h3>Module 3: Scanning Networks</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <ul class="module-list">
+                            <li class="module-item">
+                                <i class="fas fa-play-circle"></i>
+                                <span>Network Scanning Techniques</span>
+                            </li>
+                            <li class="module-item">
+                                <i class="fas fa-play-circle"></i>
+                                <span>Port Scanning Deep Dive</span>
+                            </li>
+                            <li class="module-item">
+                                <i class="fas fa-play-circle"></i>
+                                <span>Vulnerability Scanning</span>
+                            </li>
+                            <li class="module-item">
+                                <i class="fas fa-play-circle"></i>
+                                <span>Bypassing Firewalls and IDS</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div><h1 style="color: red;">and more...</h1></div>
+                <!-- More modules would go here -->
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Instructor Section -->
+    <section class="course-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>About the Instructor</h2>
+                <p>Learn from industry experts with years of experience</p>
+            </div>
+            
+            <div class="instructor-card">
+                <div class="instructor-image">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRk_60Ib36zeGuJv4uPWlEO_cJHE48v7c68pQ&s" alt="Kuldeep">
+                </div>
+                
+                <div class="instructor-info">
+                    <h3 class="instructor-name">Kuldeep S</h3>
+                    <p class="instructor-title">Senior Cybersecurity Expert & Ethical Hacker</p>
+                    
+                    <div class="instructor-bio">
+                        <p>Kuldeep is a seasoned cybersecurity professional with over 8 years of experience in ethical hacking, penetration testing, and security consulting. He has worked with numerous Fortune 500 companies to strengthen their security posture and has trained hundreds of students in the art of ethical hacking.</p>
+                        
+                        <p>His certifications include CEH (Certified Ethical Hacker), OSCP (Offensive Security Certified Professional), and CISSP (Certified Information Systems Security Professional).</p>
+                    </div>
+                    
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.instagram.com/ku1d33p_b14ck_h4t"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="course-section section-alt">
+        <div class="container">
+            <div class="section-title">
+                <h2>Student Testimonials</h2>
+                <p>What our students say about this course</p>
+            </div>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        This course completely transformed my understanding of cybersecurity. The hands-on labs were incredibly valuable and the instructor's explanations were clear and concise.
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-image">
+                            <img src="https://placehold.co/100x100/0a2463/ffffff?text=R" alt="Rahul K">
+                        </div>
+                        <div class="author-info">
+                            <h4>Rahul K</h4>
+                            <p>Security Analyst</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        I've taken several cybersecurity courses, but this one stands out for its practical approach. The real-world scenarios helped me immediately apply what I learned.
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-image">
+                            <img src="https://placehold.co/100x100/0a2463/ffffff?text=P" alt="Priya M">
+                        </div>
+                        <div class="author-info">
+                            <h4>Priya M</h4>
+                            <p>IT Administrator</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        The course materials were comprehensive and up-to-date with the latest hacking techniques. The instructor's expertise was evident throughout the course.
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-image">
+                            <img src="https://placehold.co/100x100/0a2463/ffffff?text=A" alt="Amit S">
+                        </div>
+                        <div class="author-info">
+                            <h4>Amit S</h4>
+                            <p>Software Developer</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="course-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Frequently Asked Questions</h2>
+                <p>Common questions about the Ethical Hacking Masterclass</p>
+            </div>
+            
+            <div class="course-content">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Do I need any prior experience to take this course?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>No prior experience is required. This course is designed for beginners but also covers advanced topics that will benefit experienced IT professionals. We start with the fundamentals and gradually progress to more complex concepts.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>What software do I need for this course?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>You'll need a computer with at least 8GB RAM (16GB recommended) and virtualization support. We'll guide you through installing Kali Linux and other essential tools in a virtual environment. All required software is open-source and freely available.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>How long will I have access to the course materials?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>You'll have lifetime access to all course materials, including future updates. This means you can learn at your own pace and revisit the content whenever you need a refresher.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Will this course help me get certified?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>While this course covers many topics included in certification exams like CEH and OSCP, it is not specifically a certification prep course. However, the knowledge and skills you gain will significantly help you in preparing for these certifications.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>What kind of support is available during the course?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>You'll have access to our dedicated student community where you can ask questions and interact with other students. The instructor regularly participates in discussions and provides guidance. Additionally, we offer technical support for any issues with the course platform.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Related Courses Section -->
+    <section class="related-courses section-alt">
+        <div class="container">
+            <div class="section-title">
+                <h2>Related Courses</h2>
+                <p>You might also be interested in these courses</p>
+            </div>
+            
+            <div class="card-grid">
+                <div class="card">
+                    <div class="card-img">
+                        <img src="https://placehold.co/600x400/0a2463/ffffff?text=Network+Security" alt="Network Security Pro">
+                    </div>
+                    <div class="card-content">
+                        <h3>Network Security Pro</h3>
+                        <p>Master network security protocols, firewalls, and intrusion detection systems.</p>
+                        <span class="price">₹9850.99</span>
+                        <div class="card-buttons">
+                            <a href="network-security-course.html" class="btn btn-sm">View Course</a>
+                            
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-img">
+                        <img src="https://placehold.co/600x400/0a2463/ffffff?text=Digital+Forensics" alt="Digital Forensics Expert">
+                    </div>
+                    <div class="card-content">
+                        <h3>Digital Forensics Expert</h3>
+                        <p>Learn to investigate cyber crimes and analyze digital evidence like a professional.</p>
+                        <span class="price">₹13999.99</span>
+                        <div class="card-buttons">
+                            <a href="digital-forensics-course.html" class="btn btn-sm">View Course</a>
+                            
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-img">
+                        <img src="https://placehold.co/600x400/0a2463/ffffff?text=OSCP+Certification" alt="OSCP Certification Prep">
+                    </div>
+                    <div class="card-content">
+                        <h3>OSCP Certification Prep</h3>
+                        <p>Prepare for the Offensive Security Certified Professional certification exam.</p>
+                        <span class="price">₹13999.99</span>
+                        <div class="card-buttons">
+                            <a href="oscp-prep-course.html" class="btn btn-sm">View Course</a>
+                            
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-img">
+                        <img src="https://placehold.co/600x400/0a2463/ffffff?text=Web+App+Security" alt="Web Application Security">
+                    </div>
+                    <div class="card-content">
+                        <h3>Web Application Security</h3>
+                        <p>Learn how to find and fix vulnerabilities in web applications.</p>
+                        <span class="price">₹13999.99</span>
+                        <div class="card-buttons">
+                            <a href="web-app-security-course.html" class="btn btn-sm">View Course</a>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Cyber Rakshak Institute </h3>
+                    <p>Advanced cybersecurity solutions, cutting-edge tools, and expert training to protect what matters most.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.instagram.com/ku1d33p_b14ck_h4t"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-chevron-right"></i><a href="index.html"> Home</a></li>
+                        <li><i class="fas fa-chevron-right"></i><a href="courses.html"> Courses</a></li>
+                        <li><i class="fas fa-chevron-right"></i><a href="shop.html"> Shop</a></li>
+                        <li><i class="fas fa-chevron-right"></i><a href="live-class.html"> Live Classes</a></li>
+                        <li><i class="fas fa-chevron-right"></i><a href="blog.html"> Blog</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt"></i> Madhupur, Sonbhadra Uttar Pradesh 231216</li>
+                        <li><a href="tel:7398926485"><i class="fas fa-phone"></i>+91 7398926485</a></li>
+                        <li><a href="mailto:cyberrakshakinstitute@gmail.com"><i class="fas fa-envelope"></i>cyberrakshakinstitute@gmail.com</a></li>
+                        <li><i class="fas fa-clock"></i> Mon-Fri: 9AM - 6PM</li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to our newsletter for the latest updates and security tips.</p>
+                    <form>
+                        <input type="email" placeholder="Your Email" style="width: 100%; padding: 10px; margin: 10px 0; border-radius: 20px; border: none;">
+                        <button type="submit" class="btn btn-sm" style="width: 100%;">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2025 Cyber Rakshak Institute. All rights reserved. | Designed with <i class="fas fa-heart" style="color: var(--accent);"></i> for cybersecurity professionals</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="JS/eathicalhacking.js"></script>
+</body>
+</html>

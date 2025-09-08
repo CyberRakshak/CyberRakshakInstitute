@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Cyber Rakshak Institute</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Orbitron:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/contact.css">
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container nav-container">
+            <div class="logo">
+                <i class="fas fa-shield-alt fa-2x" style="color: var(--secondary);"></i>
+                <div class="logo-text">Cyber<span>Rakshak</span> Institute</div>
+            </div>
+            
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="Index.html" class="nav-link">Home</a></li>
+                
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Courses <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown">
+                        <a href="allcourse.html" class="dropdown-item">All Course</a>
+                        <a href="CyberSecurityCourse.html" class="dropdown-item">Cyber Security Course</a>
+                        <a href="computercourse.html" class="dropdown-item">Computer Courses</a>
+                        <a href="workshop.html" class="dropdown-item">Workshops</a>
+                    </div>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Shop <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown">
+                        <a href="hackingsoftware.html" class="dropdown-item">Hacking Software</a>
+                        <a href="ComingSoon.html" class="dropdown-item">Windows Software</a>
+                        <a href="ComingSoon.html" class="dropdown-item">Hacking Tools</a>
+                        <a href="ComingSoon.html" class="dropdown-item">Hacking Gadgets</a>
+                        <a href="ComingSoon.html" class="dropdown-item">IoT Devices</a>
+                    </div>
+                </li>
+                
+                <li class="nav-item"><a href="ComingSoon.html" class="nav-link">Live Class</a></li>
+                <li class="nav-item"><a href="Blog.html" class="nav-link">Blog</a></li>
+                <li class="nav-item"><a href="ComingSoon.html" class="nav-link">About</a></li>
+                
+                <li class="nav-item">
+                    <a href="#" class="nav-link">More <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown">
+                        <a href="contact.html" class="dropdown-item">Contact Us</a>
+                        <a href="ComingSoon.html" class="dropdown-item">Support</a>
+                        <a href="ComingSoon.html" class="dropdown-item">FAQs</a>
+                        <a href="ComingSoon.html" class="dropdown-item">Careers</a>
+                    </div>
+                </li>
+            </ul>
+            
+            <div class="nav-icons">
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation -->
+    <div class="overlay" id="overlay"></div>
+    
+    <div class="mobile-nav" id="mobileNav">
+        <button class="close-mobile-menu" id="closeMobileMenu">
+            <i class="fas fa-times"></i>
+        </button>
+        
+        <ul class="mobile-nav-list">
+            <li class="mobile-nav-item">
+                <a href="Index.html" class="mobile-nav-link">Home</a>
+            </li>
+            
+            <li class="mobile-nav-item">
+                <button class="mobile-dropdown-btn">
+                    Courses <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="mobile-dropdown">
+                    <a href="allcourse.html" class="mobile-dropdown-item">All Course</a>
+                    <a href="CyberSecurityCourse.html" class="mobile-dropdown-item">Cyber Security Course</a>
+                    <a href="computercourse.html" class="mobile-dropdown-item">Computer Courses</a>
+                    <a href="workshop.html" class="mobile-dropdown-item">Workshops</a>
+                </div>
+            </li>
+            
+            <li class="mobile-nav-item">
+                <button class="mobile-dropdown-btn">
+                    Shop <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="mobile-dropdown">
+                    <a href="hackingsoftware.html" class="mobile-dropdown-item">Hacking Software</a>
+                    <a href="ComingSoon.html" class="mobile-dropdown-item">Windows Software</a>
+                    <a href="ComingSoon.html" class="mobile-dropdown-item">Hacking Tools</a>
+                    <a href="ComingSoon.html" class="mobile-dropdown-item">Hacking Gadgets</a>
+                    <a href="ComingSoon.html" class="mobile-dropdown-item">IoT Devices</a>
+                </div>
+            </li>
+            
+            <li class="mobile-nav-item">
+                <a href="ComingSoon.html" class="mobile-nav-link">Live Class</a>
+            </li>
+            
+            <li class="mobile-nav-item">
+                <a href="Blog.html" class="mobile-nav-link">Blog</a>
+            </li>
+            
+            <li class="mobile-nav-item">
+                <a href="ComingSoon.html" class="mobile-nav-link">About</a>
+            </li>
+            
+            <li class="mobile-nav-item">
+                <button class="mobile-dropdown-btn">
+                    More <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="mobile-dropdown">
+                    <a href="contact.html" class="mobile-dropdown-item">Contact Us</a>
+                    <a href="ComingSoon.html" class="mobile-dropdown-item">Support</a>
+                    <a href="ComingSoon.html" class="mobile-dropdown-item">FAQs</a>
+                    <a href="ComingSoon.html" class="mobile-dropdown-item">Careers</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Contact Hero Section -->
+    <section class="contact-hero">
+        <div class="container contact-hero-content">
+            <h1>Get In Touch With Us</h1>
+            <p>Have questions about our cybersecurity solutions or training programs? We're here to help you secure your digital world.</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container contact-container">
+            <div class="contact-info">
+                <h2>About Me</h2>
+                <p>I am a cybersecurity expert with extensive experience in various domains of digital security and technology.</p>
+                
+                <div class="expertise-list">
+                    <div class="expertise-item">
+                        <div class="expertise-icon">
+                            <i class="fas fa-user-secret"></i>
+                        </div>
+                        <div class="expertise-text">Certified Ethical Hacker</div>
+                    </div>
+                    
+                    <div class="expertise-item">
+                        <div class="expertise-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div class="expertise-text">Cyber Security Expert</div>
+                    </div>
+                    
+                    <div class="expertise-item">
+                        <div class="expertise-icon">
+                            <i class="fab fa-python"></i>
+                        </div>
+                        <div class="expertise-text">Python Developer</div>
+                    </div>
+                    
+                    <div class="expertise-item">
+                        <div class="expertise-icon">
+                            <i class="fas fa-microchip"></i>
+                        </div>
+                        <div class="expertise-text">IoT Specialist</div>
+                    </div>
+                    
+                    <div class="expertise-item">
+                        <div class="expertise-icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <div class="expertise-text">International Cyber Security Expert</div>
+                    </div>
+                    
+                    <div class="expertise-item">
+                        <div class="expertise-icon">
+                            <i class="fas fa-calculator"></i>
+                        </div>
+                        <div class="expertise-text">Tally Prime Expert</div>
+                    </div>
+                    
+                    <div class="expertise-item">
+                        <div class="expertise-icon">
+                            <i class="fas fa-desktop"></i>
+                        </div>
+                        <div class="expertise-text">ADCA Specialist</div>
+                    </div>
+                    
+                    <div class="expertise-item">
+                        <div class="expertise-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <div class="expertise-text">WordPress Web Designer</div>
+                    </div>
+                    
+                    <div class="expertise-item">
+                        <div class="expertise-icon">
+                            <i class="fas fa-terminal"></i>
+                        </div>
+                        <div class="expertise-text">Mastering Kali Linux</div>
+                    </div>
+                    
+                    <div class="expertise-item">
+                        <div class="expertise-icon">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <div class="expertise-text">SOC Level 1 Analyst</div>
+                    </div>
+                </div>
+                
+                <h2>Contact Information</h2>
+                <div class="contact-details">
+                    <div class="contact-detail">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Our Location</h4>
+                            <p>Madhupur, Sonbhadra Uttar Pradesh 231216</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-detail">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Phone Number</h4>
+                            <a href="tel:7398926485">+91 7398926485</a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-detail">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Email Address</h4>
+                            <a href="mailto:cyberrakshakinstitute@gmail.com">cyberrakshakinstitute@gmail.com</a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-detail">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Working Hours</h4>
+                            <p>Mon-Fri: 9AM - 6PM</p>
+                            <p>Sat: 10AM - 4PM</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <h3>Follow Us</h3>
+                <div class="social-links-contact">
+                    <a href="https://www.facebook.com/b14ck00"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.linkedin.com/in/kuldeep-chauhan-4a6a8127a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.instagram.com/ku1d33p_b14ck_h4t"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            
+            <div class="contact-form-container">
+                <h2>Send Us a Message</h2>
+                <div id="formMessage" class="form-message"></div>
+                
+                <form id="contactForm" method="POST">
+                    <div class="form-group">
+                        <label for="name" class="form-label">Full Name *</label>
+                        <input type="text" id="name" name="name" class="form-control" required>
+                        <div class="error-message" id="nameError"></div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email" class="form-label">Email Address *</label>
+                        <input type="email" id="email" name="email" class="form-control" required>
+                        <div class="error-message" id="emailError"></div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone" class="form-label">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" class="form-control">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subject" class="form-label">Subject *</label>
+                        <input type="text" id="subject" name="subject" class="form-control" required>
+                        <div class="error-message" id="subjectError"></div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message" class="form-label">Your Message *</label>
+                        <textarea id="message" name="message" class="form-control" required></textarea>
+                        <div class="error-message" id="messageError"></div>
+                    </div>
+                    
+                    <div class="form-check">
+                        <input type="checkbox" id="consent" name="consent" class="form-check-input" required>
+                        <label for="consent" class="form-check-label">I agree to the <a href="#">privacy policy</a> and <a href="#">terms of service</a> *</label>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-block">Send Message</button>
+                </form>
+            </div>
+        </div>
+        
+        <div class="container map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d115348.475966149!2d82.9667637!3d25.378387!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x398fe0f4cdf51f6d%3A0x581e69d43ef5421d!2sSonbhadra%2C%20Uttar%20Pradesh!5e0!3m2!1sen!2sin!4v1652345678901!5m2!1sen!2sin" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+    </section>
+    
+    <!-- Progress Bar -->
+    <div class="progress-container">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+
+    <!-- Binary Rain Animation -->
+    <div class="binary-rain" id="binaryRain"></div>
+
+    <link rel="stylesheet" href="JS/contact.js">
+</body>
+</html>

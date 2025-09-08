@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyber Rakshak Institute</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Orbitron:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="" href="CSS/style.css">
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container nav-container">
+            <div class="logo">
+                <i class="fas fa-shield-alt fa-2x" style="color: var(--secondary);"></i>
+                <div class="logo-text">Cyber<span> Rakshak</span> </div>
+            </div>
+            
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Courses <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown">
+                        <a href="allcourse.html" class="dropdown-item">All Course</a>
+                        <a href="CyberSecurityCourse.html" class="dropdown-item">Cyber Security Course</a>
+                        <a href="computercourse.html" class="dropdown-item">Computer Courses</a>
+                        <a href="workshop.html" class="dropdown-item">Workshops</a>
+                    </div>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Shop <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown">
+                        <a href="hackingsoftware.html" class="dropdown-item">Hacking Software</a>
+                        <a href="Windows software.html" class="dropdown-item">Windows Software</a>
+                        <a href="ComingSoon.html" class="dropdown-item">Hacking Tools</a>
+                        <a href="ComingSoon.html" class="dropdown-item">Hacking Gadgets</a>
+                        <a href="ComingSoon.html" class="dropdown-item">IoT Devices</a>
+                    </div>
+                </li>
+                
+                <li class="nav-item"><a href="ComingSoon.html" class="nav-link">Live Class</a></li>
+                <li class="nav-item"><a href="Blog.html" class="nav-link">Blog</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">About</a></li>
+                
+                <li class="nav-item">
+                    <a href="#" class="nav-link">More <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown">
+                        <a href="contact.html" class="dropdown-item">Contact Us</a>
+                        <a href="ComingSoon.html" class="dropdown-item">Support</a>
+                        <a href="ComingSoon.html" class="dropdown-item">FAQs</a>
+                        <a href="ComingSoon.html" class="dropdown-item">Careers</a>
+                    </div>
+                </li>
+            </ul>
+            
+            <div class="nav-icons">
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation -->
+    <div class="overlay" id="overlay"></div>
+    
+    <div class="mobile-nav" id="mobileNav">
+        <button class="close-mobile-menu" id="closeMobileMenu">
+            <i class="fas fa-times"></i>
+        </button>
+        
+        <ul class="mobile-nav-list">
+            <li class="mobile-nav-item">
+                <a href="index.html" class="mobile-nav-link">Home</a>
+            </li>
+            
+            <li class="mobile-nav-item">
+                <button class="mobile-dropdown-btn">
+                    Courses <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="mobile-dropdown">
+                    <a href="allcourse.html" class="mobile-dropdown-item">All Course</a>
+                    <a href="CyberSecurityCourse.html" class="mobile-dropdown-item">Cyber Security Course</a>
+                    <a href="computercourse.html" class="mobile-dropdown-item">Computer Courses</a>
+                    <a href="workshop.html" class="mobile-dropdown-item">Workshops</a>
+                </div>
+            </li>
+            
+            <li class="mobile-nav-item">
+                <button class="mobile-dropdown-btn">
+                    Shop <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="mobile-dropdown">
+                    <a href="hackingsoftware.html" class="mobile-dropdown-item">Hacking Software</a>
+                    <a href="Windows software.html" class="mobile-dropdown-item">Windows Software</a>
+                    <a href="ComingSoon.html" class="mobile-dropdown-item">Hacking Tools</a>
+                    <a href="ComingSoon.html" class="mobile-dropdown-item">Hacking Gadgets</a>
+                    <a href="ComingSoon.html" class="mobile-dropdown-item">IoT Devices</a>
+                </div>
+            </li>
+            
+            <li class="mobile-nav-item">
+                <a href="ComingSoon.html" class="mobile-nav-link">Live Class</a>
+            </li>
+            
+            <li class="mobile-nav-item">
+                <a href="Blog.html" class="mobile-nav-link">Blog</a>
+            </li>
+            
+            <li class="mobile-nav-item">
+                <a href="ComingSoon.html" class="mobile-nav-link">About</a>
+            </li>
+            
+            <li class="mobile-nav-item">
+                <button class="mobile-dropdown-btn">
+                    More <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="mobile-dropdown">
+                    <a href="contact.html" class="mobile-dropdown-item">Contact Us</a>
+                    <a href="ComingSoon.html" class="mobile-dropdown-item">Support</a>
+                    <a href="ComingSoon.html" class="mobile-dropdown-item">FAQs</a>
+                    <a href="ComingSoon.html" class="mobile-dropdown-item">Careers</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-content">
+            <h1>Secure Your Digital World</h1>
+            <p>Advanced cybersecurity solutions, cutting-edge tools, and expert training to protect what matters most.</p>
+            <div class="hero-buttons">
+                <a href="#" class="btn">Explore Course</a>
+                <a href="#" class="btn btn-outline">Free Consultation</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Grid -->
+    <section class="features">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Services</h2>
+                <p>Comprehensive cybersecurity solutions for individuals and businesses</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-building-shield"></i>
+                    </div>
+                    <h3>Enterprise Security</h3>
+                    <p>Comprehensive security solutions for businesses of all sizes to protect against cyber threats.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Expert Training</h3>
+                    <p>Learn from industry experts with our comprehensive cybersecurity and computer courses.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-microchip"></i>
+                    </div>
+                    <h3>Hardware Solutions</h3>
+                    <p>Advanced security hardware and gadgets to enhance your digital protection.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cybersecurity Courses Section -->
+    <section class="section section-alt">
+        <div class="container">
+            <div class="section-title">
+                <h2>Cybersecurity Courses</h2>
+                <p>Master the art of cybersecurity with our expert-led courses</p>
+            </div>
+            
+            <div class="card-grid">
+                <div class="card">
+                    <div class="card-img">
+                        <img src="data:image/jpeg;base64,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" alt="Ethical Hacking">
+                    </div>
+                    <div class="card-content">
+                        <h3>Ethical Hacking Masterclass</h3>
+                        <p>Learn ethical hacking from scratch with hands-on training and real-world scenarios.</p>
+                        <span class="price">₹12999.99</span>
+                        <div class="card-buttons">
+                            <a href="EathicalHacking.html" class="btn btn-sm">Buy Now</a>
+                            <a href="EathicalHacking.html" class="btn btn-sm btn-outline">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-img">
+                        <img src="data:image/jpeg;base64,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" alt="Network Security">
+                    </div>
+                    <div class="card-content">
+                        <h3>Network Security Pro</h3>
+                        <p>Master network security protocols, firewalls, and intrusion detection systems.</p>
+                        <span class="price">₹9850.99</span>
+                        <div class="card-buttons">
+                            <a href="ComingSoon.html" class="btn btn-sm">Buy Now</a>
+                            <a href="#" class="btn btn-sm btn-outline">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-img">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-uiMkx-o4dnmboRVduJOGuBfaPOMdJwDsfw&s" alt="Digital Forensics">
+                    </div>
+                    <div class="card-content">
+                        <h3>Digital Forensics Expert</h3>
+                        <p>Learn to investigate cyber crimes and analyze digital evidence like a professional.</p>
+                        <span class="price">₹13999.99</span>
+                        <div class="card-buttons">
+                            <a href="ComingSoon.html" class="btn btn-sm">Buy Now</a>
+                            <a href="ComingSoon.html" class="btn btn-sm btn-outline">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-img">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbH6Iwdd9YTysY44pfLi8del8FE50ebnlbAcsGw0R9tgi-zCMNJ4pCx7XHD17gms49-jM&usqp=CAU" alt="OSCP Certification">
+                    </div>
+                    <div class="card-content">
+                        <h3>OSCP Certification Prep</h3>
+                        <p>Prepare for the Offensive Security Certified Professional certification exam.</p>
+                        <span class="price">₹13999.99</span>
+                        <div class="card-buttons">
+                            <a href="ComingSoon.html" class="btn btn-sm">Buy Now</a>
+                            <a href="ComingSoon.html" class="btn btn-sm btn-outline">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="view-more">
+                <a href="CyberSecurityCourse.html" class="btn btn-outline">View All Courses</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Computer Courses Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Computer Courses</h2>
+                <p>Enhance your computer skills with our comprehensive courses</p>
+            </div>
+            
+            <div class="card-grid">
+                <div class="card">
+                    <div class="card-img">
+                        <img src="GIF/Adca.gif" alt="ADCA Course">
+                    </div>
+                    <div class="card-content">
+                        <h3>ADCA</h3>
+                        <p>Advanced Diploma in Computer Applications - Master essential computer skills.</p>
+                        <span class="price">₹6999.00</span>
+                        <div class="card-buttons">
+                            <a href="#" class="btn btn-sm">Buy Now</a>
+                            <a href="#" class="btn btn-sm btn-outline">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-img">
+                        <img src="GIF/CCC.gif" alt="CCC Course">
+                    </div>
+                    <div class="card-content">
+                        <h3>CCC</h3>
+                        <p>Course on Computer Concepts - Learn fundamental computer concepts and applications.</p>
+                        <span class="price">₹3599.00</span>
+                        <div class="card-buttons">
+                            <a href="#" class="btn btn-sm">Buy Now</a>
+                            <a href="#" class="btn btn-sm btn-outline">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-img">
+                        <img src="GIF/Advance Excel.gif" alt="Excel Mastery">
+                    </div>
+                    <div class="card-content">
+                        <h3>Excel Mastery</h3>
+                        <p>Become an Excel expert with advanced formulas, pivot tables, and data analysis.</p>
+                        <span class="price">₹2999.00</span>
+                        <div class="card-buttons">
+                            <a href="#" class="btn btn-sm">Buy Now</a>
+                            <a href="#" class="btn btn-sm btn-outline">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-img">
+                        <img src="GIF/DFA.gif" alt="DFA Course">
+                    </div>
+                    <div class="card-content">
+                        <h3>DFA</h3>
+                        <p>Diploma in Financial Accounting - Learn accounting software and financial management.</p>
+                        <span class="price">₹5999.00</span>
+                        <div class="card-buttons">
+                            <a href="#" class="btn btn-sm">Buy Now</a>
+                            <a href="#" class="btn btn-sm btn-outline">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="view-more">
+                <a href="computercourse.html" class="btn btn-outline">View All Courses</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Software Section -->
+    <section class="section section-alt">
+        <div class="container">
+            <div class="section-title">
+                <h2>Software for Hacker</h2>
+                <p>Protect your systems with our advanced security solutions</p>
+            </div>
+            
+            <div class="card-grid">
+                <div class="card">
+                    <div class="card-img">
+                        <img src="IMAGE/BurpSuit Soft.jpg" alt="SecureSuite Pro">
+                    </div>
+                    <div class="card-content">
+                        <h3>BurpSuit Professional</h3>
+                        <p>Comprehensive security suite with licence | This Make your Hacking Jurny Easy.</p>
+                        <span class="price">₹1500/Life Time</span>
+                        <div class="card-buttons">
+                            <a href="#" class="btn btn-sm">Buy Now</a>
+                           <!--<a href="#" class="btn btn-sm btn-outline">Add to Cart</a> -->
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-img">
+                        <img src="IMAGE/CraxRatSoft.jpg" alt="CryptoVault">
+                    </div>
+                    <div class="card-content">
+                        <h3>CraX Rat</h3>
+                        <p>Advanced Android pentesting software | which use by Hacker's.</p>
+                        <span class="price">₹2000/Life Time</span>
+                        <div class="card-buttons">
+                            <a href="#" class="btn btn-sm">Buy Now</a>
+                            <!-- <a href="#" class="btn btn-sm btn-outline">Add to Cart</a> -->
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-img">
+                        <img src="IMAGE/CypherRat.jpg" alt="PrivacyGuard">
+                    </div>
+                    <div class="card-content">
+                        <h3>Cypher Rat</h3>
+                        <p>Advanced Android pentesting software | which use by Hacker's.</p>
+                        <span class="price">₹1899/Life Time</span>
+                        <div class="card-buttons">
+                            <a href="#" class="btn btn-sm">Buy Now</a>
+                            <!-- <a href="#" class="btn btn-sm btn-outline">Add to Cart</a> -->
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-img">
+                        <img src="https://placehold.co/600x400/0a2463/ffffff?text=BackupSecure" alt="BackupSecure">
+                    </div>
+                    <div class="card-content">
+                        <h3>BackupSecure</h3>
+                        <p>Automated cloud backup solution with military-grade encryption for your data.</p>
+                        <span class="price">₹13999/Life Time</span>
+                        <div class="card-buttons">
+                            <a href="#" class="btn btn-sm">Buy Now</a>
+                            <!-- <a href="#" class="btn btn-sm btn-outline">Add to Cart</a> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="view-more">
+                <a href="hackingsoftware.html" class="btn btn-outline">View All Software</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Windows Software Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Windows Software</h2>
+                <p>We have a lot of primium windows software with licence at very low price</p>
+            </div>
+            
+            <div class="card-grid">
+                <div class="card">
+                    <div class="card-img">
+                        <img src="IMAGE/ms office 2024.png" alt="Ms Office">
+                    </div>
+                    <div class="card-content">
+                        <h3>Ms Office 2024</h3>
+                        <p>Complete penetration testing toolkit with all essential utilities for security professionals.</p>
+                        <span class="price">₹999/ Life Time</span>
+                        <div class="card-buttons">
+                            <a href="ComingSoon.html" class="btn btn-sm">Buy Now</a>
+                            <!-- <a href="#" class="btn btn-sm btn-outline">Learn More</a> -->
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-img">
+                        <img src="IMAGE/coraldraw2024.png" alt="Coral Draw">
+                    </div>
+                    <div class="card-content">
+                        <h3>Coral Draw 2024</h3>
+                        <p>CorelDRAW 2024 – Primium, Fast, Smart aur Professional Graphic Designing ka ultimate solution!</p>
+                        <span class="price">₹1299/ Life Time</span>
+                        <div class="card-buttons">
+                            <a href="ComingSoon.html" class="btn btn-sm">Buy Now</a>
+                            <!-- <a href="#" class="btn btn-sm btn-outline">Learn More</a> -->
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-img">
+                        <img src="IMAGE/wondershare-filmora.jpg" alt="WonderShare Filmora">
+                    </div>
+                    <div class="card-content">
+                        <h3>WonderShare Filmora</h3>
+                        <p>Filmora Premium Professional grade video editing, simple interface ke saath.</p>
+                        <span class="price">₹999/ Life Time</span>
+                        <div class="card-buttons">
+                            <a href="ComingSoon.html" class="btn btn-sm">Buy Now</a>
+                            <!-- <a href="#" class="btn btn-sm btn-outline">Learn More</a> -->
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-img">
+                        <img src="IMAGE/Adob-Photoshop 7.0.jpeg"CodeAnalyzer">
+                    </div>
+                    <div class="card-content">
+                        <h3>Photoshop 7.0</h3>
+                        <p>Design aur Editing ke liye sabse easy aur powerful tool – Photoshop 7.0.</p>
+                        <span class="price">₹13999.99</span>
+                        <div class="card-buttons">
+                            <a href="ComingSoon.html" class="btn btn-sm">Buy Now</a>
+                            <!-- <a href="#" class="btn btn-sm btn-outline">Learn More</a> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="view-more">
+                <a href="ComingSoon.html" class="btn btn-outline">View All Tools</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section class="section section-alt">
+        <div class="container">
+            <div class="section-title">
+                <h2>Latest from Blog</h2>
+                <p>Stay updated with the latest cybersecurity trends and news</p>
+            </div>
+            
+            <div class="card-grid">
+                <div class="card">
+                    <div class="card-img">
+                        <img src="IMAGE/blog/top 10 cyber attack.jpg" alt="Cybersecurity Trends">
+                    </div>
+                    <div class="card-content">
+                        <h3>10 Cybersecurity Attack for 2023</h3>
+                        <p>Stay ahead of the curve with the latest developments in cybersecurity.</p>
+                        <span class="price">June 15, 2025</span>
+                        <div class="card-buttons">
+                            <a href="ComingSoon.html" class="btn btn-sm">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-img">
+                        <img src="IMAGE/blog/networksecurity.jpg" alt="Home Network Security">
+                    </div>
+                    <div class="card-content">
+                        <h3>How to Secure Your Home Network</h3>
+                        <p>Practical tips to protect your home Wi-Fi and connected devices from threats.</p>
+                        <span class="price">May 28, 2025</span>
+                        <div class="card-buttons">
+                            <a href="networksecurity.html" class="btn btn-sm">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-img">
+                        <img src="IMAGE/blog/introduction to hacking.png" alt="Ethical Hacking Introduction">
+                    </div>
+                    <div class="card-content">
+                        <h3>Introduction to Ethical Hacking</h3>
+                        <p>Learn the basics of ethical hacking and how it helps improve security.</p>
+                        <span class="price">April 12, 2025</span>
+                        <div class="card-buttons">
+                            <a href="ComingSoon.html" class="btn btn-sm">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-img">
+                        <img src="IMAGE/blog/password-security.png" alt="Password Security">
+                    </div>
+                    <div class="card-content">
+                        <h3>Password Security Best Practices</h3>
+                        <p>Learn how to create and manage strong passwords to protect your accounts.</p>
+                        <span class="price">March 29, 2025</span>
+                        <div class="card-buttons">
+                            <a href="ComingSoon.html" class="btn btn-sm">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="view-more">
+                <a href="Blog.html" class="btn btn-outline">View All Posts</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Cyber Rakshak Institute </h3>
+                    <p>Advanced cybersecurity solutions, cutting-edge tools, and expert training to protect what matters most.</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/b14ck00"><i class="fab fa-facebook-f"></i></a>
+                        <a href="ComingSoon.html"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.linkedin.com/in/kuldeep-chauhan-4a6a8127a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app "><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.instagram.com/ku1d33p_b14ck_h4t"><i class="fab fa-instagram"></i></a>
+                        <a href="ComingSoon.html"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-chevron-right"></i><a href="index.html"> Home</a></li>
+                        <li><i class="fas fa-chevron-right"></i><a href="allcourse.html"> Courses</a></li>
+                        <li><i class="fas fa-chevron-right"></i><a href="allcourse.html"> Shop</a></li>
+                        <li><i class="fas fa-chevron-right"></i><a href="ComingSoon.html"> Live Classes</a></li>
+                        <li><i class="fas fa-chevron-right"></i><a href="Blog.html"> Blog</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt"></i> Madhupur, Sonbhadra Uttar Pradesh 231216</li>
+                        <li><a href="tel:7398926485"><i class="fas fa-phone"></i>+91 7398926485</a></li>
+                        <li><a href="mailto:cyberrakshakinstitute@gmail.com"><i class="fas fa-envelope"></i>cyberrakshakinstitute@gmail.com</a></li>
+                        <li><i class="fas fa-clock"></i> Mon-Fri: 9AM - 6PM</li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to our newsletter for the latest updates and security tips.</p>
+                    <form>
+                        <input type="email" placeholder="Your Email" style="width: 100%; padding: 10px; margin: 10px 0; border-radius: 20px; border: none;">
+                        <button type="submit" class="btn btn-sm" style="width: 100%;">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2025 Cyber Rakshak Institute. All rights reserved. | Designed with <i class="fas fa-heart" style="color: var(--accent);"></i> for cybersecurity professionals</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="JS/script.js"></script>
+</body>
+</html>

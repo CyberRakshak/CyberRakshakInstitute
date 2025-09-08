@@ -1,0 +1,254 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Network Security Guide - Cyber Rakshak Institute</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Orbitron:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/networkingblog.css">
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container nav-container">
+            <div class="logo">
+                <i class="fas fa-shield-alt fa-2x" style="color: var(--secondary);"></i>
+                <div class="logo-text">Black<span>Hat</span> Zone</div>
+            </div>
+            
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="Index.html" class="nav-link">Home</a></li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Courses <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown">
+                        <a href="allcourse.html" class="dropdown-item">All Course</a>
+                        <a href="CyberSecurityCourse.html" class="dropdown-item">Cyber Security Course</a>
+                        <a href="computercourse.html" class="dropdown-item">Computer Courses</a>
+                        <a href="workshop.html" class="dropdown-item">Workshops</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Shop <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown">
+                        <a href="hackingsoftware.html" class="dropdown-item">Hacking Software</a>
+                        <a href="#" class="dropdown-item">Windows Software</a>
+                        <a href="#" class="dropdown-item">Hacking Tools</a>
+                        <a href="#" class="dropdown-item">Hacking Gadgets</a>
+                        <a href="#" class="dropdown-item">IoT Devices</a>
+                    </div>
+                </li>
+                <li class="nav-item"><a href="#" class="nav-link">Live Class</a></li>
+                <li class="nav-item"><a href="Blog.html" class="nav-link">Blog</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">About</a></li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">More <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown">
+                        <a href="#" class="dropdown-item">Contact Us</a>
+                        <a href="#" class="dropdown-item">Support</a>
+                        <a href="#" class="dropdown-item">FAQs</a>
+                        <a href="#" class="dropdown-item">Careers</a>
+                    </div>
+                </li>
+            </ul>
+            
+            <div class="nav-icons">
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation -->
+    <div class="overlay" id="overlay"></div>
+    
+    <div class="mobile-nav" id="mobileNav">
+        <button class="close-mobile-menu" id="closeMobileMenu">
+            <i class="fas fa-times"></i>
+        </button>
+        
+        <ul class="mobile-nav-list">
+            <li class="mobile-nav-item">
+                <a href="Index.html" class="mobile-nav-link">Home</a>
+            </li>
+            <li class="mobile-nav-item">
+                <button class="mobile-dropdown-btn">
+                    Courses <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="mobile-dropdown">
+                    <a href="allcourse.html" class="mobile-dropdown-item">All Course</a>
+                    <a href="CyberSecurityCourse.html" class="mobile-dropdown-item">Cyber Security Course</a>
+                    <a href="computercourse.html" class="mobile-dropdown-item">Computer Courses</a>
+                    <a href="workshop.html" class="mobile-dropdown-item">Workshops</a>
+                </div>
+            </li>
+            <li class="mobile-nav-item">
+                <button class="mobile-dropdown-btn">
+                    Shop <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="mobile-dropdown">
+                    <a href="hackingsoftware.html" class="mobile-dropdown-item">Hacking Software</a>
+                    <a href="#" class="mobile-dropdown-item">Windows Software</a>
+                    <a href="#" class="mobile-dropdown-item">Hacking Tools</a>
+                    <a href="#" class="mobile-dropdown-item">Hacking Gadgets</a>
+                    <a href="#" class="mobile-dropdown-item">IoT Devices</a>
+                </div>
+            </li>
+            <li class="mobile-nav-item">
+                <a href="#" class="mobile-nav-link">Live Class</a>
+            </li>
+            <li class="mobile-nav-item">
+                <a href="Blog.html" class="mobile-nav-link">Blog</a>
+            </li>
+            <li class="mobile-nav-item">
+                <a href="#" class="mobile-nav-link">About</a>
+            </li>
+            <li class="mobile-nav-item">
+                <button class="mobile-dropdown-btn">
+                    More <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="mobile-dropdown">
+                    <a href="#" class="mobile-dropdown-item">Contact Us</a>
+                    <a href="#" class="mobile-dropdown-item">Support</a>
+                    <a href="#" class="mobile-dropdown-item">FAQs</a>
+                    <a href="#" class="mobile-dropdown-item">Careers</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Blog Section -->
+    <section class="blog-section">
+        <div class="container blog-container">
+            <div class="blog-header">
+                <h1>Network Security: Apna Network Kaise Secure Karein</h1>
+                <div class="blog-meta">
+                    <span><i class="fas fa-user"></i> Cyber Rakshak Institute Team</span>
+                    <span><i class="fas fa-calendar-alt"></i> August 28, 2025</span>
+                    <span><i class="fas fa-folder"></i> Cybersecurity Tips</span>
+                </div>
+            </div>
+            
+            <div class="blog-content">
+                <img src="https://placehold.co/1200x400/0a2463/ffffff?text=Hacking+Network+Security" alt="Network Security Hacking">
+                <p>Hello dosto! Welcome to Cyber Rakshak Institute ka blog. Aaj hum baat karenge <strong>Network Security</strong> ke baare mein. Agar aap soch rahe ho ki "Yeh network security kya hai? Kyun important hai? Aur isse kaise implement karein?", toh yeh post aapke liye perfect hai. Hum detail mein explain karenge, with real-world examples aur tips. Aur haan, end mein hum aapko bataayenge ki Cyber Rakshak Institute se kaise seekh sakte ho yeh sab professionally.</p>
+                
+                <h2>Network Security Kya Hai?</h2>
+                <p>Network security ek aisa process hai jisme aap apne computer network ko unauthorized access, misuse, ya attacks se protect karte ho. Simple words mein: Jaise aap apne ghar ko lock karte ho taaki chor na ghus sake, waise hi network security aapke digital "ghar" (jaise Wi-Fi, office LAN, ya cloud network) ko hackers se bachati hai.</p>
+                <p>In technical terms, network security includes hardware, software, and policies jo data transmission ko secure karte hain. Yeh OSI model ke layers par kaam karta hai, jaise physical layer se leke application layer tak.</p>
+                <img src="https://placehold.co/800x400/1e3a8a/ffffff?text=Network+Security+Overview" alt="Network Security Overview">
+                
+                <h2>Kyun Important Hai?</h2>
+                <p>Aaj kal, har cheez online hai – banking, shopping, work from home. Ek chhota sa breach (attack) aapka data leak kar sakta hai, financial loss ho sakta hai, ya even identity theft. Statistically, 2025 mein cyber attacks 15% badh gaye hain. Isliye, network security jaan'na zaroori hai, especially if you're a student, professional, or business owner.</p>
+                <p>Cyber Rakshak Institute par humara <a href="CyberSecurityCourse.html">"Network Security Pro"</a> course exactly yeh sikhaata hai – from basics to advanced. Price sirf ₹9850.99, aur hands-on labs ke saath!</p>
+                
+                <h2>Network Security Ke Prakar</h2>
+                <ul>
+                    <li><strong>Firewall Protection</strong>: Yeh ek barrier hai jo incoming aur outgoing traffic ko monitor karta hai. Jaise ek security guard jo check karta hai ki kaun andar aa raha hai.</li>
+                    <li><strong>Intrusion Detection System (IDS) and Intrusion Prevention System (IPS)</strong>: IDS attacks ko detect karta hai aur alert bhejta hai, jabki IPS unhe block bhi kar deta hai.</li>
+                    <li><strong>Virtual Private Network (VPN)</strong>: Public Wi-Fi par safe browsing ke liye VPN use karo. Yeh data ko encrypt karta hai.</li>
+                    <li><strong>Antivirus and Anti-Malware</strong>: Yeh software viruses, worms, trojans ko scan aur remove karte hain.</li>
+                    <li><strong>Access Control</strong>: Role-Based Access Control (RBAC) se ensure karo ki sirf authorized users hi access karein.</li>
+                </ul>
+                <img src="https://placehold.co/600x300/ff4d4d/ffffff?text=Firewall+Security" alt="Firewall Security">
+                
+                <h2>Network Ke Common Khatre</h2>
+                <ul>
+                    <li><strong>Malware Attacks</strong>: Viruses jo files corrupt karte hain.</li>
+                    <li><strong>Phishing</strong>: Fake emails se credentials churaana.</li>
+                    <li><strong>DDoS Attacks</strong>: Distributed Denial of Service, jisme website ko overload karke down kar diya jaata hai.</li>
+                    <li><strong>Man-in-the-Middle (MITM)</strong>: Hacker beech mein aa kar data intercept karta hai.</li>
+                    <li><strong>Zero-Day Exploits</strong>: Unknown vulnerabilities jo pehle se attack ho jaati hain.</li>
+                </ul>
+                <img src="https://placehold.co/800x500/28a745/ffffff?text=Cyber+Threats" alt="Cyber Threats">
+                
+                <h2>Network Secure Karne Ke Tips</h2>
+                <ul>
+                    <li><strong>Strong Passwords</strong>: Kam se kam 12 characters, with numbers, symbols. Password managers use karo.</li>
+                    <li><strong>Regular Updates</strong>: Software aur firmware ko update rakho.</li>
+                    <li><strong>Multi-Factor Authentication (MFA)</strong>: Sirf password nahi, OTP ya biometrics add karo.</li>
+                    <li><strong>Network Segmentation</strong>: Important data ko alag segment mein rakho.</li>
+                    <li><strong>Monitoring Tools</strong>: Tools jaise Wireshark se traffic monitor karo.</li>
+                    <li><strong>Employee Training</strong>: Sabko aware karo phishing ke baare mein.</li>
+                </ul>
+                <img src="https://placehold.co/600x800/17a2b8/ffffff?text=Network+Security+Tips" alt="Network Security Tips">
+                
+                <h2>Real-World Example</h2>
+                <p>Ek real example: 2024 mein ek famous company ka network hack hua DDoS se, loss hua millions ka. Unhone firewall nahi update kiya tha. Cyber Rakshak Institute ke students ne similar situations mein companies ko bachaya hai, using our training.</p>
+                
+                <h2>Kyun Cyber Rakshak Institute Se Seekhein?</h2>
+                <p>Market mein bohot options hain, but Cyber Rakshak Institute special hai kyunki:</p>
+                <ul>
+                    <li>Expert instructors jo real hacks handle kar chuke hain.</li>
+                    <li>Hands-on labs mein practice karo, without risk.</li>
+                    <li>Affordable prices starting from ₹9850.99.</li>
+                    <li>Community support aur globally recognized certifications.</li>
+                </ul>
+                <div class="blog-cta">
+                    <a href="CyberSecurityCourse.html" class="btn">Enroll in Network Security Pro Course</a>
+                </div>
+                
+                <h2>Conclusion</h2>
+                <p>Network security future hai cybersecurity ka. Is post se aapko basic to advanced samajh aaya hoga. Comment mein bataao, kya seekhna chahte ho next? Stay secure, stay with Cyber Rakshak Institute!</p>
+                <img src="https://placehold.co/1200x300/ffc107/000000?text=Stay+Secure" alt="Stay Secure">
+                
+                <p>Share this post if you found it helpful. Follow us on <a href="https://www.instagram.com/ku1d33p_b14ck_h4t">Instagram</a> for more tips!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Cyber Rakshak Institute</h3>
+                    <p>Advanced cybersecurity solutions, cutting-edge tools, and expert training to protect what matters most.</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/b14ck00"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.linkedin.com/in/kuldeep-chauhan-4a6a8127a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app "><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.instagram.com/ku1d33p_b14ck_h4t"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-chevron-right"></i><a href="Index.html"> Home</a></li>
+                        <li><i class="fas fa-chevron-right"></i><a href="CyberSecurityCourse.html"> Courses</a></li>
+                        <li><i class="fas fa-chevron-right"></i><a href="#"> Shop</a></li>
+                        <li><i class="fas fa-chevron-right"></i><a href="#"> Live Classes</a></li>
+                        <li><i class="fas fa-chevron-right"></i><a href="Blog.html"> Blog</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt"></i> Madhupur, Sonbhadra Uttar Pradesh 231216</li>
+                        <li><a href="tel:7398926485"><i class="fas fa-phone"></i>+91 7398926485</a></li>
+                        <li><a href="mailto:cyberrakshakinstitute@gmail.com"><i class="fas fa-envelope"></i>cyberrakshakinstitute@gmail.com</a></li>
+                        <li><i class="fas fa-clock"></i> Mon-Fri: 9AM - 6PM</li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to our newsletter for the latest updates and security tips.</p>
+                    <input type="email" placeholder="Your Email" style="width: 100%; padding: 10px; margin: 10px 0; border-radius: 20px; border: none;">
+                    <button class="btn btn-sm" style="width: 100%;">Subscribe</button>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2025 Cyber Rakshak Institute. All rights reserved. | Designed with <i class="fas fa-heart" style="color: var(--accent);"></i> for cybersecurity professionals</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="JS/networkingblog.js"></script>
+</body>
+</html>

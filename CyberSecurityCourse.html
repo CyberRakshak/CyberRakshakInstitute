@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyber Security Course - Secure</title>
+    <!-- Security Headers -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdnjs.cloudflare.com https://fonts.googleapis.com 'unsafe-inline' 'unsafe-eval'; style-src 'self' https://cdnjs.cloudflare.com https://fonts.googleapis.com 'unsafe-inline'; font-src 'self' https://cdnjs.cloudflare.com https://fonts.gstatic.com; img-src 'self' data: https:; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none';">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=()">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Orbitron:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/allcourse.css">
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container nav-container">
+            <div class="logo">
+                <i class="fas fa-shield-alt fa-2x" style="color: var(--secondary);"></i>
+                <div class="logo-text">Cyber<span> Rakshak</span></div>
+            </div>
+            
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Courses <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown">
+                        <a href="allcourse.html" class="dropdown-item">All Course</a>
+                        <a href="CyberSecurityCourse.html" class="dropdown-item">Cyber Security Course</a>
+                        <a href="computercourse.html" class="dropdown-item">Computer Courses</a>
+                        <a href="workshop.html" class="dropdown-item">Workshops</a>
+                    </div>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Shop <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown">
+                        <a href="hackingsoftware.html" class="dropdown-item">Hacking Software</a>
+                        <a href="Windows software.html" class="dropdown-item">Windows Software</a>
+                        <a href="ComingSoon.html" class="dropdown-item">Hacking Tools</a>
+                        <a href="ComingSoon.html" class="dropdown-item">Hacking Gadgets</a>
+                        <a href="ComingSoon.html" class="dropdown-item">IoT Devices</a>
+                    </div>
+                </li>
+                
+                <li class="nav-item"><a href="ComingSoon.html" class="nav-link">Live Class</a></li>
+                <li class="nav-item"><a href="Blog.html" class="nav-link">Blog</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">About</a></li>
+                
+                <li class="nav-item">
+                    <a href="#" class="nav-link">More <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown">
+                        <a href="contact.html" class="dropdown-item">Contact Us</a>
+                        <a href="ComingSoon.html" class="dropdown-item">Support</a>
+                        <a href="ComingSoon.html" class="dropdown-item">FAQs</a>
+                        <a href="ComingSoon.html" class="dropdown-item">Careers</a>
+                    </div>
+                </li>
+            </ul>
+            
+            <div class="nav-icons">
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation -->
+    <div class="overlay" id="overlay"></div>
+    
+    <div class="mobile-nav" id="mobileNav">
+        <button class="close-mobile-menu" id="closeMobileMenu">
+            <i class="fas fa-times"></i>
+        </button>
+        
+        <ul class="mobile-nav-list">
+            <li class="mobile-nav-item">
+                <a href="index.html" class="mobile-nav-link">Home</a>
+            </li>
+            
+            <li class="mobile-nav-item">
+                <button class="mobile-dropdown-btn">
+                    Courses <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="mobile-dropdown">
+                    <a href="allcourse.html" class="mobile-dropdown-item">All Course</a>
+                    <a href="CyberSecurityCourse.html" class="mobile-dropdown-item">Cyber Security Course</a>
+                    <a href="computercourse.html" class="mobile-dropdown-item">Computer Courses</a>
+                    <a href="workshop.html" class="mobile-dropdown-item">Workshops</a>
+                </div>
+            </li>
+            
+            <li class="mobile-nav-item">
+                <button class="mobile-dropdown-btn">
+                    Shop <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="mobile-dropdown">
+                    <a href="hackingsoftware.html" class="mobile-dropdown-item">Hacking Software</a>
+                    <a href="Windows software.html" class="mobile-dropdown-item">Windows Software</a>
+                    <a href="ComingSoon.html" class="mobile-dropdown-item">Hacking Tools</a>
+                    <a href="ComingSoon.html" class="mobile-dropdown-item">Hacking Gadgets</a>
+                    <a href="ComingSoon.html" class="mobile-dropdown-item">IoT Devices</a>
+                </div>
+            </li>
+            
+            <li class="mobile-nav-item">
+                <a href="ComingSoon.html" class="mobile-nav-link">Live Class</a>
+            </li>
+            
+            <li class="mobile-nav-item">
+                <a href="Blog.html" class="mobile-nav-link">Blog</a>
+            </li>
+            
+            <li class="mobile-nav-item">
+                <a href="ComingSoon.html" class="mobile-nav-link">About</a>
+            </li>
+            
+            <li class="mobile-nav-item">
+                <button class="mobile-dropdown-btn">
+                    More <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="mobile-dropdown">
+                    <a href="contact.html" class="mobile-dropdown-item">Contact Us</a>
+                    <a href="ComingSoon.html" class="mobile-dropdown-item">Support</a>
+                    <a href="ComingSoon.html" class="mobile-dropdown-item">FAQs</a>
+                    <a href="ComingSoon.html" class="mobile-dropdown-item">Careers</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Rate limiting notification -->
+    <div class="rate-limit-notice" id="rateLimitNotice">
+        <i class="fas fa-exclamation-circle"></i>
+        <span>Please wait before making another request.</span>
+    </div>
+
+    <!-- Cybersecurity Courses Section -->
+    <section class="section section-alt">
+        <div class="container">
+            <div class="section-title">
+                <h2>Cybersecurity Courses</h2>
+                <p>Master the art of cybersecurity with our expert-led courses</p>
+            </div>
+            
+            <div class="card-grid">
+                <div class="card">
+                    <div class="card-img">
+                        <img src="IMAGE/eathicalhacking.jpeg" crossorigin="anonymous">
+                    </div>
+                    <div class="card-content">
+                        <h3>Ethical Hacking Masterclass</h3>
+                        <p>Learn ethical hacking from scratch with hands-on training and real-world scenarios.</p>
+                        <span class="price">₹12999.99</span>
+                        <div class="card-buttons">
+                            <a href="EathicalHacking.html" class="btn btn-sm">Buy Now</a>
+                            <a href="EathicalHacking.html" class="btn btn-sm btn-outline">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-img">
+                        <img src="IMAGE/networkseurity.jpeg" alt="Network Security" crossorigin="anonymous">
+                    </div>
+                    <div class="card-content">
+                        <h3>Network Security Pro</h3>
+                        <p>Master network security protocols, firewalls, and intrusion detection systems.</p>
+                        <span class="price">₹9850.99</span>
+                        <div class="card-buttons">
+                            <a href="ComingSoon.html" class="btn btn-sm">Buy Now</a>
+                            <a href="ComingSoon.html" class="btn btn-sm btn-outline">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-img">
+                        <img src="IMAGE/digitalforensic.jpeg" alt="Digital Forensics" crossorigin="anonymous">
+                    </div>
+                    <div class="card-content">
+                        <h3>Digital Forensics Expert</h3>
+                        <p>Learn to investigate cyber crimes and analyze digital evidence like a professional.</p>
+                        <span class="price">₹13999.99</span>
+                        <div class="card-buttons">
+                            <a href="ComingSoon.html" class="btn btn-sm">Buy Now</a>
+                            <a href="ComingSoon.html" class="btn btn-sm btn-outline">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-img">
+                        <img src="IMAGE/OSCP Course.jpg" alt="OSCP Certification" crossorigin="anonymous">
+                    </div>
+                    <div class="card-content">
+                        <h3>OSCP Certification Prep</h3>
+                        <p>Prepare for the Offensive Security Certified Professional certification exam.</p>
+                        <span class="price">₹13999.99</span>
+                        <div class="card-buttons">
+                            <a href="ComingSoon.html" class="btn btn-sm">Buy Now</a>
+                            <a href="ComingSoon.html" class="btn btn-sm btn-outline">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Cyber Rakshak Institute</h3>
+                    <p>Advanced cybersecurity solutions, cutting-edge tools, and expert training to protect what matters most.</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/b14ck00" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="ComingSoon.html" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.linkedin.com/in/kuldeep-chauhan-4a6a8127a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app " aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.instagram.com/ku1d33p_b14ck_h4t" aria-label="Instagram" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+                        <a href="ComingSoon.html" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-chevron-right"></i><a href="index.html"> Home</a></li>
+                        <li><i class="fas fa-chevron-right"></i><a href="allcourse.html"> Courses</a></li>
+                        <li><i class="fas fa-chevron-right"></i><a href="hackingsoftware.html"> Shop</a></li>
+                        <li><i class="fas fa-chevron-right"></i><a href="ComingSoon.html"> Live Classes</a></li>
+                        <li><i class="fas fa-chevron-right"></i><a href="Blog.html"> Blog</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt"></i> Madhupur, Sonbhadra Uttar Pradesh 231216</li>
+                        <li><a href="tel:7398926485"><i class="fas fa-phone"></i>+91 7398926485</a></li>
+                        <li><a href="mailto:cyberrakshakinstitute@gmail.com"><i class="fas fa-envelope"></i>cyberrakshakinstitute@gmail.com</a></li>
+                        <li><i class="fas fa-clock"></i> Mon-Fri: 9AM - 6PM</li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to our newsletter for the latest updates and security tips.</p>
+                    <div class="newsletter-form">
+                        <div class="form-group">
+                            <input type="email" id="newsletter-email" placeholder="Your Email" required aria-label="Email for newsletter">
+                            <div class="form-error" id="email-error"></div>
+                        </div>
+                        <button type="button" class="btn btn-sm" style="width: 100%;" id="newsletter-submit" onclick="handleNewsletterSignup()">Subscribe</button>
+                        <div id="newsletter-message" class="form-message"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2025 Cyber Rakshak Institute. All rights reserved. | Designed By <i class="fas fa-heart" style="color: var(--accent);" aria-hidden="true"></i> Kuldeep Chauhan CEO of Cyber Rakshak Institute</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Security Badge -->
+    <div class="security-badge">
+        <i class="fas fa-shield-alt"></i> Secure Page
+    </div>
+
+    <script src="JS/allcourse.js"></script>
+</body>
+</html>

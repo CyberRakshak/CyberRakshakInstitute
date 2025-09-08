@@ -1,0 +1,1423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - BlackHat Zone</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Orbitron:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0a2463;
+            --secondary: #61dafb;
+            --accent: #ff4d4d;
+            --dark: #1e1e2c;
+            --light: #f8f9fa;
+            --gray: #6c757d;
+            --success: #28a745;
+            --warning: #ffc107;
+            --info: #17a2b8;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: white;
+            background: linear-gradient(135deg, #0a2463 0%, #1e1e2c 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        h1, h2, h3, h4, h5 {
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header & Navigation */
+        header {
+            background: rgba(10, 36, 99, 0.9);
+            padding: 15px 0;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo-text {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: white;
+            margin-left: 10px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        
+        .logo-text span {
+            color: var(--secondary);
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-item {
+            position: relative;
+            margin: 0 12px;
+        }
+        
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+            padding: 10px 0;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+        }
+        
+        .nav-link:hover {
+            color: var(--secondary);
+            transform: translateY(-2px);
+        }
+        
+        .nav-link i {
+            margin-left: 5px;
+            font-size: 14px;
+        }
+        
+        .dropdown {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 200px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(15px);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+        
+        .nav-item:hover .dropdown {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(5px);
+        }
+        
+        .dropdown-item {
+            display: block;
+            padding: 12px 20px;
+            color: var(--dark);
+            text-decoration: none;
+            font-size: 15px;
+            transition: all 0.3s ease;
+            border-bottom: 1px solid #f1f1f1;
+        }
+        
+        .dropdown-item:hover {
+            background-color: #f8f9fa;
+            color: var(--primary);
+            padding-left: 25px;
+        }
+        
+        .nav-icons {
+            display: flex;
+            align-items: center;
+        }
+        
+        .cart-count {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background-color: var(--accent);
+            color: white;
+            font-size: 12px;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        /* Mobile Menu Button (Hidden by Default) */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+            z-index: 1001;
+            order: 2;
+            margin-left: 15px;
+        }
+        
+        /* Profile Icon for Mobile */
+        .profile-icon-mobile {
+            display: none;
+        }
+        
+        /* Mobile Navigation */
+        .mobile-nav {
+            position: fixed;
+            top: 0;
+            right: -300px;
+            width: 300px;
+            height: 100vh;
+            background: linear-gradient(135deg, var(--primary) 0%, #1e3a8a 100%);
+            z-index: 999;
+            transition: right 0.4s ease;
+            padding: 80px 20px 20px;
+            overflow-y: auto;
+            box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .mobile-nav.active {
+            right: 0;
+        }
+        
+        .mobile-nav-list {
+            list-style: none;
+        }
+        
+        .mobile-nav-item {
+            margin-bottom: 15px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .mobile-nav-link {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 12px 0;
+            display: block;
+            transition: all 0.3s ease;
+        }
+        
+        .mobile-nav-link:hover {
+            color: var(--secondary);
+            padding-left: 10px;
+        }
+        
+        .mobile-dropdown-btn {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 18px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            padding: 12px 0;
+            text-align: left;
+        }
+        
+        .mobile-dropdown {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+        }
+        
+        .mobile-dropdown.active {
+            max-height: 500px;
+        }
+        
+        .mobile-dropdown-item {
+            display: block;
+            padding: 10px 15px;
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            border-left: 2px solid transparent;
+        }
+        
+        .mobile-dropdown-item:hover {
+            color: var(--secondary);
+            border-left: 2px solid var(--secondary);
+            padding-left: 20px;
+        }
+        
+        .close-mobile-menu {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 998;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.4s ease;
+        }
+        
+        .overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        /* Main Content */
+        .main-content {
+            flex: 1;
+            padding: 120px 0 80px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cyber-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.1;
+            overflow: hidden;
+        }
+        
+        .cyber-grid {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(97, 218, 251, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(97, 218, 251, 0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+            animation: gridMove 20s linear infinite;
+        }
+        
+        @keyframes gridMove {
+            0% {
+                transform: translateY(0) translateX(0);
+            }
+            100% {
+                transform: translateY(50px) translateX(50px);
+            }
+        }
+        
+        .cyber-circle {
+            position: absolute;
+            border-radius: 50%;
+            border: 2px solid rgba(97, 218, 251, 0.2);
+            animation: pulseCircle 8s ease-in-out infinite;
+        }
+        
+        .cyber-circle:nth-child(1) {
+            width: 300px;
+            height: 300px;
+            top: -150px;
+            left: -150px;
+            animation-delay: 0s;
+        }
+        
+        .cyber-circle:nth-child(2) {
+            width: 500px;
+            height: 500px;
+            bottom: -250px;
+            right: -250px;
+            animation-delay: 2s;
+        }
+        
+        .cyber-circle:nth-child(3) {
+            width: 200px;
+            height: 200px;
+            top: 50%;
+            left: 10%;
+            animation-delay: 4s;
+        }
+        
+        .cyber-circle:nth-child(4) {
+            width: 400px;
+            height: 400px;
+            bottom: 20%;
+            right: 20%;
+            animation-delay: 6s;
+        }
+        
+        @keyframes pulseCircle {
+            0%, 100% {
+                transform: scale(1);
+                opacity: 0.3;
+            }
+            50% {
+                transform: scale(1.1);
+                opacity: 0.6;
+            }
+        }
+        
+        /* Blog Hero Section */
+        .blog-hero {
+            background: linear-gradient(135deg, var(--primary) 0%, #1e3a8a 100%);
+            color: white;
+            padding: 80px 0 60px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 60px;
+        }
+        
+        .blog-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAw0MC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgdmlld0JveD0iMCAwID6wIDYwIj48ZyBmaWxsPSJub25lIiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjAuNSIgb3BhY2l0eT0iMC4xIj48cGF0aCBkPSJNMCAwaDYwdjYwSDB6Ii8+PC9nPjwvc3ZnPg==');
+            opacity: 0.1;
+        }
+        
+        .blog-hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .blog-hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            color: white;
+            animation: fadeInUp 1s ease;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .blog-hero p {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+            animation: fadeInUp 1s ease 0.2s;
+            animation-fill-mode: both;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Blog Content */
+        .blog-container {
+            display: grid;
+            grid-template-columns: 7fr 3fr;
+            gap: 40px;
+        }
+        
+        .blog-posts {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .blog-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s ease;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(97, 218, 251, 0.2);
+        }
+        
+        .blog-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+            border-color: var(--secondary);
+        }
+        
+        .blog-img {
+            height: 200px;
+            background: linear-gradient(135deg, var(--primary) 0%, #1e3a8a 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .blog-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .blog-img::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAw0MC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgdmlld0JveD0iMCAwIDYwIDYwIj48ZyBmaWxsPSJub25lIiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjAuNSIgb3BhY2l0eT0iMC4xIj48cGF0aCBkPSJNMCAwaDYwdjYwSDB6Ii8+PC9nPjwvc3ZnPg==');
+            opacity: 0.1;
+        }
+        
+        .blog-content {
+            padding: 25px;
+        }
+        
+        .blog-content h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: var(--secondary);
+        }
+        
+        .blog-meta {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+        }
+        
+        .blog-meta span {
+            margin-right: 15px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .blog-meta i {
+            margin-right: 5px;
+            color: var(--secondary);
+        }
+        
+        .blog-excerpt {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        
+        .blog-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+        
+        .blog-tag {
+            background: rgba(97, 218, 251, 0.1);
+            color: var(--secondary);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            transition: all 0.3s ease;
+        }
+        
+        .blog-tag:hover {
+            background: var(--secondary);
+            color: var(--dark);
+        }
+        
+        .read-more {
+            display: inline-block;
+            color: var(--secondary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .read-more:hover {
+            color: white;
+            transform: translateX(5px);
+        }
+        
+        /* Sidebar */
+        .sidebar {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 25px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(97, 218, 251, 0.2);
+            height: fit-content;
+        }
+        
+        .sidebar-widget {
+            margin-bottom: 30px;
+        }
+        
+        .sidebar-widget:last-child {
+            margin-bottom: 0;
+        }
+        
+        .sidebar-widget h3 {
+            color: var(--secondary);
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .sidebar-widget h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--secondary), transparent);
+            border-radius: 2px;
+        }
+        
+        /* About Widget */
+        .about-widget {
+            text-align: center;
+        }
+        
+        .about-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            background: linear-gradient(135deg, var(--primary) 0%, #1e3a8a 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            color: white;
+        }
+        
+        .about-text {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        
+        /* Categories Widget */
+        .categories-list {
+            list-style: none;
+        }
+        
+        .categories-list li {
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .categories-list a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+        }
+        
+        .categories-list a:hover {
+            color: var(--secondary);
+            transform: translateX(5px);
+        }
+        
+        .categories-list i {
+            margin-right: 10px;
+            color: var(--secondary);
+        }
+        
+        .category-count {
+            background: rgba(97, 218, 251, 0.1);
+            color: var(--secondary);
+            padding: 2px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+        }
+        
+        /* Recent Posts Widget */
+        .recent-posts {
+            list-style: none;
+        }
+        
+        .recent-post {
+            display: flex;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .recent-post:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+        
+        .recent-post-img {
+            width: 70px;
+            height: 70px;
+            border-radius: 8px;
+            margin-right: 15px;
+            background: linear-gradient(135deg, var(--primary) 0%, #1e3a8a 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 20px;
+        }
+        
+        .recent-post-content h4 {
+            font-size: 0.95rem;
+            margin-bottom: 5px;
+        }
+        
+        .recent-post-content a {
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .recent-post-content a:hover {
+            color: var(--secondary);
+        }
+        
+        .recent-post-date {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.8rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .recent-post-date i {
+            margin-right: 5px;
+            color: var(--secondary);
+        }
+        
+        /* Tags Widget */
+        .tags-cloud {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        
+        .tag {
+            background: rgba(97, 218, 251, 0.1);
+            color: var(--secondary);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        
+        .tag:hover {
+            background: var(--secondary);
+            color: var(--dark);
+        }
+        
+        /* Newsletter Widget */
+        .newsletter-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .newsletter-input {
+            padding: 12px 15px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+        }
+        
+        .newsletter-input:focus {
+            outline: none;
+            border-color: var(--secondary);
+            box-shadow: 0 0 0 3px rgba(97, 218, 251, 0.2);
+        }
+        
+        .newsletter-input::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+        
+        .newsletter-btn {
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            background: linear-gradient(135deg, var(--secondary) 0%, #4ec5e3 100%);
+            color: var(--dark);
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .newsletter-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(97, 218, 251, 0.4);
+        }
+        
+        /* Pagination */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            margin-top: 60px;
+            gap: 10px;
+        }
+        
+        .page-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(97, 218, 251, 0.2);
+        }
+        
+        .page-link:hover, .page-link.active {
+            background: var(--secondary);
+            color: var(--dark);
+        }
+        
+        /* Binary rain animation */
+        .binary-rain {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.1;
+            pointer-events: none;
+        }
+        
+        .binary-digit {
+            position: absolute;
+            color: var(--secondary);
+            font-family: 'Orbitron', sans-serif;
+            font-size: 16px;
+            animation: binaryRain 10s linear infinite;
+            opacity: 0;
+            text-shadow: 0 0 5px rgba(97, 218, 251, 0.8);
+        }
+        
+        @keyframes binaryRain {
+            0% {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            5% {
+                opacity: 1;
+            }
+            95% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(1000%);
+                opacity: 0;
+            }
+        }
+        
+        /* Progress Bar */
+        .progress-container {
+            width: 100%;
+            height: 5px;
+            background: rgba(255, 255, 255, 0.1);
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            z-index: 1000;
+        }
+        
+        .progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, var(--secondary) 0%, #4ec5e3 100%);
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .nav-menu {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .blog-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .blog-hero h1 {
+                font-size: 2.5rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .blog-hero h1 {
+                font-size: 2rem;
+            }
+            
+            .blog-hero p {
+                font-size: 1rem;
+            }
+            
+            .blog-posts {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .blog-hero {
+                padding: 60px 0 40px;
+            }
+            
+            .blog-hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .blog-content {
+                padding: 20px;
+            }
+            
+            .sidebar {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container nav-container">
+            <div class="logo">
+                <i class="fas fa-shield-alt fa-2x" style="color: var(--secondary);"></i>
+                <div class="logo-text">Black<span>Hat</span> Zone</div>
+            </div>
+            
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="Index.html" class="nav-link">Home</a></li>
+                
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Courses <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown">
+                        <a href="allcourse.html" class="dropdown-item">All Course</a>
+                        <a href="CyberSecurityCourse.html" class="dropdown-item">Cyber Security Course</a>
+                        <a href="computercourse.html" class="dropdown-item">Computer Courses</a>
+                        <a href="workshop.html" class="dropdown-item">Workshops</a>
+                    </div>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Shop <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown">
+                        <a href="#" class="dropdown-item">Hacking Software</a>
+                        <a href="#" class="dropdown-item">Windows Software</a>
+                        <a href="#" class="dropdown-item">Hacking Tools</a>
+                        <a href="#" class="dropdown-item">Hacking Gadgets</a>
+                        <a href="#" class="dropdown-item">IoT Devices</a>
+                    </div>
+                </li>
+                
+                <li class="nav-item"><a href="#" class="nav-link">Live Class</a></li>
+                <li class="nav-item"><a href="Blog.html" class="nav-link">Blog</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">About</a></li>
+                
+                <li class="nav-item">
+                    <a href="#" class="nav-link">More <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown">
+                        <a href="#" class="dropdown-item">Contact Us</a>
+                        <a href="#" class="dropdown-item">Support</a>
+                        <a href="#" class="dropdown-item">FAQs</a>
+                        <a href="#" class="dropdown-item">Careers</a>
+                    </div>
+                </li>
+            </ul>
+            
+            <div class="nav-icons">
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation -->
+    <div class="overlay" id="overlay"></div>
+    
+    <div class="mobile-nav" id="mobileNav">
+        <button class="close-mobile-menu" id="closeMobileMenu">
+            <i class="fas fa-times"></i>
+        </button>
+        
+        <ul class="mobile-nav-list">
+            <li class="mobile-nav-item">
+                <a href="Index.html" class="mobile-nav-link">Home</a>
+            </li>
+            
+            <li class="mobile-nav-item">
+                <button class="mobile-dropdown-btn">
+                    Courses <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="mobile-dropdown">
+                    <a href="allcourse.html" class="mobile-dropdown-item">All Course</a>
+                    <a href="CyberSecurityCourse.html" class="mobile-dropdown-item">Cyber Security Course</a>
+                    <a href="computercourse.html" class="mobile-dropdown-item">Computer Courses</a>
+                    <a href="workshop.html" class="mobile-dropdown-item">Workshops</a>
+                </div>
+            </li>
+            
+            <li class="mobile-nav-item">
+                <button class="mobile-dropdown-btn">
+                    Shop <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="mobile-dropdown">
+                    <a href="#" class="mobile-dropdown-item">Hacking Software</a>
+                    <a href="#" class="mobile-dropdown-item">Windows Software</a>
+                    <a href="#" class="mobile-dropdown-item">Hacking Tools</a>
+                    <a href="#" class="mobile-dropdown-item">Hacking Gadgets</a>
+                    <a href="#" class="mobile-dropdown-item">IoT Devices</a>
+                </div>
+            </li>
+            
+            <li class="mobile-nav-item">
+                <a href="#" class="mobile-nav-link">Live Class</a>
+            </li>
+            
+            <li class="mobile-nav-item">
+                <a href="Blog.html" class="mobile-nav-link">Blog</a>
+            </li>
+            
+            <li class="mobile-nav-item">
+                <a href="#" class="mobile-nav-link">About</a>
+            </li>
+            
+            <li class="mobile-nav-item">
+                <button class="mobile-dropdown-btn">
+                    More <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="mobile-dropdown">
+                    <a href="#" class="mobile-dropdown-item">Contact Us</a>
+                    <a href="#" class="mobile-dropdown-item">Support</a>
+                    <a href="#" class="mobile-dropdown-item">FAQs</a>
+                    <a href="#" class="mobile-dropdown-item">Careers</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Animated Background Elements -->
+        <div class="cyber-background">
+            <div class="cyber-grid"></div>
+            <div class="cyber-circle"></div>
+            <div class="cyber-circle"></div>
+            <div class="cyber-circle"></div>
+            <div class="cyber-circle"></div>
+        </div>
+        
+        <!-- Binary Rain Animation -->
+        <div class="binary-rain" id="binaryRain"></div>
+
+        <!-- Blog Hero Section -->
+        <section class="blog-hero">
+            <div class="container blog-hero-content">
+                <h1>BlackHat Zone Blog</h1>
+                <p>Stay updated with the latest cybersecurity trends, hacking techniques, and security solutions from industry experts.</p>
+            </div>
+        </section>
+
+        <!-- Blog Content -->
+        <section class="container blog-container">
+            <div class="blog-posts">
+                <!-- Blog Post 1 -->
+                <article class="blog-card">
+                    <div class="blog-img">
+                        <i class="fas fa-user-secret"></i>
+                    </div>
+                    <div class="blog-content">
+                        <h3>10 Essential Ethical Hacking Techniques for Beginners</h3>
+                        <div class="blog-meta">
+                            <span><i class="far fa-calendar"></i> June 15, 2023</span>
+                            <span><i class="far fa-user"></i> Admin</span>
+                        </div>
+                        <p class="blog-excerpt">Learn the fundamental techniques every aspiring ethical hacker should master to identify vulnerabilities and secure systems effectively.</p>
+                        <div class="blog-tags">
+                            <span class="blog-tag">Ethical Hacking</span>
+                            <span class="blog-tag">Cybersecurity</span>
+                        </div>
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <!-- Blog Post 2 -->
+                <article class="blog-card">
+                    <div class="blog-img">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="blog-content">
+                        <h3>How to Secure Your Home Network Against Cyber Threats</h3>
+                        <div class="blog-meta">
+                            <span><i class="far fa-calendar"></i> May 28, 2023</span>
+                            <span><i class="far fa-user"></i> Admin</span>
+                        </div>
+                        <p class="blog-excerpt">Practical steps to protect your home Wi-Fi, IoT devices, and personal data from potential cyber attacks and unauthorized access.</p>
+                        <div class="blog-tags">
+                            <span class="blog-tag">Network Security</span>
+                            <span class="blog-tag">IoT</span>
+                        </div>
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <!-- Blog Post 3 -->
+                <article class="blog-card">
+                    <div class="blog-img">
+                        <i class="fab fa-python"></i>
+                    </div>
+                    <div class="blog-content">
+                        <h3>Python for Cybersecurity: Automating Security Tasks</h3>
+                        <div class="blog-meta">
+                            <span><i class="far fa-calendar"></i> April 12, 2023</span>
+                            <span><i class="far fa-user"></i> Admin</span>
+                        </div>
+                        <p class="blog-excerpt">Discover how Python scripting can help automate security processes, vulnerability scanning, and penetration testing tasks.</p>
+                        <div class="blog-tags">
+                            <span class="blog-tag">Python</span>
+                            <span class="blog-tag">Automation</span>
+                        </div>
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <!-- Blog Post 4 -->
+                <article class="blog-card">
+                    <div class="blog-img">
+                        <i class="fas fa-microchip"></i>
+                    </div>
+                    <div class="blog-content">
+                        <h3>IoT Security Challenges and Solutions in 2023</h3>
+                        <div class="blog-meta">
+                            <span><i class="far fa-calendar"></i> March 29, 2023</span>
+                            <span><i class="far fa-user"></i> Admin</span>
+                        </div>
+                        <p class="blog-excerpt">Exploring the latest security challenges facing IoT devices and effective strategies to protect connected ecosystems from threats.</p>
+                        <div class="blog-tags">
+                            <span class="blog-tag">IoT</span>
+                            <span class="blog-tag">Security</span>
+                        </div>
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <!-- Blog Post 5 -->
+                <article class="blog-card">
+                    <div class="blog-img">
+                        <i class="fas fa-terminal"></i>
+                    </div>
+                    <div class="blog-content">
+                        <h3>Mastering Kali Linux: Essential Tools for Penetration Testing</h3>
+                        <div class="blog-meta">
+                            <span><i class="far fa-calendar"></i> February 15, 2023</span>
+                            <span><i class="far fa-user"></i> Admin</span>
+                        </div>
+                        <p class="blog-excerpt">A comprehensive guide to the most powerful tools in Kali Linux for effective penetration testing and vulnerability assessment.</p>
+                        <div class="blog-tags">
+                            <span class="blog-tag">Kali Linux</span>
+                            <span class="blog-tag">Penetration Testing</span>
+                        </div>
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <!-- Blog Post 6 -->
+                <article class="blog-card">
+                    <div class="blog-img">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <div class="blog-content">
+                        <h3>SOC Level 1 Analyst: Day in the Life and Essential Skills</h3>
+                        <div class="blog-meta">
+                            <span><i class="far fa-calendar"></i> January 20, 2023</span>
+                            <span><i class="far fa-user"></i> Admin</span>
+                        </div>
+                        <p class="blog-excerpt">What it's like to work as a SOC Level 1 analyst and the critical skills needed to detect and respond to security incidents.</p>
+                        <div class="blog-tags">
+                            <span class="blog-tag">SOC</span>
+                            <span class="blog-tag">Career</span>
+                        </div>
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <!-- About Widget -->
+                <div class="sidebar-widget about-widget">
+                    <div class="about-img">
+                        <i class="fas fa-user-secret"></i>
+                    </div>
+                    <h3>About Me</h3>
+                    <p class="about-text">Certified Ethical Hacker and Cybersecurity Expert with expertise in Python, IoT, Kali Linux, and SOC operations. I share insights to help you secure digital assets.</p>
+                    <div class="social-links-contact">
+                        <a href="https://www.facebook.com/b14ck00"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.linkedin.com/in/kuldeep-chauhan-4a6a8127a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.instagram.com/ku1d33p_b14ck_h4t"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <!-- Categories Widget -->
+                <div class="sidebar-widget">
+                    <h3>Categories</h3>
+                    <ul class="categories-list">
+                        <li>
+                            <a href="#"><i class="fas fa-angle-right"></i> Ethical Hacking</a>
+                            <span class="category-count">12</span>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fas fa-angle-right"></i> Network Security</a>
+                            <span class="category-count">8</span>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fas fa-angle-right"></i> Python Programming</a>
+                            <span class="category-count">10</span>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fas fa-angle-right"></i> IoT Security</a>
+                            <span class="category-count">7</span>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fas fa-angle-right"></i> Kali Linux</a>
+                            <span class="category-count">9</span>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fas fa-angle-right"></i> SOC Operations</a>
+                            <span class="category-count">6</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Recent Posts Widget -->
+                <div class="sidebar-widget">
+                    <h3>Recent Posts</h3>
+                    <ul class="recent-posts">
+                        <li class="recent-post">
+                            <div class="recent-post-img">
+                                <i class="fas fa-user-secret"></i>
+                            </div>
+                            <div class="recent-post-content">
+                                <h4><a href="#">10 Essential Ethical Hacking Techniques for Beginners</a></h4>
+                                <span class="recent-post-date"><i class="far fa-calendar"></i> June 15, 2023</span>
+                            </div>
+                        </li>
+                        <li class="recent-post">
+                            <div class="recent-post-img">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <div class="recent-post-content">
+                                <h4><a href="#">How to Secure Your Home Network Against Cyber Threats</a></h4>
+                                <span class="recent-post-date"><i class="far fa-calendar"></i> May 28, 2023</span>
+                            </div>
+                        </li>
+                        <li class="recent-post">
+                            <div class="recent-post-img">
+                                <i class="fab fa-python"></i>
+                            </div>
+                            <div class="recent-post-content">
+                                <h4><a href="#">Python for Cybersecurity: Automating Security Tasks</a></h4>
+                                <span class="recent-post-date"><i class="far fa-calendar"></i> April 12, 2023</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Tags Widget -->
+                <div class="sidebar-widget">
+                    <h3>Tags</h3>
+                    <div class="tags-cloud">
+                        <a href="#" class="tag">Hacking</a>
+                        <a href="#" class="tag">Security</a>
+                        <a href="#" class="tag">Python</a>
+                        <a href="#" class="tag">Kali Linux</a>
+                        <a href="#" class="tag">IoT</a>
+                        <a href="#" class="tag">Network</a>
+                        <a href="#" class="tag">Cybersecurity</a>
+                        <a href="#" class="tag">SOC</a>
+                        <a href="#" class="tag">Encryption</a>
+                    </div>
+                </div>
+
+                <!-- Newsletter Widget -->
+                <div class="sidebar-widget">
+                    <h3>Newsletter</h3>
+                    <p class="about-text">Subscribe to our newsletter for the latest cybersecurity updates and exclusive content.</p>
+                    <form class="newsletter-form">
+                        <input type="email" class="newsletter-input" placeholder="Your Email Address" required>
+                        <button type="submit" class="newsletter-btn">Subscribe</button>
+                    </form>
+                </div>
+            </aside>
+        </section>
+
+        <!-- Pagination -->
+        <div class="container">
+            <div class="pagination">
+                <a href="#" class="page-link active">1</a>
+                <a href="#" class="page-link">2</a>
+                <a href="#" class="page-link">3</a>
+                <a href="#" class="page-link"><i class="fas fa-angle-right"></i></a>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Progress Bar -->
+    <div class="progress-container">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+
+    <script>
+        // Mobile menu functionality
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const closeMobileMenu = document.getElementById('closeMobileMenu');
+        const mobileNav = document.getElementById('mobileNav');
+        const overlay = document.getElementById('overlay');
+        const dropdownButtons = document.querySelectorAll('.mobile-dropdown-btn');
+        
+        // Toggle mobile menu
+        function toggleMobileMenu() {
+            mobileNav.classList.toggle('active');
+            overlay.classList.toggle('active');
+            document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
+        }
+        
+        // Close mobile menu when clicking on a link
+        function closeMenuOnLinkClick() {
+            mobileNav.classList.remove('active');
+            overlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+        
+        // Toggle dropdown menus
+        function toggleDropdown() {
+            const dropdown = this.nextElementSibling;
+            dropdown.classList.toggle('active');
+            
+            // Rotate chevron icon
+            const icon = this.querySelector('i');
+            icon.classList.toggle('fa-chevron-down');
+            icon.classList.toggle('fa-chevron-up');
+        }
+        
+        // Event listeners
+        mobileMenuBtn.addEventListener('click', toggleMobileMenu);
+        closeMobileMenu.addEventListener('click', toggleMobileMenu);
+        overlay.addEventListener('click', toggleMobileMenu);
+        
+        // Add event listeners to dropdown buttons
+        dropdownButtons.forEach(button => {
+            button.addEventListener('click', toggleDropdown);
+        });
+        
+        // Close menu when clicking on navigation links
+        const mobileNavLinks = document.querySelectorAll('.mobile-nav-link, .mobile-dropdown-item');
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', closeMenuOnLinkClick);
+        });
+        
+        // Binary rain animation
+        function createBinaryRain() {
+            const binaryRain = document.getElementById('binaryRain');
+            const digits = '01';
+            const digitCount = 100;
+            
+            for (let i = 0; i < digitCount; i++) {
+                const digit = document.createElement('div');
+                digit.className = 'binary-digit';
+                digit.innerText = digits[Math.floor(Math.random() * digits.length)];
+                digit.style.left = `${Math.random() * 100}%`;
+                digit.style.animationDelay = `${Math.random() * 10}s`;
+                binaryRain.appendChild(digit);
+            }
+        }
+        
+        createBinaryRain();
+        
+        // Progress bar on scroll
+        window.onscroll = function() {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById('progressBar').style.width = scrolled + '%';
+        };
+        
+        // Newsletter form submission
+        document.querySelector('.newsletter-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const emailInput = this.querySelector('.newsletter-input');
+            const email = emailInput.value.trim();
+            
+            if (email) {
+                alert('Thank you for subscribing to our newsletter!');
+                emailInput.value = '';
+            }
+        });
+    </script>
+</body>
+</html>
