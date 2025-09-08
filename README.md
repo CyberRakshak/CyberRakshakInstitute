@@ -30,15 +30,6 @@
 
 ---
 
-## 🖼️ Screenshots / Demo
-
-> Neeche placeholders hain — apni images/GIFs add karein.
-
-![Homepage](https://placehold.co/1200x600?text=Homepage+Screenshot)
-![Feature-Flow](https://placehold.co/1200x600?text=Feature+Flow+GIF)
-
----
-
 ## 💎 Kyun Visit Karein? (USP)
 
 * ⚡ **Lightning Speed:** CDN + caching optimized.
@@ -97,14 +88,14 @@
 
 ## 📣 Social Proof
 
-[![Twitter Follow](https://img.shields.io/twitter/follow/YOUR_TWITTER_HANDLE?style=social)](#)
-[![YouTube Channel Subscribers](https://img.shields.io/youtube/channel/subscribers/YOUR_CHANNEL_ID?style=social)](#)
+[![Twitter Follow]()](#)
+[![YouTube Channel Subscribers]()](#)
 
 ---
 
 ## 📬 Contact
 
-**Email:** [you@example.com](mailto:cyberrakshakinstitute@gmail.com)
+**Email:** [cyberrakshakinstitute@gmail.com](mailto:cyberrakshakinstitute@gmail.com)
 **Telegram/WhatsApp:** +91-7398926485
 
 > *“Agar aapko website pasand aaye to doston ke saath share karna na bhoolen!”*
