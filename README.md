@@ -96,7 +96,7 @@
 ## 📬 Contact
 
 **Email:** [cyberrakshakinstitute@gmail.com](mailto:cyberrakshakinstitute@gmail.com)
-**Telegram/WhatsApp:** (tell:7398926485)
+**Telegram/WhatsApp:** +91-7398926485
 
 > *“Agar aapko website pasand aaye to doston ke saath share karna na bhoolen!”*
 
