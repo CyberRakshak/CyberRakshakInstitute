@@ -100,10 +100,4 @@
 
 > *“Agar aapko website pasand aaye to doston ke saath share karna na bhoolen!”*
 
----
-
-### 🔖 SEO-Friendly One-Liner
-
-**“\[Cyber Rakshak Institute] — fast, secure aur simple web tools & guides in Hindi.”**
-
 
