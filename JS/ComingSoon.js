@@ -50,7 +50,7 @@
         function updateCountdown() {
             // Set the launch date (3 months from now)
             const launchDate = new Date();
-            launchDate.setMonth(launchDate.getMonth() + 0);
+            launchDate.setMonth(launchDate.getMonth() + 3);
             
             const currentTime = new Date();
             const diff = launchDate - currentTime;
@@ -120,4 +120,5 @@
         terminalLines.forEach((line, index) => {
             line.style.animationDelay = `${index * 2}s`;
         });
+
 
