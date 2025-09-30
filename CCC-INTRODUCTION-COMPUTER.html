@@ -1,0 +1,1803 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CYBER RAKSHAK INSTITUTE - EXAM PORTAL</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <style>
+        :root {
+            --primary: #1a237e;
+            --secondary: #283593;
+            --success: #00b09b;
+            --danger: #ff416c;
+            --warning: #ff9800;
+            --info: #2196f3;
+            --dark: #1a237e;
+            --light: #f8f9fa;
+            --gray: #6c757d;
+            --cyber-blue: #0d47a1;
+            --cyber-dark: #0a2e6b;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #1a237e 0%, #283593 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(to right, var(--cyber-blue), var(--cyber-dark));
+            color: white;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 3px solid #ff9800;
+        }
+
+        .institute-name {
+            text-align: center;
+            flex: 1;
+        }
+
+        .institute-name h1 {
+            font-size: 28px;
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .institute-name h1 i {
+            color: #ff9800;
+            font-size: 32px;
+        }
+
+        .institute-name p {
+            font-size: 14px;
+            opacity: 0.9;
+            font-style: italic;
+        }
+
+        .user-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .user-photo {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--dark);
+            font-size: 20px;
+            overflow: hidden;
+            border: 2px solid #ff9800;
+        }
+
+        .user-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .exam-info {
+            display: flex;
+            gap: 20px;
+            font-size: 14px;
+        }
+
+        .exam-info span {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .main-content {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .question-container {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border-left: 4px solid var(--cyber-blue);
+        }
+
+        .question-number {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+
+        .question-text {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .options-container {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .option {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 15px;
+            background: white;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: 2px solid #e9ecef;
+        }
+
+        .option:hover {
+            background: #f1f3f5;
+            border-color: var(--info);
+        }
+
+        .option.selected {
+            background: #e3f2fd;
+            border-color: var(--info);
+        }
+
+        .option input {
+            display: none;
+        }
+
+        .option-label {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            border: 2px solid var(--gray);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            color: transparent;
+        }
+
+        .option.selected .option-label {
+            background: var(--info);
+            border-color: var(--info);
+            color: white;
+        }
+
+        .controls {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .btn {
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s;
+        }
+
+        .btn-primary {
+            background: var(--cyber-blue);
+            color: white;
+        }
+
+        .btn-secondary {
+            background: var(--secondary);
+            color: white;
+        }
+
+        .btn-success {
+            background: var(--success);
+            color: white;
+        }
+
+        .btn-danger {
+            background: var(--danger);
+            color: white;
+        }
+
+        .btn-warning {
+            background: var(--warning);
+            color: white;
+        }
+
+        .btn-info {
+            background: var(--info);
+            color: white;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn:disabled {
+            background: var(--gray);
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        .progress-container {
+            background: white;
+            border-radius: 10px;
+            padding: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border-left: 4px solid var(--warning);
+        }
+
+        .progress-status {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+
+        .progress-bar {
+            height: 10px;
+            background: #e9ecef;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(to right, var(--success), var(--info));
+            width: 0%;
+            transition: width 0.5s;
+        }
+
+        .question-grid {
+            display: grid;
+            grid-template-columns: repeat(10, 1fr);
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .question-indicator {
+            width: 35px;
+            height: 35px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .question-indicator.answered {
+            background: var(--success);
+            color: white;
+        }
+
+        .question-indicator.marked {
+            background: var(--warning);
+            color: white;
+        }
+
+        .question-indicator.current {
+            background: var(--info);
+            color: white;
+            transform: scale(1.1);
+            border: 2px solid var(--cyber-blue);
+        }
+
+        .question-indicator.pending {
+            background: #e9ecef;
+            color: var(--dark);
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background: white;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 800px;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .modal-header {
+            background: linear-gradient(to right, var(--cyber-blue), var(--cyber-dark));
+            color: white;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: 15px 15px 0 0;
+            border-bottom: 3px solid #ff9800;
+        }
+
+        .modal-header h2 {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .close-btn {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        .modal-body {
+            padding: 20px;
+        }
+
+        .status-legend {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .status-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 14px;
+        }
+
+        .status-color {
+            width: 15px;
+            height: 15px;
+            border-radius: 3px;
+        }
+
+        .status-answered {
+            background: var(--success);
+        }
+
+        .status-marked {
+            background: var(--warning);
+        }
+
+        .status-pending {
+            background: #e9ecef;
+        }
+
+        .report-section {
+            margin-bottom: 30px;
+        }
+
+        .report-section h3 {
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e9ecef;
+            color: var(--dark);
+        }
+
+        .report-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .candidate-details, .exam-summary {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 10px;
+        }
+
+        .detail-item {
+            display: flex;
+            margin-bottom: 10px;
+            align-items: flex-start;
+        }
+
+        .detail-label {
+            font-weight: bold;
+            width: 120px;
+            color: var(--dark);
+            flex-shrink: 0;
+        }
+
+        .detail-value {
+            flex: 1;
+        }
+
+        .analysis-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        .analysis-table th, .analysis-table td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .analysis-table th {
+            background: #f8f9fa;
+            color: var(--dark);
+        }
+
+        .analysis-table tr:hover {
+            background: #f1f3f5;
+        }
+
+        .topic-performance {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .topic-card {
+            background: white;
+            border-radius: 10px;
+            padding: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            border-top: 3px solid var(--cyber-blue);
+        }
+
+        .topic-name {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: var(--dark);
+        }
+
+        .topic-stats {
+            display: flex;
+            justify-content: space-between;
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+
+        .topic-accuracy {
+            font-size: 18px;
+            font-weight: bold;
+            color: var(--success);
+            margin-top: 10px;
+        }
+
+        .login-container {
+            padding: 30px;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .login-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .login-header h1 {
+            color: var(--cyber-blue);
+            margin-bottom: 10px;
+        }
+
+        .login-header p {
+            color: var(--gray);
+            font-style: italic;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: var(--dark);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: all 0.3s;
+        }
+
+        .form-control:focus {
+            border-color: var(--cyber-blue);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(13, 71, 161, 0.1);
+        }
+
+        .photo-container {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .photo-placeholder {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: #e9ecef;
+            margin: 0 auto 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 50px;
+            color: var(--gray);
+            border: 3px dashed var(--gray);
+            overflow: hidden;
+        }
+
+        .photo-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .photo-btn {
+            background: var(--cyber-blue);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin: 0 auto;
+        }
+
+        .camera-modal {
+            display: none;
+        }
+
+        .camera-container {
+            text-align: center;
+        }
+
+        #cameraVideo {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 10px;
+            background: #000;
+        }
+
+        .camera-controls {
+            margin-top: 15px;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .timer {
+            font-size: 18px;
+            font-weight: bold;
+            color: var(--danger);
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .camera-fallback {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .upload-btn {
+            background: var(--cyber-blue);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin: 15px auto;
+            font-size: 16px;
+        }
+
+        .camera-tabs {
+            display: flex;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .camera-tab {
+            flex: 1;
+            padding: 12px;
+            text-align: center;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            border-bottom: 3px solid transparent;
+        }
+
+        .camera-tab.active {
+            border-bottom: 3px solid var(--cyber-blue);
+            color: var(--cyber-blue);
+        }
+
+        .report-photo-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .report-user-photo {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: var(--light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--dark);
+            font-size: 24px;
+            overflow: hidden;
+            border: 2px solid #ff9800;
+        }
+
+        .report-user-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        @media (max-width: 768px) {
+            .question-grid {
+                grid-template-columns: repeat(5, 1fr);
+            }
+            
+            .report-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .controls {
+                flex-wrap: wrap;
+            }
+            
+            .btn {
+                flex: 1;
+                min-width: 120px;
+                justify-content: center;
+            }
+            
+            .exam-info {
+                flex-direction: column;
+                gap: 5px;
+            }
+            
+            .header {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+            
+            .institute-name h1 {
+                font-size: 22px;
+            }
+            
+            .detail-item {
+                flex-direction: column;
+                gap: 5px;
+            }
+            
+            .detail-label {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Login/Registration Screen -->
+    <div class="container" id="loginScreen">
+        <div class="header">
+            <div class="institute-name">
+                <h1><i class="fas fa-shield-alt"></i> CYBER RAKSHAK INSTITUTE</h1>
+                <p>Secure Your Future in Cybersecurity</p>
+            </div>
+        </div>
+        <div class="login-container">
+            <div class="login-header">
+                <h1>Register & Start Exam</h1>
+                <p>Complete your registration to begin the assessment</p>
+            </div>
+            
+            <div class="photo-container">
+                <div class="photo-placeholder" id="photoPreview">
+                    <i class="fas fa-user-shield"></i>
+                </div>
+                <button class="photo-btn" onclick="openCameraModal()">
+                    <i class="fas fa-camera"></i> Take Photo
+                </button>
+            </div>
+            
+            <div class="form-group">
+                <label for="fullName"><i class="fas fa-user"></i> Full Name</label>
+                <input type="text" id="fullName" class="form-control" placeholder="Enter your full name">
+            </div>
+            
+            <div class="form-group">
+                <label for="email"><i class="fas fa-envelope"></i> Email</label>
+                <input type="email" id="email" class="form-control" placeholder="Enter your email">
+            </div>
+            
+            <div class="form-group">
+                <label for="phone"><i class="fas fa-phone"></i> Phone</label>
+                <input type="tel" id="phone" class="form-control" placeholder="Enter your phone number">
+            </div>
+            
+            <button class="btn btn-primary" style="width: 100%;" onclick="startExam()">
+                <i class="fas fa-play-circle"></i> REGISTER & START EXAM
+            </button>
+        </div>
+    </div>
+
+    <!-- Camera Modal -->
+    <div class="modal camera-modal" id="cameraModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2><i class="fas fa-camera"></i> Take Your Photo</h2>
+                <button class="close-btn" onclick="closeCamera()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="camera-tabs">
+                    <button class="camera-tab active" id="cameraTab" onclick="switchTab('camera')">Camera</button>
+                    <button class="camera-tab" id="uploadTab" onclick="switchTab('upload')">Upload Photo</button>
+                </div>
+                
+                <div id="cameraTabContent">
+                    <div class="camera-container">
+                        <video id="cameraVideo" autoplay playsinline></video>
+                        <canvas id="cameraCanvas" style="display: none;"></canvas>
+                        <div class="camera-controls">
+                            <button class="btn btn-success" onclick="capturePhoto()">
+                                <i class="fas fa-camera"></i> Capture Photo
+                            </button>
+                            <button class="btn btn-secondary" onclick="closeCamera()">
+                                <i class="fas fa-times"></i> Cancel
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="uploadTabContent" style="display: none;">
+                    <div class="camera-fallback">
+                        <p>Upload your photo instead</p>
+                        <input type="file" id="photoUpload" accept="image/*" style="display: none;">
+                        <button class="upload-btn" onclick="document.getElementById('photoUpload').click()">
+                            <i class="fas fa-upload"></i> Choose Photo
+                        </button>
+                        <div class="camera-controls">
+                            <button class="btn btn-secondary" onclick="closeCamera()">
+                                <i class="fas fa-times"></i> Cancel
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Exam Interface -->
+    <div class="container" id="examScreen" style="display: none;">
+        <div class="header">
+            <div class="institute-name">
+                <h1><i class="fas fa-shield-alt"></i> CYBER RAKSHAK INSTITUTE</h1>
+                <p>Secure Your Future in Cybersecurity</p>
+            </div>
+            <div class="user-info">
+                <div class="user-photo" id="userPhotoDisplay">
+                    <i class="fas fa-user-shield"></i>
+                </div>
+                <div class="exam-info">
+                    <span id="userNameDisplay"><i class="fas fa-user"></i> </span>
+                    <span id="userEmailDisplay"><i class="fas fa-envelope"></i> </span>
+                    <span id="userPhoneDisplay"><i class="fas fa-phone"></i> </span>
+                    <span><i class="fas fa-star"></i> Score: <span id="scoreDisplay">0</span>/<span id="totalQuestionsDisplay">0</span></span>
+                    <span class="timer"><i class="fas fa-clock"></i> <span id="timer">02:00:00</span></span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="main-content">
+            <div class="question-container">
+                <div class="question-number" id="questionNumber">Q.1: Loading...</div>
+                <div class="question-text" id="questionText">Loading question...</div>
+                
+                <div class="options-container" id="optionsContainer">
+                    <!-- Options will be loaded dynamically -->
+                </div>
+                
+                <div class="controls">
+                    <button class="btn btn-info" onclick="resetAnswer()">
+                        <i class="fas fa-undo"></i> Reset Answer
+                    </button>
+                    <button class="btn btn-secondary" onclick="previousQuestion()" id="prevBtn">
+                        <i class="fas fa-arrow-left"></i> Previous
+                    </button>
+                    <button class="btn btn-secondary" onclick="nextQuestion()" id="nextBtn">
+                        Next <i class="fas fa-arrow-right"></i>
+                    </button>
+                    <button class="btn btn-primary" onclick="showSummaryPanel()">
+                        <i class="fas fa-th-list"></i> Question Panel
+                    </button>
+                    <button class="btn btn-danger" onclick="finishExam()" id="finishBtn">
+                        <i class="fas fa-flag-checkered"></i> Finish Exam
+                    </button>
+                </div>
+            </div>
+            
+            <div class="progress-container">
+                <div class="progress-status">
+                    <span>✅ Answered: <span id="answeredCount">0</span></span>
+                    <span>⏰ Pending: <span id="pendingCount">0</span></span>
+                    <span>Progress: <span id="progressPercent">0</span>%</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+                
+                <div class="question-grid" id="questionGrid">
+                    <!-- Question indicators will be generated by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Summary Panel Modal -->
+    <div class="modal" id="summaryModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2><i class="fas fa-th-list"></i> QUESTION PANEL</h2>
+                <button class="close-btn" onclick="closeSummaryPanel()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="status-legend">
+                    <div class="status-item">
+                        <div class="status-color status-answered"></div>
+                        <span>✅ Answered</span>
+                    </div>
+                    <div class="status-item">
+                        <div class="status-color status-pending"></div>
+                        <span>⏰ Not Visited</span>
+                    </div>
+                </div>
+                
+                <div class="question-grid" id="summaryGrid">
+                    <!-- Summary question indicators will be generated by JavaScript -->
+                </div>
+                
+                <div class="controls" style="margin-top: 20px; justify-content: center;">
+                    <button class="btn btn-danger" onclick="finishExam()" id="modalFinishBtn">
+                        <i class="fas fa-flag-checkered"></i> Finish Exam
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Finish Exam Confirmation Modal -->
+    <div class="modal" id="finishModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2><i class="fas fa-exclamation-triangle"></i> FINISH EXAM CONFIRMATION</h2>
+                <button class="close-btn" onclick="closeFinishModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>Are you sure you want to finish the exam?</p>
+                
+                <div class="report-section" style="margin-top: 20px;">
+                    <h3>📊 Current Status:</h3>
+                    <ul style="padding-left: 20px;">
+                        <li>✅ Answered: <span id="finishAnsweredCount">0</span> questions</li>
+                        <li>⏰ Not Answered: <span id="finishPendingCount">0</span> questions</li>
+                    </ul>
+                </div>
+                
+                <p style="margin-top: 20px; color: var(--danger); font-weight: bold;">
+                    <i class="fas fa-exclamation-circle"></i> Once submitted, you cannot re-attempt!
+                </p>
+                
+                <div class="controls" style="margin-top: 30px; justify-content: center;">
+                    <button class="btn btn-secondary" onclick="closeFinishModal()">
+                        <i class="fas fa-arrow-left"></i> Continue Exam
+                    </button>
+                    <button class="btn btn-danger" onclick="submitExam()">
+                        <i class="fas fa-rocket"></i> SUBMIT & GENERATE REPORT
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Final Report Modal -->
+    <div class="modal" id="reportModal">
+        <div class="modal-content">
+            <div class="modal-header" style="background: linear-gradient(to right, var(--success), var(--info));">
+                <h2><i class="fas fa-trophy"></i> EXAMINATION REPORT - CYBER RAKSHAK INSTITUTE</h2>
+                <button class="close-btn" onclick="closeReport()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div id="reportContent">
+                    <div class="report-grid">
+                        <div class="candidate-details">
+                            <h3>👤 CANDIDATE DETAILS</h3>
+                            <div class="detail-item">
+                                <div class="detail-label">📸 Photo:</div>
+                                <div class="detail-value">
+                                    <div class="report-photo-container">
+                                        <div class="report-user-photo" id="reportUserPhoto">
+                                            <i class="fas fa-user-shield"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-label">👤 Name:</div>
+                                <div class="detail-value" id="reportUserName">John Doe</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-label">📧 Email:</div>
+                                <div class="detail-value" id="reportUserEmail">john@email.com</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-label">📞 Phone:</div>
+                                <div class="detail-value" id="reportUserPhone">9876543210</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-label">🆔 Exam ID:</div>
+                                <div class="detail-value" id="reportExamId">CRI-2024-78901</div>
+                            </div>
+                        </div>
+                        
+                        <div class="exam-summary">
+                            <h3>📊 EXAM SUMMARY</h3>
+                            <div class="detail-item">
+                                <div class="detail-label">📅 Exam Date:</div>
+                                <div class="detail-value" id="reportExamDate">15 Dec 2024</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-label">⏱️ Time Taken:</div>
+                                <div class="detail-value" id="reportTimeTaken">1hr 45min</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-label">🎯 Total Questions:</div>
+                                <div class="detail-value" id="reportTotalQuestions">100</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-label">✅ Correct:</div>
+                                <div class="detail-value" id="reportCorrectAnswers">0</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-label">❌ Wrong:</div>
+                                <div class="detail-value" id="reportWrongAnswers">0</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-label">⚪ Unattempted:</div>
+                                <div class="detail-value" id="reportUnattempted">0</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-label">📊 Final Score:</div>
+                                <div class="detail-value" id="reportFinalScore">0/100 (0%)</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-label">🏆 Grade:</div>
+                                <div class="detail-value" id="reportGrade">-</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="report-section">
+                        <h3>📈 DETAILED QUESTION ANALYSIS</h3>
+                        
+                        <h4 style="margin: 15px 0 10px; color: var(--danger);">❌ INCORRECT ANSWERS (<span id="incorrectCount">0</span>):</h4>
+                        <table class="analysis-table" id="incorrectAnswersTable">
+                            <thead>
+                                <tr>
+                                    <th>Q.No.</th>
+                                    <th>Question</th>
+                                    <th>Your Answer</th>
+                                    <th>Correct Answer</th>
+                                </tr>
+                            </thead>
+                            <tbody id="incorrectAnswersBody">
+                                <!-- Incorrect answers will be populated here -->
+                            </tbody>
+                        </table>
+                        
+                        <h4 style="margin: 20px 0 10px; color: var(--gray);">⚪ UNATTEMPTED QUESTIONS (<span id="unattemptedCount">0</span>):</h4>
+                        <p id="unattemptedQuestionsList">-</p>
+                    </div>
+                    
+                    <div class="report-section">
+                        <h3>🎯 TOPIC-WISE PERFORMANCE</h3>
+                        <div class="topic-performance" id="topicPerformance">
+                            <!-- Topic performance cards will be generated here -->
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="controls" style="margin-top: 30px; justify-content: center;">
+                    <button class="btn btn-primary" onclick="downloadReport()">
+                        <i class="fas fa-download"></i> Download Report (PDF)
+                    </button>
+                    <button class="btn btn-success" onclick="closeReport()">
+                        <i class="fas fa-home"></i> Return to Home
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Sample questions data - You can replace this with your 100 questions
+        const questions = [
+            {
+                id: 1,
+                text: "What is the primary goal of cybersecurity?",
+                options: ["Data protection", "Network speed", "User convenience", "System aesthetics"],
+                correctAnswer: 0,
+                topic: "Cybersecurity Fundamentals"
+            },
+            {
+                id: 2,
+                text: "Which protocol is used for secure web browsing?",
+                options: ["HTTP", "FTP", "HTTPS", "SMTP"],
+                correctAnswer: 2,
+                topic: "Network Security"
+            },
+            {
+                id: 3,
+                text: "What does VPN stand for?",
+                options: [
+                    "Virtual Private Network",
+                    "Very Protected Network",
+                    "Virtual Public Network",
+                    "Verified Private Network"
+                ],
+                correctAnswer: 0,
+                topic: "Network Security"
+            },
+            {
+                id: 4,
+                text: "Which of these is a type of malware?",
+                options: [
+                    "Firewall",
+                    "Antivirus",
+                    "Ransomware",
+                    "Encryption"
+                ],
+                correctAnswer: 2,
+                topic: "Malware Analysis"
+            },
+            {
+                id: 5,
+                text: "What is two-factor authentication?",
+                options: ["Using two passwords", "Two-step verification process", "Double encryption", "Backup authentication"],
+                correctAnswer: 1,
+                topic: "Authentication"
+            },
+            {
+                id: 6,
+                text: "Which encryption algorithm is most commonly used?",
+                options: ["AES", "DES", "RSA", "MD5"],
+                correctAnswer: 0,
+                topic: "Cryptography"
+            },
+            {
+                id: 7,
+                text: "What is a firewall used for?",
+                options: ["Speed up internet", "Monitor network traffic", "Block unauthorized access", "Store backups"],
+                correctAnswer: 2,
+                topic: "Network Security"
+            },
+            {
+                id: 8,
+                text: "What does DDoS stand for?",
+                options: ["Data Denial of Service", "Distributed Denial of Service", "Digital Defense of System", "Direct Data on Server"],
+                correctAnswer: 1,
+                topic: "Network Security"
+            },
+            {
+                id: 9,
+                text: "Which is NOT a strong password practice?",
+                options: ["Using special characters", "Reusing passwords", "Long passwords", "Mixing case letters"],
+                correctAnswer: 1,
+                topic: "Authentication"
+            },
+            {
+                id: 10,
+                text: "What is social engineering?",
+                options: [
+                    "Software engineering for social media",
+                    "Manipulating people to reveal information",
+                    "Engineering social networks",
+                    "Building social apps"
+                ],
+                correctAnswer: 1,
+                topic: "Social Engineering"
+            }
+        ];
+
+        // Exam state
+        const examState = {
+            currentQuestion: 0,
+            answers: new Array(questions.length).fill(null),
+            timeRemaining: 7200, // 2 hours in seconds
+            timerInterval: null,
+            userPhoto: null,
+            userName: "",
+            userEmail: "",
+            userPhone: "",
+            startTime: null,
+            endTime: null,
+            cameraStream: null
+        };
+
+        // Camera functions
+        function openCameraModal() {
+            document.getElementById('cameraModal').style.display = 'flex';
+            switchTab('camera');
+        }
+
+        function switchTab(tab) {
+            // Update tabs
+            document.getElementById('cameraTab').classList.toggle('active', tab === 'camera');
+            document.getElementById('uploadTab').classList.toggle('active', tab === 'upload');
+            
+            // Update content
+            document.getElementById('cameraTabContent').style.display = tab === 'camera' ? 'block' : 'none';
+            document.getElementById('uploadTabContent').style.display = tab === 'upload' ? 'block' : 'none';
+            
+            if (tab === 'camera') {
+                initializeCamera();
+            }
+        }
+
+        function initializeCamera() {
+            // Stop any existing stream
+            if (examState.cameraStream) {
+                examState.cameraStream.getTracks().forEach(track => track.stop());
+            }
+            
+            // Access the camera with mobile-friendly constraints
+            const constraints = {
+                video: {
+                    facingMode: 'user',
+                    width: { ideal: 1280 },
+                    height: { ideal: 720 }
+                },
+                audio: false
+            };
+            
+            navigator.mediaDevices.getUserMedia(constraints)
+                .then(function(stream) {
+                    examState.cameraStream = stream;
+                    const video = document.getElementById('cameraVideo');
+                    video.srcObject = stream;
+                })
+                .catch(function(err) {
+                    console.error("Camera error: ", err);
+                    // If camera fails, switch to upload tab automatically
+                    switchTab('upload');
+                    
+                    // Show user-friendly message
+                    const uploadTabContent = document.getElementById('uploadTabContent');
+                    uploadTabContent.innerHTML = `
+                        <div class="camera-fallback">
+                            <p style="color: var(--danger); margin-bottom: 15px;">
+                                <i class="fas fa-exclamation-triangle"></i> 
+                                Camera access denied or not available.
+                            </p>
+                            <p>Please upload your photo instead:</p>
+                            <input type="file" id="photoUpload" accept="image/*" style="display: none;">
+                            <button class="upload-btn" onclick="document.getElementById('photoUpload').click()">
+                                <i class="fas fa-upload"></i> Choose Photo
+                            </button>
+                            <div class="camera-controls">
+                                <button class="btn btn-secondary" onclick="closeCamera()">
+                                    <i class="fas fa-times"></i> Cancel
+                                </button>
+                            </div>
+                        </div>
+                    `;
+                    
+                    // Add event listener for file upload
+                    document.getElementById('photoUpload').addEventListener('change', handlePhotoUpload);
+                });
+        }
+
+        function handlePhotoUpload(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    examState.userPhoto = e.target.result;
+                    updatePhotoDisplay();
+                    closeCamera();
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+
+        function closeCamera() {
+            document.getElementById('cameraModal').style.display = 'none';
+            
+            // Stop camera stream
+            if (examState.cameraStream) {
+                examState.cameraStream.getTracks().forEach(track => track.stop());
+                examState.cameraStream = null;
+            }
+        }
+
+        function capturePhoto() {
+            const video = document.getElementById('cameraVideo');
+            const canvas = document.getElementById('cameraCanvas');
+            const context = canvas.getContext('2d');
+            
+            // Set canvas dimensions to match video
+            canvas.width = video.videoWidth;
+            canvas.height = video.videoHeight;
+            
+            // Draw current video frame to canvas
+            context.drawImage(video, 0, 0, canvas.width, canvas.height);
+            
+            // Convert canvas to data URL
+            const photoDataUrl = canvas.toDataURL('image/png');
+            examState.userPhoto = photoDataUrl;
+            
+            updatePhotoDisplay();
+            closeCamera();
+        }
+
+        function updatePhotoDisplay() {
+            // Update photo preview
+            const photoPreview = document.getElementById('photoPreview');
+            photoPreview.innerHTML = `<img src="${examState.userPhoto}" alt="User Photo">`;
+            
+            // Update user photo display in exam screen
+            const userPhotoDisplay = document.getElementById('userPhotoDisplay');
+            userPhotoDisplay.innerHTML = `<img src="${examState.userPhoto}" alt="User Photo">`;
+            
+            // Update report user photo - FIXED: Proper photo display in report
+            const reportUserPhoto = document.getElementById('reportUserPhoto');
+            reportUserPhoto.innerHTML = `<img src="${examState.userPhoto}" alt="User Photo">`;
+        }
+
+        // Initialize the exam
+        function initExam() {
+            generateQuestionIndicators();
+            updateProgress();
+            startTimer();
+            examState.startTime = new Date();
+            
+            // Update display with total questions
+            document.getElementById('totalQuestionsDisplay').textContent = questions.length;
+        }
+
+        // Generate question indicators
+        function generateQuestionIndicators() {
+            const grid = document.getElementById('questionGrid');
+            grid.innerHTML = '';
+            
+            questions.forEach((question, index) => {
+                const indicator = document.createElement('div');
+                indicator.className = 'question-indicator pending';
+                if (index === examState.currentQuestion) {
+                    indicator.classList.add('current');
+                }
+                indicator.textContent = index + 1;
+                indicator.onclick = () => goToQuestionNumber(index);
+                grid.appendChild(indicator);
+            });
+            
+            // Also generate for summary modal
+            const summaryGrid = document.getElementById('summaryGrid');
+            summaryGrid.innerHTML = '';
+            
+            questions.forEach((question, index) => {
+                const indicator = document.createElement('div');
+                indicator.className = 'question-indicator pending';
+                indicator.textContent = index + 1;
+                indicator.onclick = () => {
+                    goToQuestionNumber(index);
+                    closeSummaryPanel();
+                };
+                summaryGrid.appendChild(indicator);
+            });
+        }
+
+        // Update progress indicators
+        function updateProgress() {
+            const answered = examState.answers.filter(answer => answer !== null).length;
+            const pending = questions.length - answered;
+            const progressPercent = Math.round((answered / questions.length) * 100);
+            
+            document.getElementById('answeredCount').textContent = answered;
+            document.getElementById('pendingCount').textContent = pending;
+            document.getElementById('progressPercent').textContent = progressPercent;
+            
+            document.getElementById('progressFill').style.width = `${progressPercent}%`;
+            
+            // Update question indicators
+            const indicators = document.querySelectorAll('#questionGrid .question-indicator');
+            indicators.forEach((indicator, index) => {
+                indicator.className = 'question-indicator';
+                
+                if (examState.answers[index] !== null) {
+                    indicator.classList.add('answered');
+                } else {
+                    indicator.classList.add('pending');
+                }
+                
+                if (index === examState.currentQuestion) {
+                    indicator.classList.add('current');
+                }
+            });
+            
+            // Update summary indicators
+            const summaryIndicators = document.querySelectorAll('#summaryGrid .question-indicator');
+            summaryIndicators.forEach((indicator, index) => {
+                indicator.className = 'question-indicator';
+                
+                if (examState.answers[index] !== null) {
+                    indicator.classList.add('answered');
+                } else {
+                    indicator.classList.add('pending');
+                }
+            });
+            
+            // Update score
+            updateScore();
+        }
+
+        // Update score display
+        function updateScore() {
+            let correctCount = 0;
+            examState.answers.forEach((answer, index) => {
+                if (answer !== null && answer === questions[index].correctAnswer) {
+                    correctCount++;
+                }
+            });
+            
+            document.getElementById('scoreDisplay').textContent = correctCount;
+        }
+
+        // Start the exam timer
+        function startTimer() {
+            updateTimerDisplay();
+            
+            examState.timerInterval = setInterval(() => {
+                examState.timeRemaining--;
+                updateTimerDisplay();
+                
+                if (examState.timeRemaining <= 0) {
+                    clearInterval(examState.timerInterval);
+                    finishExam();
+                }
+            }, 1000);
+        }
+
+        // Update timer display
+        function updateTimerDisplay() {
+            const hours = Math.floor(examState.timeRemaining / 3600);
+            const minutes = Math.floor((examState.timeRemaining % 3600) / 60);
+            const seconds = examState.timeRemaining % 60;
+            
+            document.getElementById('timer').textContent = 
+                `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+        }
+
+        // Select an option
+        function selectOption(element) {
+            const options = document.querySelectorAll('.option');
+            options.forEach(opt => opt.classList.remove('selected'));
+            element.classList.add('selected');
+            
+            const optionIndex = Array.from(element.parentNode.children).indexOf(element);
+            examState.answers[examState.currentQuestion] = optionIndex;
+            updateProgress();
+        }
+
+        // Go to previous question
+        function previousQuestion() {
+            if (examState.currentQuestion > 0) {
+                examState.currentQuestion--;
+                loadQuestion();
+            }
+        }
+
+        // Go to next question - NO RESTRICTIONS
+        function nextQuestion() {
+            if (examState.currentQuestion < questions.length - 1) {
+                examState.currentQuestion++;
+                loadQuestion();
+            }
+        }
+
+        // Reset current answer
+        function resetAnswer() {
+            examState.answers[examState.currentQuestion] = null;
+            const options = document.querySelectorAll('.option');
+            options.forEach(opt => opt.classList.remove('selected'));
+            updateProgress();
+        }
+
+        // Load current question
+        function loadQuestion() {
+            const question = questions[examState.currentQuestion];
+            document.getElementById('questionNumber').textContent = `Q.${examState.currentQuestion + 1}: ${question.text}`;
+            document.getElementById('questionText').textContent = "Select the correct answer from the options below:";
+            
+            const optionsContainer = document.getElementById('optionsContainer');
+            optionsContainer.innerHTML = '';
+            
+            question.options.forEach((option, index) => {
+                const optionElement = document.createElement('div');
+                optionElement.className = 'option';
+                if (examState.answers[examState.currentQuestion] === index) {
+                    optionElement.classList.add('selected');
+                }
+                optionElement.onclick = () => selectOption(optionElement);
+                
+                const optionLabel = document.createElement('div');
+                optionLabel.className = 'option-label';
+                optionLabel.textContent = String.fromCharCode(65 + index); // A, B, C, D
+                
+                const optionText = document.createElement('div');
+                optionText.className = 'option-text';
+                optionText.textContent = option;
+                
+                optionElement.appendChild(optionLabel);
+                optionElement.appendChild(optionText);
+                optionsContainer.appendChild(optionElement);
+            });
+            
+            // Update navigation buttons - ALWAYS ENABLED except at boundaries
+            document.getElementById('prevBtn').disabled = examState.currentQuestion === 0;
+            document.getElementById('nextBtn').disabled = examState.currentQuestion === questions.length - 1;
+            
+            updateProgress();
+        }
+
+        // Go to specific question number
+        function goToQuestionNumber(index) {
+            examState.currentQuestion = index;
+            loadQuestion();
+        }
+
+        // Show summary panel
+        function showSummaryPanel() {
+            document.getElementById('summaryModal').style.display = 'flex';
+        }
+
+        // Close summary panel
+        function closeSummaryPanel() {
+            document.getElementById('summaryModal').style.display = 'none';
+        }
+
+        // Show finish exam confirmation
+        function finishExam() {
+            closeSummaryPanel();
+            
+            // Update finish modal with current stats
+            const answered = examState.answers.filter(answer => answer !== null).length;
+            const pending = questions.length - answered;
+            
+            document.getElementById('finishAnsweredCount').textContent = answered;
+            document.getElementById('finishPendingCount').textContent = pending;
+            
+            document.getElementById('finishModal').style.display = 'flex';
+        }
+
+        // Close finish modal
+        function closeFinishModal() {
+            document.getElementById('finishModal').style.display = 'none';
+        }
+
+        // Submit exam and show report
+        function submitExam() {
+            closeFinishModal();
+            clearInterval(examState.timerInterval);
+            examState.endTime = new Date();
+            generateReport();
+            document.getElementById('reportModal').style.display = 'flex';
+        }
+
+        // Generate detailed report
+        function generateReport() {
+            // Calculate scores and stats
+            let correctCount = 0;
+            let wrongCount = 0;
+            let unattemptedCount = 0;
+            const incorrectAnswers = [];
+            const unattemptedQuestions = [];
+            
+            // Topic-wise performance
+            const topicPerformance = {};
+            
+            questions.forEach((question, index) => {
+                // Initialize topic if not exists
+                if (!topicPerformance[question.topic]) {
+                    topicPerformance[question.topic] = {
+                        total: 0,
+                        correct: 0,
+                        wrong: 0,
+                        unattempted: 0
+                    };
+                }
+                
+                topicPerformance[question.topic].total++;
+                
+                if (examState.answers[index] === null) {
+                    unattemptedCount++;
+                    unattemptedQuestions.push(index + 1);
+                    topicPerformance[question.topic].unattempted++;
+                } else if (examState.answers[index] === question.correctAnswer) {
+                    correctCount++;
+                    topicPerformance[question.topic].correct++;
+                } else {
+                    wrongCount++;
+                    incorrectAnswers.push({
+                        questionNumber: index + 1,
+                        question: question.text,
+                        userAnswer: question.options[examState.answers[index]],
+                        correctAnswer: question.options[question.correctAnswer]
+                    });
+                    topicPerformance[question.topic].wrong++;
+                }
+            });
+            
+            // Calculate time taken
+            const timeTakenMs = examState.endTime - examState.startTime;
+            const hours = Math.floor(timeTakenMs / (1000 * 60 * 60));
+            const minutes = Math.floor((timeTakenMs % (1000 * 60 * 60)) / (1000 * 60));
+            const timeTakenStr = `${hours > 0 ? hours + 'hr ' : ''}${minutes}min`;
+            
+            // Calculate percentage and grade
+            const percentage = Math.round((correctCount / questions.length) * 100);
+            let grade = "FAIL";
+            if (percentage >= 90) grade = "DISTINCTION";
+            else if (percentage >= 75) grade = "FIRST CLASS";
+            else if (percentage >= 60) grade = "SECOND CLASS";
+            else if (percentage >= 40) grade = "PASS";
+            
+            // Update report with calculated values
+            document.getElementById('reportUserName').textContent = examState.userName;
+            document.getElementById('reportUserEmail').textContent = examState.userEmail;
+            document.getElementById('reportUserPhone').textContent = examState.userPhone;
+            document.getElementById('reportExamDate').textContent = new Date().toLocaleDateString('en-GB');
+            document.getElementById('reportTimeTaken').textContent = timeTakenStr;
+            document.getElementById('reportTotalQuestions').textContent = questions.length;
+            document.getElementById('reportCorrectAnswers').textContent = correctCount;
+            document.getElementById('reportWrongAnswers').textContent = wrongCount;
+            document.getElementById('reportUnattempted').textContent = unattemptedCount;
+            document.getElementById('reportFinalScore').textContent = `${correctCount}/${questions.length} (${percentage}%)`;
+            document.getElementById('reportGrade').textContent = grade;
+            
+            // Update incorrect answers table
+            const incorrectAnswersBody = document.getElementById('incorrectAnswersBody');
+            incorrectAnswersBody.innerHTML = '';
+            incorrectAnswers.forEach(item => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${item.questionNumber}</td>
+                    <td>${item.question}</td>
+                    <td>${item.userAnswer}</td>
+                    <td>${item.correctAnswer}</td>
+                `;
+                incorrectAnswersBody.appendChild(row);
+            });
+            
+            document.getElementById('incorrectCount').textContent = incorrectAnswers.length;
+            
+            // Update unattempted questions
+            document.getElementById('unattemptedCount').textContent = unattemptedCount;
+            document.getElementById('unattemptedQuestionsList').textContent = 
+                unattemptedQuestions.length > 0 ? unattemptedQuestions.join(', ') : '-';
+            
+            // Update topic performance
+            const topicPerformanceContainer = document.getElementById('topicPerformance');
+            topicPerformanceContainer.innerHTML = '';
+            
+            for (const topic in topicPerformance) {
+                const stats = topicPerformance[topic];
+                const accuracy = stats.total > 0 ? Math.round((stats.correct / stats.total) * 100) : 0;
+                
+                const topicCard = document.createElement('div');
+                topicCard.className = 'topic-card';
+                topicCard.innerHTML = `
+                    <div class="topic-name">${topic}</div>
+                    <div class="topic-stats">
+                        <span>Total: ${stats.total}</span>
+                        <span>Correct: ${stats.correct}</span>
+                    </div>
+                    <div class="topic-stats">
+                        <span>Wrong: ${stats.wrong}</span>
+                        <span>Unattempted: ${stats.unattempted}</span>
+                    </div>
+                    <div class="topic-accuracy">${accuracy}%</div>
+                `;
+                topicPerformanceContainer.appendChild(topicCard);
+            }
+        }
+
+        // Close report
+        function closeReport() {
+            document.getElementById('reportModal').style.display = 'none';
+            // In a real app, you would redirect to home or login
+            document.getElementById('examScreen').style.display = 'none';
+            document.getElementById('loginScreen').style.display = 'block';
+        }
+
+        // Download report as PDF - WORKING VERSION
+        function downloadReport() {
+            const element = document.getElementById('reportContent');
+            const opt = {
+                margin: 10,
+                filename: `Cyber_Rakshak_Exam_Report_${examState.userName.replace(/\s+/g, '_')}.pdf`,
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { 
+                    scale: 2, 
+                    useCORS: true,
+                    logging: true
+                },
+                jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+            };
+
+            // Show loading indicator
+            const downloadBtn = document.querySelector('.btn-primary');
+            const originalText = downloadBtn.innerHTML;
+            downloadBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Generating PDF...';
+            downloadBtn.disabled = true;
+
+            html2pdf().set(opt).from(element).save().then(() => {
+                // Restore button
+                downloadBtn.innerHTML = originalText;
+                downloadBtn.disabled = false;
+                
+                // Show success message
+                alert('Report downloaded successfully!');
+            }).catch(error => {
+                console.error('PDF generation failed:', error);
+                
+                // Restore button
+                downloadBtn.innerHTML = originalText;
+                downloadBtn.disabled = false;
+                
+                // Fallback: Show data in new window for printing
+                alert('PDF download failed. Opening report in new window for printing...');
+                const reportWindow = window.open('', '_blank');
+                reportWindow.document.write(`
+                    <html>
+                        <head>
+                            <title>Cyber Rakshak Institute - Exam Report - ${examState.userName}</title>
+                            <style>
+                                body { font-family: Arial, sans-serif; padding: 20px; }
+                                .report-section { margin-bottom: 30px; }
+                                table { width: 100%; border-collapse: collapse; margin: 15px 0; }
+                                th, td { padding: 10px; border: 1px solid #ddd; text-align: left; }
+                                th { background: #f5f5f5; }
+                                .institute-header { text-align: center; margin-bottom: 30px; color: #1a237e; }
+                            </style>
+                        </head>
+                        <body>
+                            <div class="institute-header">
+                                <h1>CYBER RAKSHAK INSTITUTE</h1>
+                                <h3>Exam Report</h3>
+                            </div>
+                            ${element.innerHTML}
+                            <script>
+                                window.onload = function() {
+                                    window.print();
+                                };
+                            <\/script>
+                        </body>
+                    </html>
+                `);
+                reportWindow.document.close();
+            });
+        }
+
+        // Start exam (from login screen)
+        function startExam() {
+            const fullName = document.getElementById('fullName').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            
+            if (!fullName || !email || !phone) {
+                alert('Please fill in all fields');
+                return;
+            }
+            
+            // Store user info
+            examState.userName = fullName;
+            examState.userEmail = email;
+            examState.userPhone = phone;
+            
+            // Update user info in exam screen
+            document.getElementById('userNameDisplay').innerHTML = `<i class="fas fa-user"></i> ${fullName}`;
+            document.getElementById('userEmailDisplay').innerHTML = `<i class="fas fa-envelope"></i> ${email}`;
+            document.getElementById('userPhoneDisplay').innerHTML = `<i class="fas fa-phone"></i> ${phone}`;
+            
+            // Update report with user info
+            document.getElementById('reportUserName').textContent = fullName;
+            document.getElementById('reportUserEmail').textContent = email;
+            document.getElementById('reportUserPhone').textContent = phone;
+            
+            // Generate a random exam ID
+            document.getElementById('reportExamId').textContent = `CRI-${new Date().getFullYear()}-${Math.floor(10000 + Math.random() * 90000)}`;
+            
+            document.getElementById('loginScreen').style.display = 'none';
+            document.getElementById('examScreen').style.display = 'block';
+            
+            initExam();
+            loadQuestion();
+        }
+
+        // Initialize file upload event listener
+        document.addEventListener('DOMContentLoaded', function() {
+            const photoUpload = document.getElementById('photoUpload');
+            if (photoUpload) {
+                photoUpload.addEventListener('change', handlePhotoUpload);
+            }
+        });
+
+        // Initialize the app
+        window.onload = function() {
+            // Any additional initialization if needed
+        };
+    </script>
+</body>
+</html>
