@@ -2197,9 +2197,9 @@
             
             const percentage = Math.round((correctCount / questions.length) * 100);
             let grade = "FAIL";
-            if (percentage >= 90) grade = "DISTINCTION";
-            else if (percentage >= 75) grade = "FIRST CLASS";
-            else if (percentage >= 60) grade = "SECOND CLASS";
+            if (percentage >= 90) grade = "YOU ARE IN THE TOPER";
+            else if (percentage >= 75) grade = "FIRST";
+            else if (percentage >= 60) grade = "SECOND";
             else if (percentage >= 40) grade = "PASS";
             
             document.getElementById('reportUserName').textContent = examState.userName;
