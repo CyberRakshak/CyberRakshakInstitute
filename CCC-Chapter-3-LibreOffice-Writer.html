@@ -1,0 +1,2376 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CCC परीक्षा पोर्टल | Cyber Rakshak Institute - CCC Exam Portal</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <style>
+        :root {
+            --primary: #1a237e;
+            --secondary: #283593;
+            --success: #00b09b;
+            --danger: #ff416c;
+            --warning: #ff9800;
+            --info: #2196f3;
+            --dark: #1a237e;
+            --light: #f8f9fa;
+            --gray: #6c757d;
+            --cyber-blue: #0d47a1;
+            --cyber-dark: #0a2e6b;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #1a237e 0%, #283593 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(to right, var(--cyber-blue), var(--cyber-dark));
+            color: white;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 3px solid #ff9800;
+        }
+
+        .institute-name {
+            text-align: center;
+            flex: 1;
+        }
+
+        .institute-name h1 {
+            font-size: 28px;
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .institute-name h1 i {
+            color: #ff9800;
+            font-size: 32px;
+        }
+
+        .institute-name p {
+            font-size: 14px;
+            opacity: 0.9;
+            font-style: italic;
+        }
+
+        .user-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .user-photo {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--dark);
+            font-size: 20px;
+            overflow: hidden;
+            border: 2px solid #ff9800;
+        }
+
+        .user-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .exam-info {
+            display: flex;
+            gap: 20px;
+            font-size: 14px;
+        }
+
+        .exam-info span {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .main-content {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .question-container {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border-left: 4px solid var(--cyber-blue);
+        }
+
+        .question-number {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+
+        .question-text {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .options-container {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .option {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 15px;
+            background: white;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: 2px solid #e9ecef;
+        }
+
+        .option:hover {
+            background: #f1f3f5;
+            border-color: var(--info);
+        }
+
+        .option.selected {
+            background: #e3f2fd;
+            border-color: var(--info);
+        }
+
+        .option input {
+            display: none;
+        }
+
+        .option-label {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            border: 2px solid var(--gray);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            color: transparent;
+        }
+
+        .option.selected .option-label {
+            background: var(--info);
+            border-color: var(--info);
+            color: white;
+        }
+
+        .controls {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .btn {
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s;
+        }
+
+        .btn-primary {
+            background: var(--cyber-blue);
+            color: white;
+        }
+
+        .btn-secondary {
+            background: var(--secondary);
+            color: white;
+        }
+
+        .btn-success {
+            background: var(--success);
+            color: white;
+        }
+
+        .btn-danger {
+            background: var(--danger);
+            color: white;
+        }
+
+        .btn-warning {
+            background: var(--warning);
+            color: white;
+        }
+
+        .btn-info {
+            background: var(--info);
+            color: white;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn:disabled {
+            background: var(--gray);
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        .progress-container {
+            background: white;
+            border-radius: 10px;
+            padding: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border-left: 4px solid var(--warning);
+        }
+
+        .progress-status {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+
+        .progress-bar {
+            height: 10px;
+            background: #e9ecef;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(to right, var(--success), var(--info));
+            width: 0%;
+            transition: width 0.5s;
+        }
+
+        .question-grid {
+            display: grid;
+            grid-template-columns: repeat(10, 1fr);
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .question-indicator {
+            width: 35px;
+            height: 35px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .question-indicator.answered {
+            background: var(--success);
+            color: white;
+        }
+
+        .question-indicator.marked {
+            background: var(--warning);
+            color: white;
+        }
+
+        .question-indicator.current {
+            background: var(--info);
+            color: white;
+            transform: scale(1.1);
+            border: 2px solid var(--cyber-blue);
+        }
+
+        .question-indicator.pending {
+            background: #e9ecef;
+            color: var(--dark);
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background: white;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 800px;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .modal-header {
+            background: linear-gradient(to right, var(--cyber-blue), var(--cyber-dark));
+            color: white;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: 15px 15px 0 0;
+            border-bottom: 3px solid #ff9800;
+        }
+
+        .modal-header h2 {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .close-btn {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        .modal-body {
+            padding: 20px;
+        }
+
+        .status-legend {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .status-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 14px;
+        }
+
+        .status-color {
+            width: 15px;
+            height: 15px;
+            border-radius: 3px;
+        }
+
+        .status-answered {
+            background: var(--success);
+        }
+
+        .status-marked {
+            background: var(--warning);
+        }
+
+        .status-pending {
+            background: #e9ecef;
+        }
+
+        .report-section {
+            margin-bottom: 30px;
+        }
+
+        .report-section h3 {
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e9ecef;
+            color: var(--dark);
+        }
+
+        .report-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .candidate-details, .exam-summary {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 10px;
+        }
+
+        .detail-item {
+            display: flex;
+            margin-bottom: 10px;
+            align-items: flex-start;
+        }
+
+        .detail-label {
+            font-weight: bold;
+            width: 120px;
+            color: var(--dark);
+            flex-shrink: 0;
+        }
+
+        .detail-value {
+            flex: 1;
+        }
+
+        .analysis-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        .analysis-table th, .analysis-table td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .analysis-table th {
+            background: #f8f9fa;
+            color: var(--dark);
+        }
+
+        .analysis-table tr:hover {
+            background: #f1f3f5;
+        }
+
+        .topic-performance {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .topic-card {
+            background: white;
+            border-radius: 10px;
+            padding: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            border-top: 3px solid var(--cyber-blue);
+        }
+
+        .topic-name {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: var(--dark);
+        }
+
+        .topic-stats {
+            display: flex;
+            justify-content: space-between;
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+
+        .topic-accuracy {
+            font-size: 18px;
+            font-weight: bold;
+            color: var(--success);
+            margin-top: 10px;
+        }
+
+        .login-container {
+            padding: 30px;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .login-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .login-header h1 {
+            color: var(--cyber-blue);
+            margin-bottom: 10px;
+        }
+
+        .login-header p {
+            color: var(--gray);
+            font-style: italic;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: var(--dark);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: all 0.3s;
+        }
+
+        .form-control:focus {
+            border-color: var(--cyber-blue);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(13, 71, 161, 0.1);
+        }
+
+        .photo-container {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .photo-placeholder {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: #e9ecef;
+            margin: 0 auto 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 50px;
+            color: var(--gray);
+            border: 3px dashed var(--gray);
+            overflow: hidden;
+        }
+
+        .photo-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .photo-btn {
+            background: var(--cyber-blue);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin: 0 auto;
+        }
+
+        .camera-modal {
+            display: none;
+        }
+
+        .camera-container {
+            text-align: center;
+        }
+
+        #cameraVideo {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 10px;
+            background: #000;
+        }
+
+        .camera-controls {
+            margin-top: 15px;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .timer {
+            font-size: 18px;
+            font-weight: bold;
+            color: var(--danger);
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .camera-fallback {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .upload-btn {
+            background: var(--cyber-blue);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin: 15px auto;
+            font-size: 16px;
+        }
+
+        .camera-tabs {
+            display: flex;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .camera-tab {
+            flex: 1;
+            padding: 12px;
+            text-align: center;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            border-bottom: 3px solid transparent;
+        }
+
+        .camera-tab.active {
+            border-bottom: 3px solid var(--cyber-blue);
+            color: var(--cyber-blue);
+        }
+
+        .report-photo-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .report-user-photo {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: var(--light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--dark);
+            font-size: 24px;
+            overflow: hidden;
+            border: 2px solid #ff9800;
+        }
+
+        .report-user-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        @media (max-width: 768px) {
+            .question-grid {
+                grid-template-columns: repeat(5, 1fr);
+            }
+            
+            .report-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .controls {
+                flex-wrap: wrap;
+            }
+            
+            .btn {
+                flex: 1;
+                min-width: 120px;
+                justify-content: center;
+            }
+            
+            .exam-info {
+                flex-direction: column;
+                gap: 5px;
+            }
+            
+            .header {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+            
+            .institute-name h1 {
+                font-size: 22px;
+            }
+            
+            .detail-item {
+                flex-direction: column;
+                gap: 5px;
+            }
+            
+            .detail-label {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Login/Registration Screen -->
+    <div class="container" id="loginScreen">
+        <div class="header">
+            <div class="institute-name">
+                <h1><i class="fas fa-shield-alt"></i>CYBER RAKSHAK INSTITUTE</h1>
+                <p>Secure Your Future in Cybersecurity</p>
+            </div>
+        </div>
+        <div class="login-container">
+            <div class="login-header">
+                <h1>Register & Start Exam</h1>
+                <p>Complete your registration to begin the assessment</p>
+            </div>
+            
+            <div class="photo-container">
+                <div class="photo-placeholder" id="photoPreview">
+                    <i class="fas fa-user-shield"></i>
+                </div>
+                <button class="photo-btn" onclick="openCameraModal()">
+                    <i class="fas fa-camera"></i> फोटो लें | Take Photo
+                </button>
+            </div>
+            
+            <div class="form-group">
+                <label for="fullName"><i class="fas fa-user"></i> पूरा नाम * | Full Name *</label>
+                <input type="text" id="fullName" class="form-control" placeholder="अपना पूरा नाम दर्ज करें | Enter your full name" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="email"><i class="fas fa-envelope"></i> ईमेल (वैकल्पिक) | Email (Optional)</label>
+                <input type="email" id="email" class="form-control" placeholder="अपना ईमेल दर्ज करें (वैकल्पिक) | Enter your email (optional)">
+            </div>
+            
+            <div class="form-group">
+                <label for="phone"><i class="fas fa-phone"></i> फोन नंबर * | Phone Number *</label>
+                <input type="tel" id="phone" class="form-control" placeholder="अपना फोन नंबर दर्ज करें | Enter your phone number" required>
+            </div>
+            
+            <button class="btn btn-primary" style="width: 100%;" onclick="startExam()">
+                <i class="fas fa-play-circle"></i> पंजीकरण करें और परीक्षा शुरू करें |START EXAM
+            </button>
+        </div>
+    </div>
+
+    <!-- Camera Modal -->
+    <div class="modal camera-modal" id="cameraModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2><i class="fas fa-camera"></i> अपनी फोटो लें | Take Your Photo</h2>
+                <button class="close-btn" onclick="closeCamera()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="camera-tabs">
+                    <button class="camera-tab active" id="cameraTab" onclick="switchTab('camera')">कैमरा | Camera</button>
+                    <button class="camera-tab" id="uploadTab" onclick="switchTab('upload')">फोटो अपलोड करें | Upload Photo</button>
+                </div>
+                
+                <div id="cameraTabContent">
+                    <div class="camera-container">
+                        <video id="cameraVideo" autoplay playsinline></video>
+                        <canvas id="cameraCanvas" style="display: none;"></canvas>
+                        <div class="camera-controls">
+                            <button class="btn btn-success" onclick="capturePhoto()">
+                                <i class="fas fa-camera"></i> फोटो लें | Capture Photo
+                            </button>
+                            <button class="btn btn-secondary" onclick="closeCamera()">
+                                <i class="fas fa-times"></i> रद्द करें | Cancel
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="uploadTabContent" style="display: none;">
+                    <div class="camera-fallback">
+                        <p>इसके बजाय अपनी फोटो अपलोड करें | Upload your photo instead</p>
+                        <input type="file" id="photoUpload" accept="image/*" style="display: none;">
+                        <button class="upload-btn" onclick="document.getElementById('photoUpload').click()">
+                            <i class="fas fa-upload"></i> फोटो चुनें | Choose Photo
+                        </button>
+                        <div class="camera-controls">
+                            <button class="btn btn-secondary" onclick="closeCamera()">
+                                <i class="fas fa-times"></i> रद्द करें | Cancel
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Exam Interface -->
+    <div class="container" id="examScreen" style="display: none;">
+        <div class="header">
+            <div class="institute-name">
+                <h1><i class="fas fa-shield-alt"></i>CYBER RAKSHAK INSTITUTE</h1>
+                <p>Secure Your Future in Cybersecurity</p>
+            </div>
+            <div class="user-info">
+                <div class="user-photo" id="userPhotoDisplay">
+                    <i class="fas fa-user-shield"></i>
+                </div>
+                <div class="exam-info">
+                    <span id="userNameDisplay"><i class="fas fa-user"></i> </span>
+                    <span id="userEmailDisplay"><i class="fas fa-envelope"></i> </span>
+                    <span id="userPhoneDisplay"><i class="fas fa-phone"></i> </span>
+                    <span><i class="fas fa-star"></i> स्कोर | Score: <span id="scoreDisplay">0</span>/<span id="totalQuestionsDisplay">0</span></span>
+                    <span class="timer"><i class="fas fa-clock"></i> <span id="timer">01:30:00</span></span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="main-content">
+            <div class="question-container">
+                <div class="question-number" id="questionNumber">Q.1: लोड हो रहा है... | Loading...</div>
+                <div class="question-text" id="questionText">प्रश्न लोड हो रहा है... | Loading question...</div>
+                
+                <div class="options-container" id="optionsContainer">
+                    <!-- Options will be loaded dynamically -->
+                </div>
+                
+                <div class="controls">
+                    <button class="btn btn-info" onclick="resetAnswer()">
+                        <i class="fas fa-undo"></i> उत्तर रीसेट करें | Reset Answer
+                    </button>
+                    <button class="btn btn-secondary" onclick="previousQuestion()" id="prevBtn">
+                        <i class="fas fa-arrow-left"></i> पिछला | Previous
+                    </button>
+                    <button class="btn btn-secondary" onclick="nextQuestion()" id="nextBtn">
+                        अगला | Next <i class="fas fa-arrow-right"></i>
+                    </button>
+                    <button class="btn btn-primary" onclick="showSummaryPanel()">
+                        <i class="fas fa-th-list"></i> प्रश्न पैनल | Question Panel
+                    </button>
+                    <button class="btn btn-danger" onclick="finishExam()" id="finishBtn">
+                        <i class="fas fa-flag-checkered"></i> परीक्षा समाप्त करें | Finish Exam
+                    </button>
+                </div>
+            </div>
+            
+            <div class="progress-container">
+                <div class="progress-status">
+                    <span>✅ उत्तर दिए गए | Answered: <span id="answeredCount">0</span></span>
+                    <span>⏰ बाकी | Pending: <span id="pendingCount">0</span></span>
+                    <span>प्रगति | Progress: <span id="progressPercent">0</span>%</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+                
+                <div class="question-grid" id="questionGrid">
+                    <!-- Question indicators will be generated by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Summary Panel Modal -->
+    <div class="modal" id="summaryModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2><i class="fas fa-th-list"></i>QUESTION PANEL</h2>
+                <button class="close-btn" onclick="closeSummaryPanel()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="status-legend">
+                    <div class="status-item">
+                        <div class="status-color status-answered"></div>
+                        <span>✅Answered</span>
+                    </div>
+                    <div class="status-item">
+                        <div class="status-color status-pending"></div>
+                        <span>⏰Not Visited</span>
+                    </div>
+                </div>
+                
+                <div class="question-grid" id="summaryGrid">
+                    <!-- Summary question indicators will be generated by JavaScript -->
+                </div>
+                
+                <div class="controls" style="margin-top: 20px; justify-content: center;">
+                    <button class="btn btn-danger" onclick="finishExam()" id="modalFinishBtn">
+                        <i class="fas fa-flag-checkered"></i>Finish Exam
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Finish Exam Confirmation Modal -->
+    <div class="modal" id="finishModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2><i class="fas fa-exclamation-triangle"></i>FINISH EXAM CONFIRMATION</h2>
+                <button class="close-btn" onclick="closeFinishModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>क्या आप वाकई परीक्षा समाप्त करना चाहते हैं? | Are you sure you want to finish the exam?</p>
+                
+                <div class="report-section" style="margin-top: 20px;">
+                    <h3>📊Current Status:</h3>
+                    <ul style="padding-left: 20px;">
+                        <li>✅Answered: <span id="finishAnsweredCount">0</span>questions</li>
+                        <li>⏰Not Answered: <span id="finishPendingCount">0</span>questions</li>
+                    </ul>
+                </div>
+                
+                <p style="margin-top: 20px; color: var(--danger); font-weight: bold;">
+                    <i class="fas fa-exclamation-circle"></i> एक बार सबमिट करने के बाद आप परीक्षा में वापस नहीं जा पाएंगे! | Once submitted, you cannot return to the exam!
+                </p>
+                
+                <div class="controls" style="margin-top: 30px; justify-content: center;">
+                    <button class="btn btn-secondary" onclick="closeFinishModal()">
+                        <i class="fas fa-arrow-left"></i>Continue Exam
+                    </button>
+                    <button class="btn btn-danger" onclick="submitExam()">
+                        <i class="fas fa-rocket"></i>SUBMIT & GENERATE REPORT
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Final Report Modal -->
+    <div class="modal" id="reportModal">
+        <div class="modal-content">
+            <div class="modal-header" style="background: linear-gradient(to right, var(--success), var(--info));">
+                <h2><i class="fas fa-trophy"></i>EXAMINATION REPORT - CYBER RAKSHAK INSTITUTE</h2>
+                <button class="close-btn" onclick="closeReport()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div id="reportContent">
+                    <div class="report-grid">
+                        <div class="candidate-details">
+                            <h3>👤CANDIDATE DETAILS</h3>
+                            <div class="detail-item">
+                                <div class="detail-label">📸| Photo:</div>
+                                <div class="detail-value">
+                                    <div class="report-photo-container">
+                                        <div class="report-user-photo" id="reportUserPhoto">
+                                            <i class="fas fa-user-shield"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-label">👤Name:</div>
+                                <div class="detail-value" id="reportUserName">जॉन डो | John Doe</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-label">📧Email:</div>
+                                <div class="detail-value" id="reportUserEmail">john@email.com</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-label">📞Phone:</div>
+                                <div class="detail-value" id="reportUserPhone">9876543210</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-label">🆔Exam ID:</div>
+                                <div class="detail-value" id="reportExamId">CYBERR-CCC-2025-78901</div>
+                            </div>
+                        </div>
+                        
+                        <div class="exam-summary">
+                            <h3>📊EXAM SUMMARY</h3>
+                            <div class="detail-item">
+                                <div class="detail-label">📅Exam Date:</div>
+                                <div class="detail-value" id="reportExamDate">15 Dec 2024</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-label">⏱️Time Taken:</div>
+                                <div class="detail-value" id="reportTimeTaken">1hr 45min</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-label">🎯Total Questions:</div>
+                                <div class="detail-value" id="reportTotalQuestions">100</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-label">✅Correct:</div>
+                                <div class="detail-value" id="reportCorrectAnswers">0</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-label">❌Wrong:</div>
+                                <div class="detail-value" id="reportWrongAnswers">0</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-label">⚪Unattempted:</div>
+                                <div class="detail-value" id="reportUnattempted">0</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-label">📊Final Score:</div>
+                                <div class="detail-value" id="reportFinalScore">0/100 (0%)</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-label">🏆Grade:</div>
+                                <div class="detail-value" id="reportGrade">-</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="report-section">
+                        <h3>📈DETAILED QUESTION ANALYSIS</h3>
+                        
+                        <h4 style="margin: 15px 0 10px; color: var(--danger);">❌INCORRECT ANSWERS (<span id="incorrectCount">0</span>):</h4>
+                        <table class="analysis-table" id="incorrectAnswersTable">
+                            <thead>
+                                <tr>
+                                    <th>Q.No.</th>
+                                    <th>Question</th>
+                                    <th>Your Answer</th>
+                                    <th>Correct Answer</th>
+                                </tr>
+                            </thead>
+                            <tbody id="incorrectAnswersBody">
+                                <!-- Incorrect answers will be populated here -->
+                            </tbody>
+                        </table>
+                        
+                        <h4 style="margin: 20px 0 10px; color: var(--gray);">⚪UNATTEMPTED QUESTIONS (<span id="unattemptedCount">0</span>):</h4>
+                        <p id="unattemptedQuestionsList">-</p>
+                    </div>
+                    
+                    <div class="report-section">
+                        <h3>🎯TOPIC-WISE PERFORMANCE</h3>
+                        <div class="topic-performance" id="topicPerformance">
+                            <!-- Topic performance cards will be generated here -->
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="controls" style="margin-top: 30px; justify-content: center;">
+                    <button class="btn btn-primary" onclick="downloadReport()">
+                        <i class="fas fa-download"></i>Download Report (PDF)
+                    </button>
+                    <button class="btn btn-success" onclick="closeReport()">
+                        <i class="fas fa-home"></i>Return to Home
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Complete 100 Word Processing Questions Data from PDF
+        const questions = [
+            {
+                "id": 1,
+                "text": "Save As के लिए कौन सी शॉर्टकट कुंजी का उपयोग किया जाता है? / Which shortcut key is used for Save As?",
+                "options": ["Ctrl + S", "Ctrl + C", "Shift + R", "Ctrl + Shift + S"],
+                "correctAnswer": 3,
+                "topic": "Shortcut Keys"
+            },
+            {
+                "id": 2,
+                "text": "सेंटर अलाइनमेंट के लिए कौन सी शॉर्टकट कुंजी का उपयोग किया जाता है? / Which shortcut key is used for Center Alignment?",
+                "options": ["Ctrl + C", "Ctrl + E", "Shift + E", "Ctrl + Shift + E"],
+                "correctAnswer": 1,
+                "topic": "Shortcut Keys"
+            },
+            {
+                "id": 3,
+                "text": "निम्नलिखित में से कौन सा प्रोप्राइटरी सॉफ्टवेयर है? / Which of the following is Proprietary Software?",
+                "options": ["LibreOffice", "MS Office", "Windows", "B & C"],
+                "correctAnswer": 3,
+                "topic": "Software Types"
+            },
+            {
+                "id": 4,
+                "text": "स्पेल चेक के लिए कौन सी शॉर्टकट कुंजी का उपयोग किया जाता है? / Which shortcut key is used for Spell Check?",
+                "options": ["Ctrl + C", "Shift + C", "F7", "Ctrl + F7"],
+                "correctAnswer": 2,
+                "topic": "Shortcut Keys"
+            },
+            {
+                "id": 5,
+                "text": "डॉक्यूमेंट की शुरुआत में जाने के लिए कौन सी शॉर्टकट कुंजी का उपयोग किया जाता है? / Which shortcut key is used to go to the beginning of the document?",
+                "options": ["Ctrl + A", "Shift + Home", "Ctrl + Shift + A", "Ctrl + Home"],
+                "correctAnswer": 3,
+                "topic": "Shortcut Keys"
+            },
+            {
+                "id": 6,
+                "text": "LibreOffice Writer में अधिकतम ज़ूम प्रतिशत क्या है? / What is the maximum zoom percentage in LibreOffice Writer?",
+                "options": ["400%", "500%", "600%", "3000%"],
+                "correctAnswer": 3,
+                "topic": "View Options"
+            },
+            {
+                "id": 7,
+                "text": "Find and Replace के लिए कौन सी शॉर्टकट कुंजी का उपयोग किया जाता है? / Which shortcut key is used for Find and Replace?",
+                "options": ["Ctrl + H", "Shift + H", "Ctrl + F", "Ctrl + Shift + H"],
+                "correctAnswer": 0,
+                "topic": "Shortcut Keys"
+            },
+            {
+                "id": 8,
+                "text": "लेफ्ट अलाइनमेंट के लिए कौन सी शॉर्टकट कुंजी का उपयोग किया जाता है? / Which shortcut key is used for Left Alignment?",
+                "options": ["Ctrl + L", "Ctrl + Shift + L", "Shift + L", "Ctrl + A"],
+                "correctAnswer": 0,
+                "topic": "Shortcut Keys"
+            },
+            {
+                "id": 9,
+                "text": "डॉक्यूमेंट के अंत में जाने के लिए कौन सी शॉर्टकट कुंजी का उपयोग किया जाता है? / Which shortcut key is used to go to the end of the document?",
+                "options": ["Ctrl + End", "Shift + End", "Ctrl + Shift + End", "Ctrl + E"],
+                "correctAnswer": 0,
+                "topic": "Shortcut Keys"
+            },
+            {
+                "id": 10,
+                "text": "राइट अलाइनमेंट के लिए कौन सी शॉर्टकट कुंजी का उपयोग किया जाता है? / Which shortcut key is used for Right Alignment?",
+                "options": ["Ctrl + R", "Ctrl + Shift + R", "Shift + R", "Ctrl + A"],
+                "correctAnswer": 0,
+                "topic": "Shortcut Keys"
+            },
+            {
+                "id": 11,
+                "text": "जस्टिफाई अलाइनमेंट के लिए कौन सी शॉर्टकट कुंजी का उपयोग किया जाता है? / Which shortcut key is used for Justify Alignment?",
+                "options": ["Ctrl + J", "Ctrl + Shift + J", "Shift + J", "Ctrl + A"],
+                "correctAnswer": 0,
+                "topic": "Shortcut Keys"
+            },
+            {
+                "id": 12,
+                "text": "फॉन्ट डायलॉग बॉक्स खोलने के लिए कौन सी शॉर्टकट कुंजी का उपयोग किया जाता है? / Which shortcut key is used to open the Font dialog box?",
+                "options": ["Ctrl + D", "Ctrl + Shift + D", "Ctrl + F", "Ctrl + Shift + F"],
+                "correctAnswer": 0,
+                "topic": "Shortcut Keys"
+            },
+            {
+                "id": 13,
+                "text": "पैराग्राफ डायलॉग बॉक्स खोलने के लिए कौन सी शॉर्टकट कुंजी का उपयोग किया जाता है? / Which shortcut key is used to open the Paragraph dialog box?",
+                "options": ["Ctrl + Shift + P", "Ctrl + P", "Shift + P", "Ctrl + Shift + A"],
+                "correctAnswer": 0,
+                "topic": "Shortcut Keys"
+            },
+            {
+                "id": 14,
+                "text": "अनडू के लिए कौन सी शॉर्टकट कुंजी का उपयोग किया जाता है? / Which shortcut key is used for Undo?",
+                "options": ["Ctrl + Z", "Ctrl + Y", "Ctrl + U", "Ctrl + Shift + Z"],
+                "correctAnswer": 0,
+                "topic": "Shortcut Keys"
+            },
+            {
+                "id": 15,
+                "text": "रीडू के लिए कौन सी शॉर्टकट कुंजी का उपयोग किया जाता है? / Which shortcut key is used for Redo?",
+                "options": ["Ctrl + Y", "Ctrl + Z", "Ctrl + R", "Ctrl + Shift + Y"],
+                "correctAnswer": 0,
+                "topic": "Shortcut Keys"
+            },
+            {
+                "id": 16,
+                "text": "कट के लिए कौन सी शॉर्टकट कुंजी का उपयोग किया जाता है? / Which shortcut key is used for Cut?",
+                "options": ["Ctrl + X", "Ctrl + C", "Ctrl + V", "Ctrl + Z"],
+                "correctAnswer": 0,
+                "topic": "Shortcut Keys"
+            },
+            {
+                "id": 17,
+                "text": "कॉपी के लिए कौन सी शॉर्टकट कुंजी का उपयोग किया जाता है? / Which shortcut key is used for Copy?",
+                "options": ["Ctrl + C", "Ctrl + X", "Ctrl + V", "Ctrl + Z"],
+                "correctAnswer": 0,
+                "topic": "Shortcut Keys"
+            },
+            {
+                "id": 18,
+                "text": "पेस्ट के लिए कौन सी शॉर्टकट कुंजी का उपयोग किया जाता है? / Which shortcut key is used for Paste?",
+                "options": ["Ctrl + V", "Ctrl + C", "Ctrl + X", "Ctrl + Z"],
+                "correctAnswer": 0,
+                "topic": "Shortcut Keys"
+            },
+            {
+                "id": 19,
+                "text": "सभी सेलेक्ट करने के लिए कौन सी शॉर्टकट कुंजी का उपयोग किया जाता है? / Which shortcut key is used for Select All?",
+                "options": ["Ctrl + A", "Ctrl + S", "Ctrl + D", "Ctrl + F"],
+                "correctAnswer": 0,
+                "topic": "Shortcut Keys"
+            },
+            {
+                "id": 20,
+                "text": "बोल्ड के लिए कौन सी शॉर्टकट कुंजी का उपयोग किया जाता है? / Which shortcut key is used for Bold?",
+                "options": ["Ctrl + B", "Ctrl + I", "Ctrl + U", "Ctrl + Shift + B"],
+                "correctAnswer": 0,
+                "topic": "Shortcut Keys"
+            },
+            {
+                "id": 21,
+                "text": "इटैलिक के लिए कौन सी शॉर्टकट कुंजी का उपयोग किया जाता है? / Which shortcut key is used for Italic?",
+                "options": ["Ctrl + I", "Ctrl + B", "Ctrl + U", "Ctrl + Shift + I"],
+                "correctAnswer": 0,
+                "topic": "Shortcut Keys"
+            },
+            {
+                "id": 22,
+                "text": "अंडरलाइन के लिए कौन सी शॉर्टकट कुंजी का उपयोग किया जाता है? / Which shortcut key is used for Underline?",
+                "options": ["Ctrl + U", "Ctrl + B", "Ctrl + I", "Ctrl + Shift + U"],
+                "correctAnswer": 0,
+                "topic": "Shortcut Keys"
+            },
+            {
+                "id": 23,
+                "text": "नया डॉक्यूमेंट बनाने के लिए कौन सी शॉर्टकट कुंजी का उपयोग किया जाता है? / Which shortcut key is used for New Document?",
+                "options": ["Ctrl + N", "Ctrl + O", "Ctrl + S", "Ctrl + P"],
+                "correctAnswer": 0,
+                "topic": "Shortcut Keys"
+            },
+            {
+                "id": 24,
+                "text": "डॉक्यूमेंट ओपन करने के लिए कौन सी शॉर्टकट कुंजी का उपयोग किया जाता है? / Which shortcut key is used for Open Document?",
+                "options": ["Ctrl + O", "Ctrl + N", "Ctrl + S", "Ctrl + P"],
+                "correctAnswer": 0,
+                "topic": "Shortcut Keys"
+            },
+            {
+                "id": 25,
+                "text": "सेव के लिए कौन सी शॉर्टकट कुंजी का उपयोग किया जाता है? / Which shortcut key is used for Save?",
+                "options": ["Ctrl + S", "Ctrl + N", "Ctrl + O", "Ctrl + P"],
+                "correctAnswer": 0,
+                "topic": "Shortcut Keys"
+            },
+            {
+                "id": 26,
+                "text": "प्रिंट के लिए कौन सी शॉर्टकट कुंजी का उपयोग किया जाता है? / Which shortcut key is used for Print?",
+                "options": ["Ctrl + P", "Ctrl + N", "Ctrl + O", "Ctrl + S"],
+                "correctAnswer": 0,
+                "topic": "Shortcut Keys"
+            },
+            {
+                "id": 27,
+                "text": "फाइंड के लिए कौन सी शॉर्टकट कुंजी का उपयोग किया जाता है? / Which shortcut key is used for Find?",
+                "options": ["Ctrl + F", "Ctrl + H", "Ctrl + G", "Ctrl + Shift + F"],
+                "correctAnswer": 0,
+                "topic": "Shortcut Keys"
+            },
+            {
+                "id": 28,
+                "text": "गो टू के लिए कौन सी शॉर्टकट कुंजी का उपयोग किया जाता है? / Which shortcut key is used for Go To?",
+                "options": ["Ctrl + G", "Ctrl + F", "Ctrl + H", "Ctrl + Shift + G"],
+                "correctAnswer": 0,
+                "topic": "Shortcut Keys"
+            },
+            {
+                "id": 29,
+                "text": "हेल्प के लिए कौन सी शॉर्टकट कुंजी का उपयोग किया जाता है? / Which shortcut key is used for Help?",
+                "options": ["F1", "F2", "F3", "F4"],
+                "correctAnswer": 0,
+                "topic": "Shortcut Keys"
+            },
+            {
+                "id": 30,
+                "text": "थिसॉरस के लिए कौन सी शॉर्टकट कुंजी का उपयोग किया जाता है? / Which shortcut key is used for Thesaurus?",
+                "options": ["Ctrl + F7", "F7", "Shift + F7", "Ctrl + Shift + F7"],
+                "correctAnswer": 2,
+                "topic": "Shortcut Keys"
+            },
+            {
+                "id": 31,
+                "text": "हाइपरलिंक के लिए कौन सी शॉर्टकट कुंजी का उपयोग किया जाता है? / Which shortcut key is used for Hyperlink?",
+                "options": ["Ctrl + K", "Ctrl + H", "Ctrl + L", "Ctrl + Shift + K"],
+                "correctAnswer": 0,
+                "topic": "Shortcut Keys"
+            },
+            {
+                "id": 32,
+                "text": "पेज ब्रेक इन्सर्ट करने के लिए कौन सी शॉर्टकट कुंजी का उपयोग किया जाता है? / Which shortcut key is used for Insert Page Break?",
+                "options": ["Ctrl + Enter", "Shift + Enter", "Ctrl + Shift + Enter", "Alt + Enter"],
+                "correctAnswer": 0,
+                "topic": "Shortcut Keys"
+            },
+            {
+                "id": 33,
+                "text": "लाइन ब्रेक इन्सर्ट करने के लिए कौन सी शॉर्टकट कुंजी का उपयोग किया जाता है? / Which shortcut key is used for Insert Line Break?",
+                "options": ["Shift + Enter", "Ctrl + Enter", "Ctrl + Shift + Enter", "Alt + Enter"],
+                "correctAnswer": 0,
+                "topic": "Shortcut Keys"
+            },
+            {
+                "id": 34,
+                "text": "फॉन्ट साइज बढ़ाने के लिए कौन सी शॉर्टकट कुंजी का उपयोग किया जाता है? / Which shortcut key is used for Increase Font Size?",
+                "options": ["Ctrl + ]", "Ctrl + [", "Ctrl + Shift + >", "Ctrl + ="],
+                "correctAnswer": 2,
+                "topic": "Shortcut Keys"
+            },
+            {
+                "id": 35,
+                "text": "फॉन्ट साइज घटाने के लिए कौन सी शॉर्टकट कुंजी का उपयोग किया जाता है? / Which shortcut key is used for Decrease Font Size?",
+                "options": ["Ctrl + [", "Ctrl + ]", "Ctrl + Shift + <", "Ctrl + -"],
+                "correctAnswer": 2,
+                "topic": "Shortcut Keys"
+            },
+            {
+                "id": 36,
+                "text": "सुपरस्क्रिप्ट के लिए कौन सी शॉर्टकट कुंजी का उपयोग किया जाता है? / Which shortcut key is used for Superscript?",
+                "options": ["Ctrl + Shift + P", "Ctrl + =", "Ctrl + Shift + B", "Ctrl + Shift + +"],
+                "correctAnswer": 3,
+                "topic": "Shortcut Keys"
+            },
+            {
+                "id": 37,
+                "text": "सबस्क्रिप्ट के लिए कौन सी शॉर्टकट कुंजी का उपयोग किया जाता है? / Which shortcut key is used for Subscript?",
+                "options": ["Ctrl + =", "Ctrl + Shift + B", "Ctrl + Shift + P", "Ctrl + Shift + +"],
+                "correctAnswer": 0,
+                "topic": "Shortcut Keys"
+            },
+            {
+                "id": 38,
+                "text": "केस बदलने के लिए कौन सी शॉर्टकट कुंजी का उपयोग किया जाता है? / Which shortcut key is used for Change Case?",
+                "options": ["Shift + F3", "Ctrl + F3", "Alt + F3", "Ctrl + Shift + F3"],
+                "correctAnswer": 0,
+                "topic": "Shortcut Keys"
+            },
+            {
+                "id": 39,
+                "text": "फुटनोट इन्सर्ट करने के लिए कौन सी शॉर्टकट कुंजी का उपयोग किया जाता है? / Which shortcut key is used for Insert Footnote?",
+                "options": ["Ctrl + Alt + F", "Ctrl + F", "Ctrl + Shift + F", "Alt + F"],
+                "correctAnswer": 0,
+                "topic": "Shortcut Keys"
+            },
+            {
+                "id": 40,
+                "text": "एंडनोट इन्सर्ट करने के लिए कौन सी शॉर्टकट कुंजी का उपयोग किया जाता है? / Which shortcut key is used for Insert Endnote?",
+                "options": ["Ctrl + Alt + D", "Ctrl + D", "Ctrl + Shift + D", "Alt + D"],
+                "correctAnswer": 0,
+                "topic": "Shortcut Keys"
+            },
+            {
+                "id": 41,
+                "text": "कमेंट इन्सर्ट करने के लिए कौन सी शॉर्टकट कुंजी का उपयोग किया जाता है? / Which shortcut key is used for Insert Comment?",
+                "options": ["Ctrl + Alt + C", "Ctrl + C", "Ctrl + Shift + C", "Alt + C"],
+                "correctAnswer": 0,
+                "topic": "Shortcut Keys"
+            },
+            {
+                "id": 42,
+                "text": "फील्ड्स अपडेट करने के लिए कौन सी शॉर्टकट कुंजी का उपयोग किया जाता है? / Which shortcut key is used for Update Fields?",
+                "options": ["F9", "F5", "F11", "F12"],
+                "correctAnswer": 0,
+                "topic": "Shortcut Keys"
+            },
+            {
+                "id": 43,
+                "text": "फील्ड कोड्स टॉगल करने के लिए कौन सी शॉर्टकट कुंजी का उपयोग किया जाता है? / Which shortcut key is used for Toggle Field Codes?",
+                "options": ["Shift + F9", "F9", "Ctrl + F9", "Alt + F9"],
+                "correctAnswer": 0,
+                "topic": "Shortcut Keys"
+            },
+            {
+                "id": 44,
+                "text": "डेट फील्ड इन्सर्ट करने के लिए कौन सी शॉर्टकट कुंजी का उपयोग किया जाता है? / Which shortcut key is used for Insert Date Field?",
+                "options": ["Ctrl + ;", "Ctrl + Shift + ;", "Alt + Shift + D", "Ctrl + D"],
+                "correctAnswer": 2,
+                "topic": "Shortcut Keys"
+            },
+            {
+                "id": 45,
+                "text": "टाइम फील्ड इन्सर्ट करने के लिए कौन सी शॉर्टकट कुंजी का उपयोग किया जाता है? / Which shortcut key is used for Insert Time Field?",
+                "options": ["Ctrl + Shift + ;", "Ctrl + ;", "Alt + Shift + T", "Ctrl + T"],
+                "correctAnswer": 2,
+                "topic": "Shortcut Keys"
+            },
+            {
+                "id": 46,
+                "text": "नॉनप्रिंटिंग कैरेक्टर्स दिखाने/छुपाने के लिए कौन सी शॉर्टकट कुंजी का उपयोग किया जाता है? / Which shortcut key is used for Show/Hide Nonprinting Characters?",
+                "options": ["Ctrl + Shift + 8", "Ctrl + 8", "Ctrl + *", "Ctrl + /"],
+                "correctAnswer": 0,
+                "topic": "Shortcut Keys"
+            },
+            {
+                "id": 47,
+                "text": "वर्ड काउंट के लिए कौन सी शॉर्टकट कुंजी का उपयोग किया जाता है? / Which shortcut key is used for Word Count?",
+                "options": ["Ctrl + Shift + G", "Ctrl + G", "Ctrl + Shift + W", "Ctrl + W"],
+                "correctAnswer": 0,
+                "topic": "Shortcut Keys"
+            },
+            {
+                "id": 48,
+                "text": "सिंबल इन्सर्ट करने के लिए कौन सी शॉर्टकट कुंजी का उपयोग किया जाता है? / Which shortcut key is used for Insert Symbol?",
+                "options": ["Ctrl + Shift + Q", "Ctrl + Q", "Alt + Shift + S", "Ctrl + S"],
+                "correctAnswer": 0,
+                "topic": "Shortcut Keys"
+            },
+            {
+                "id": 49,
+                "text": "इक्वेशन इन्सर्ट करने के लिए कौन सी शॉर्टकट कुंजी का उपयोग किया जाता है? / Which shortcut key is used for Insert Equation?",
+                "options": ["Alt + =", "Ctrl + =", "Ctrl + Shift + =", "Alt + Shift + ="],
+                "correctAnswer": 0,
+                "topic": "Shortcut Keys"
+            },
+            {
+                "id": 50,
+                "text": "टेबल इन्सर्ट करने के लिए कौन सी शॉर्टकट कुंजी का उपयोग किया जाता है? / Which shortcut key is used for Insert Table?",
+                "options": ["Ctrl + F12", "Ctrl + T", "Ctrl + Shift + T", "Alt + T"],
+                "correctAnswer": 0,
+                "topic": "Shortcut Keys"
+            },
+            {
+                "id": 51,
+                "text": "ऊपर रो इन्सर्ट करने के लिए कौन सी शॉर्टकट कुंजी का उपयोग किया जाता है? / Which shortcut key is used for Insert Row Above?",
+                "options": ["Ctrl + +", "Ctrl + Shift + +", "Alt + Shift + +", "Ctrl + Alt + +"],
+                "correctAnswer": 1,
+                "topic": "Shortcut Keys"
+            },
+            {
+                "id": 52,
+                "text": "नीचे रो इन्सर्ट करने के लिए कौन सी शॉर्टकट कुंजी का उपयोग किया जाता है? / Which shortcut key is used for Insert Row Below?",
+                "options": ["Ctrl + +", "Ctrl + Shift + +", "Alt + Shift + +", "Tab"],
+                "correctAnswer": 3,
+                "topic": "Shortcut Keys"
+            },
+            {
+                "id": 53,
+                "text": "रो डिलीट करने के लिए कौन सी शॉर्टकट कुंजी का उपयोग किया जाता है? / Which shortcut key is used for Delete Row?",
+                "options": ["Ctrl + -", "Ctrl + Shift + -", "Alt + Shift + -", "Ctrl + Alt + -"],
+                "correctAnswer": 0,
+                "topic": "Shortcut Keys"
+            },
+            {
+                "id": 54,
+                "text": "कॉलम इन्सर्ट करने के लिए कौन सी शॉर्टकट कुंजी का उपयोग किया जाता है? / Which shortcut key is used for Insert Column?",
+                "options": ["Ctrl + +", "Ctrl + Shift + +", "Alt + Shift + +", "Ctrl + Alt + +"],
+                "correctAnswer": 1,
+                "topic": "Shortcut Keys"
+            },
+            {
+                "id": 55,
+                "text": "कॉलम डिलीट करने के लिए कौन सी शॉर्टकट कुंजी का उपयोग किया जाता है? / Which shortcut key is used for Delete Column?",
+                "options": ["Ctrl + -", "Ctrl + Shift + -", "Alt + Shift + -", "Ctrl + Alt + -"],
+                "correctAnswer": 0,
+                "topic": "Shortcut Keys"
+            },
+            {
+                "id": 56,
+                "text": "सेल्स मर्ज करने के लिए कौन सी शॉर्टकट कुंजी का उपयोग किया जाता है? / Which shortcut key is used for Merge Cells?",
+                "options": ["Ctrl + M", "Ctrl + Shift + M", "Alt + M", "Ctrl + Alt + M"],
+                "correctAnswer": 0,
+                "topic": "Shortcut Keys"
+            },
+            {
+                "id": 57,
+                "text": "सेल्स स्प्लिट करने के लिए कौन सी शॉर्टकट कुंजी का उपयोग किया जाता है? / Which shortcut key is used for Split Cells?",
+                "options": ["Ctrl + Shift + M", "Ctrl + M", "Alt + Shift + M", "Ctrl + Alt + M"],
+                "correctAnswer": 0,
+                "topic": "Shortcut Keys"
+            },
+            {
+                "id": 58,
+                "text": "ऑटोसम के लिए कौन सी शॉर्टकट कुंजी का उपयोग किया जाता है? / Which shortcut key is used for AutoSum?",
+                "options": ["Alt + =", "Ctrl + =", "Ctrl + Shift + =", "Alt + Shift + ="],
+                "correctAnswer": 0,
+                "topic": "Shortcut Keys"
+            },
+            {
+                "id": 59,
+                "text": "फंक्शन इन्सर्ट करने के लिए कौन सी शॉर्टकट कुंजी का उपयोग किया जाता है? / Which shortcut key is used for Insert Function?",
+                "options": ["Shift + F3", "Ctrl + F3", "Alt + F3", "Ctrl + Shift + F3"],
+                "correctAnswer": 0,
+                "topic": "Shortcut Keys"
+            },
+            {
+                "id": 60,
+                "text": "चार्ट इन्सर्ट करने के लिए कौन सी शॉर्टकट कुंजी का उपयोग किया जाता है? / Which shortcut key is used for Insert Chart?",
+                "options": ["F11", "F12", "Ctrl + F11", "Ctrl + F12"],
+                "correctAnswer": 0,
+                "topic": "Shortcut Keys"
+            },
+            {
+                "id": 61,
+                "text": "पिक्चर इन्सर्ट करने के लिए कौन सी शॉर्टकट कुंजी का उपयोग किया जाता है? / Which shortcut key is used for Insert Picture?",
+                "options": ["Ctrl + Shift + P", "Ctrl + P", "Alt + Shift + P", "Ctrl + Alt + P"],
+                "correctAnswer": 0,
+                "topic": "Shortcut Keys"
+            },
+            {
+                "id": 62,
+                "text": "शेप इन्सर्ट करने के लिए कौन सी शॉर्टकट कुंजी का उपयोग किया जाता है? / Which shortcut key is used for Insert Shape?",
+                "options": ["Ctrl + Shift + S", "Ctrl + S", "Alt + Shift + S", "Ctrl + Alt + S"],
+                "correctAnswer": 0,
+                "topic": "Shortcut Keys"
+            },
+            {
+                "id": 63,
+                "text": "टेक्स्ट बॉक्स इन्सर्ट करने के लिए कौन सी शॉर्टकट कुंजी का उपयोग किया जाता है? / Which shortcut key is used for Insert Text Box?",
+                "options": ["Ctrl + Shift + X", "Ctrl + X", "Alt + Shift + X", "Ctrl + Alt + X"],
+                "correctAnswer": 0,
+                "topic": "Shortcut Keys"
+            },
+            {
+                "id": 64,
+                "text": "पेज नंबर इन्सर्ट करने के लिए कौन सी शॉर्टकट कुंजी का उपयोग किया जाता है? / Which shortcut key is used for Insert Page Number?",
+                "options": ["Ctrl + Shift + N", "Ctrl + N", "Alt + Shift + N", "Ctrl + Alt + N"],
+                "correctAnswer": 0,
+                "topic": "Shortcut Keys"
+            },
+            {
+                "id": 65,
+                "text": "हेडर इन्सर्ट करने के लिए कौन सी शॉर्टकट कुंजी का उपयोग किया जाता है? / Which shortcut key is used for Insert Header?",
+                "options": ["Ctrl + Shift + H", "Ctrl + H", "Alt + Shift + H", "Ctrl + Alt + H"],
+                "correctAnswer": 0,
+                "topic": "Shortcut Keys"
+            },
+            {
+                "id": 66,
+                "text": "फूटर इन्सर्ट करने के लिए कौन सी शॉर्टकट कुंजी का उपयोग किया जाता है? / Which shortcut key is used for Insert Footer?",
+                "options": ["Ctrl + Shift + F", "Ctrl + F", "Alt + Shift + F", "Ctrl + Alt + F"],
+                "correctAnswer": 0,
+                "topic": "Shortcut Keys"
+            },
+            {
+                "id": 67,
+                "text": "पेज ब्रेक इन्सर्ट करने के लिए कौन सी शॉर्टकट कुंजी का उपयोग किया जाता है? / Which shortcut key is used for Insert Page Break?",
+                "options": ["Ctrl + Enter", "Shift + Enter", "Ctrl + Shift + Enter", "Alt + Enter"],
+                "correctAnswer": 0,
+                "topic": "Shortcut Keys"
+            },
+            {
+                "id": 68,
+                "text": "सेक्शन ब्रेक इन्सर्ट करने के लिए कौन सी शॉर्टकट कुंजी का उपयोग किया जाता है? / Which shortcut key is used for Insert Section Break?",
+                "options": ["Ctrl + Shift + Enter", "Ctrl + Enter", "Shift + Enter", "Alt + Enter"],
+                "correctAnswer": 0,
+                "topic": "Shortcut Keys"
+            },
+            {
+                "id": 69,
+                "text": "कॉलम ब्रेक इन्सर्ट करने के लिए कौन सी शॉर्टकट कुंजी का उपयोग किया जाता है? / Which shortcut key is used for Insert Column Break?",
+                "options": ["Ctrl + Shift + Enter", "Ctrl + Enter", "Shift + Enter", "Alt + Enter"],
+                "correctAnswer": 0,
+                "topic": "Shortcut Keys"
+            },
+            {
+                "id": 70,
+                "text": "मैनुअल लाइन ब्रेक इन्सर्ट करने के लिए कौन सी शॉर्टकट कुंजी का उपयोग किया जाता है? / Which shortcut key is used for Insert Manual Line Break?",
+                "options": ["Shift + Enter", "Ctrl + Enter", "Ctrl + Shift + Enter", "Alt + Enter"],
+                "correctAnswer": 0,
+                "topic": "Shortcut Keys"
+            },
+            {
+                "id": 71,
+                "text": "नॉनब्रेकिंग स्पेस इन्सर्ट करने के लिए कौन सी शॉर्टकट कुंजी का उपयोग किया जाता है? / Which shortcut key is used for Insert Nonbreaking Space?",
+                "options": ["Ctrl + Shift + Space", "Ctrl + Space", "Alt + Space", "Ctrl + Alt + Space"],
+                "correctAnswer": 0,
+                "topic": "Shortcut Keys"
+            },
+            {
+                "id": 72,
+                "text": "नॉनब्रेकिंग हाइफन इन्सर्ट करने के लिए कौन सी शॉर्टकट कुंजी का उपयोग किया जाता है? / Which shortcut key is used for Insert Nonbreaking Hyphen?",
+                "options": ["Ctrl + Shift + -", "Ctrl + -", "Alt + -", "Ctrl + Alt + -"],
+                "correctAnswer": 0,
+                "topic": "Shortcut Keys"
+            },
+            {
+                "id": 73,
+                "text": "ऑप्शनल हाइफन इन्सर्ट करने के लिए कौन सी शॉर्टकट कुंजी का उपयोग किया जाता है? / Which shortcut key is used for Insert Optional Hyphen?",
+                "options": ["Ctrl + -", "Ctrl + Shift + -", "Alt + -", "Ctrl + Alt + -"],
+                "correctAnswer": 0,
+                "topic": "Shortcut Keys"
+            },
+            {
+                "id": 74,
+                "text": "एम डैश इन्सर्ट करने के लिए कौन सी शॉर्टकट कुंजी का उपयोग किया जाता है? / Which shortcut key is used for Insert Em Dash?",
+                "options": ["Ctrl + Alt + -", "Ctrl + -", "Ctrl + Shift + -", "Alt + -"],
+                "correctAnswer": 0,
+                "topic": "Shortcut Keys"
+            },
+            {
+                "id": 75,
+                "text": "एन डैश इन्सर्ट करने के लिए कौन सी शॉर्टकट कुंजी का उपयोग किया जाता है? / Which shortcut key is used for Insert En Dash?",
+                "options": ["Ctrl + -", "Ctrl + Alt + -", "Ctrl + Shift + -", "Alt + -"],
+                "correctAnswer": 0,
+                "topic": "Shortcut Keys"
+            },
+            {
+                "id": 76,
+                "text": "कॉपीराइट सिंबल इन्सर्ट करने के लिए कौन सी शॉर्टकट कुंजी का उपयोग किया जाता है? / Which shortcut key is used for Insert Copyright Symbol?",
+                "options": ["Ctrl + Alt + C", "Ctrl + C", "Ctrl + Shift + C", "Alt + C"],
+                "correctAnswer": 0,
+                "topic": "Shortcut Keys"
+            },
+            {
+                "id": 77,
+                "text": "रजिस्टर्ड सिंबल इन्सर्ट करने के लिए कौन सी शॉर्टकट कुंजी का उपयोग किया जाता है? / Which shortcut key is used for Insert Registered Symbol?",
+                "options": ["Ctrl + Alt + R", "Ctrl + R", "Ctrl + Shift + R", "Alt + R"],
+                "correctAnswer": 0,
+                "topic": "Shortcut Keys"
+            },
+            {
+                "id": 78,
+                "text": "ट्रेडमार्क सिंबल इन्सर्ट करने के लिए कौन सी शॉर्टकट कुंजी का उपयोग किया जाता है? / Which shortcut key is used for Insert Trademark Symbol?",
+                "options": ["Ctrl + Alt + T", "Ctrl + T", "Ctrl + Shift + T", "Alt + T"],
+                "correctAnswer": 0,
+                "topic": "Shortcut Keys"
+            },
+            {
+                "id": 79,
+                "text": "बुलेट इन्सर्ट करने के लिए कौन सी शॉर्टकट कुंजी का उपयोग किया जाता है? / Which shortcut key is used for Insert Bullet?",
+                "options": ["Ctrl + Shift + L", "Ctrl + L", "Alt + Shift + L", "Ctrl + Alt + L"],
+                "correctAnswer": 0,
+                "topic": "Shortcut Keys"
+            },
+            {
+                "id": 80,
+                "text": "नंबरिंग इन्सर्ट करने के लिए कौन सी शॉर्टकट कुंजी का उपयोग किया जाता है? / Which shortcut key is used for Insert Numbering?",
+                "options": ["Ctrl + Shift + N", "Ctrl + N", "Alt + Shift + N", "Ctrl + Alt + N"],
+                "correctAnswer": 0,
+                "topic": "Shortcut Keys"
+            },
+            {
+                "id": 81,
+                "text": "इंडेंट बढ़ाने के लिए कौन सी शॉर्टकट कुंजी का उपयोग किया जाता है? / Which shortcut key is used for Increase Indent?",
+                "options": ["Ctrl + M", "Ctrl + Shift + M", "Alt + M", "Ctrl + Alt + M"],
+                "correctAnswer": 0,
+                "topic": "Shortcut Keys"
+            },
+            {
+                "id": 82,
+                "text": "इंडेंट घटाने के लिए कौन सी शॉर्टकट कुंजी का उपयोग किया जाता है? / Which shortcut key is used for Decrease Indent?",
+                "options": ["Ctrl + Shift + M", "Ctrl + M", "Alt + Shift + M", "Ctrl + Alt + M"],
+                "correctAnswer": 0,
+                "topic": "Shortcut Keys"
+            },
+            {
+                "id": 83,
+                "text": "हैंगिंग इंडेंट के लिए कौन सी शॉर्टकट कुंजी का उपयोग किया जाता है? / Which shortcut key is used for Hanging Indent?",
+                "options": ["Ctrl + T", "Ctrl + Shift + T", "Alt + T", "Ctrl + Alt + T"],
+                "correctAnswer": 0,
+                "topic": "Shortcut Keys"
+            },
+            {
+                "id": 84,
+                "text": "हैंगिंग इंडेंट हटाने के लिए कौन सी शॉर्टकट कुंजी का उपयोग किया जाता है? / Which shortcut key is used for Remove Hanging Indent?",
+                "options": ["Ctrl + Shift + T", "Ctrl + T", "Alt + Shift + T", "Ctrl + Alt + T"],
+                "correctAnswer": 0,
+                "topic": "Shortcut Keys"
+            },
+            {
+                "id": 85,
+                "text": "सिंगल स्पेसिंग के लिए कौन सी शॉर्टकट कुंजी का उपयोग किया जाता है? / Which shortcut key is used for Single Spacing?",
+                "options": ["Ctrl + 1", "Ctrl + 2", "Ctrl + 5", "Ctrl + 0"],
+                "correctAnswer": 0,
+                "topic": "Shortcut Keys"
+            },
+            {
+                "id": 86,
+                "text": "डबल स्पेसिंग के लिए कौन सी शॉर्टकट कुंजी का उपयोग किया जाता है? / Which shortcut key is used for Double Spacing?",
+                "options": ["Ctrl + 2", "Ctrl + 1", "Ctrl + 5", "Ctrl + 0"],
+                "correctAnswer": 0,
+                "topic": "Shortcut Keys"
+            },
+            {
+                "id": 87,
+                "text": "1.5 लाइन स्पेसिंग के लिए कौन सी शॉर्टकट कुंजी का उपयोग किया जाता है? / Which shortcut key is used for 1.5 Line Spacing?",
+                "options": ["Ctrl + 5", "Ctrl + 1", "Ctrl + 2", "Ctrl + 0"],
+                "correctAnswer": 0,
+                "topic": "Shortcut Keys"
+            },
+            {
+                "id": 88,
+                "text": "पैराग्राफ फॉर्मेटिंग हटाने के लिए कौन सी शॉर्टकट कुंजी का उपयोग किया जाता है? / Which shortcut key is used for Remove Paragraph Formatting?",
+                "options": ["Ctrl + Q", "Ctrl + Shift + Q", "Alt + Q", "Ctrl + Alt + Q"],
+                "correctAnswer": 0,
+                "topic": "Shortcut Keys"
+            },
+            {
+                "id": 89,
+                "text": "कैरेक्टर फॉर्मेटिंग हटाने के लिए कौन सी शॉर्टकट कुंजी का उपयोग किया जाता है? / Which shortcut key is used for Remove Character Formatting?",
+                "options": ["Ctrl + Space", "Ctrl + Shift + Space", "Alt + Space", "Ctrl + Alt + Space"],
+                "correctAnswer": 0,
+                "topic": "Shortcut Keys"
+            },
+            {
+                "id": 90,
+                "text": "नॉर्मल स्टाइल अप्लाई करने के लिए कौन सी शॉर्टकट कुंजी का उपयोग किया जाता है? / Which shortcut key is used for Apply Normal Style?",
+                "options": ["Ctrl + Shift + N", "Ctrl + N", "Alt + Shift + N", "Ctrl + Alt + N"],
+                "correctAnswer": 0,
+                "topic": "Shortcut Keys"
+            },
+            {
+                "id": 91,
+                "text": "हेडिंग 1 स्टाइल अप्लाई करने के लिए कौन सी शॉर्टकट कुंजी का उपयोग किया जाता है? / Which shortcut key is used for Apply Heading 1 Style?",
+                "options": ["Ctrl + Alt + 1", "Ctrl + 1", "Ctrl + Shift + 1", "Alt + 1"],
+                "correctAnswer": 0,
+                "topic": "Shortcut Keys"
+            },
+            {
+                "id": 92,
+                "text": "हेडिंग 2 स्टाइल अप्लाई करने के लिए कौन सी शॉर्टकट कुंजी का उपयोग किया जाता है? / Which shortcut key is used for Apply Heading 2 Style?",
+                "options": ["Ctrl + Alt + 2", "Ctrl + 2", "Ctrl + Shift + 2", "Alt + 2"],
+                "correctAnswer": 0,
+                "topic": "Shortcut Keys"
+            },
+            {
+                "id": 93,
+                "text": "हेडिंग 3 स्टाइल अप्लाई करने के लिए कौन सी शॉर्टकट कुंजी का उपयोग किया जाता है? / Which shortcut key is used for Apply Heading 3 Style?",
+                "options": ["Ctrl + Alt + 3", "Ctrl + 3", "Ctrl + Shift + 3", "Alt + 3"],
+                "correctAnswer": 0,
+                "topic": "Shortcut Keys"
+            },
+            {
+                "id": 94,
+                "text": "लिस्ट स्टाइल अप्लाई करने के लिए कौन सी शॉर्टकट कुंजी का उपयोग किया जाता है? / Which shortcut key is used for Apply List Style?",
+                "options": ["Ctrl + Shift + L", "Ctrl + L", "Alt + Shift + L", "Ctrl + Alt + L"],
+                "correctAnswer": 0,
+                "topic": "Shortcut Keys"
+            },
+            {
+                "id": 95,
+                "text": "टेबल ऑफ कॉन्टेंट्स अपडेट करने के लिए कौन सी शॉर्टकट कुंजी का उपयोग किया जाता है? / Which shortcut key is used for Update Table of Contents?",
+                "options": ["F9", "F5", "F11", "F12"],
+                "correctAnswer": 0,
+                "topic": "Shortcut Keys"
+            },
+            {
+                "id": 96,
+                "text": "टेबल ऑफ कॉन्टेंट्स एंट्री मार्क करने के लिए कौन सी शॉर्टकट कुंजी का उपयोग किया जाता है? / Which shortcut key is used for Mark Table of Contents Entry?",
+                "options": ["Alt + Shift + O", "Ctrl + Shift + O", "Alt + O", "Ctrl + O"],
+                "correctAnswer": 0,
+                "topic": "Shortcut Keys"
+            },
+            {
+                "id": 97,
+                "text": "इंडेक्स एंट्री मार्क करने के लिए कौन सी शॉर्टकट कुंजी का उपयोग किया जाता है? / Which shortcut key is used for Mark Index Entry?",
+                "options": ["Alt + Shift + X", "Ctrl + Shift + X", "Alt + X", "Ctrl + X"],
+                "correctAnswer": 0,
+                "topic": "Shortcut Keys"
+            },
+            {
+                "id": 98,
+                "text": "फुटनोट इन्सर्ट करने के लिए कौन सी शॉर्टकट कुंजी का उपयोग किया जाता है? / Which shortcut key is used for Insert Footnote?",
+                "options": ["Ctrl + Alt + F", "Ctrl + F", "Ctrl + Shift + F", "Alt + F"],
+                "correctAnswer": 0,
+                "topic": "Shortcut Keys"
+            },
+            {
+                "id": 99,
+                "text": "एंडनोट इन्सर्ट करने के लिए कौन सी शॉर्टकट कुंजी का उपयोग किया जाता है? / Which shortcut key is used for Insert Endnote?",
+                "options": ["Ctrl + Alt + D", "Ctrl + D", "Ctrl + Shift + D", "Alt + D"],
+                "correctAnswer": 0,
+                "topic": "Shortcut Keys"
+            },
+            {
+                "id": 100,
+                "text": "कैप्शन इन्सर्ट करने के लिए कौन सी शॉर्टकट कुंजी का उपयोग किया जाता है? / Which shortcut key is used for Insert Caption?",
+                "options": ["Ctrl + Shift + C", "Ctrl + C", "Alt + Shift + C", "Ctrl + Alt + C"],
+                "correctAnswer": 0,
+                "topic": "Shortcut Keys"
+            }
+        ];
+
+        // Exam state
+        const examState = {
+            currentQuestion: 0,
+            answers: new Array(questions.length).fill(null),
+            timeRemaining: 5400, // 90 minutes in seconds
+            timerInterval: null,
+            userPhoto: null,
+            userName: "",
+            userEmail: "",
+            userPhone: "",
+            startTime: null,
+            endTime: null,
+            cameraStream: null
+        };
+
+        // Camera functions
+        function openCameraModal() {
+            document.getElementById('cameraModal').style.display = 'flex';
+            switchTab('camera');
+        }
+
+        function switchTab(tab) {
+            document.getElementById('cameraTab').classList.toggle('active', tab === 'camera');
+            document.getElementById('uploadTab').classList.toggle('active', tab === 'upload');
+            
+            document.getElementById('cameraTabContent').style.display = tab === 'camera' ? 'block' : 'none';
+            document.getElementById('uploadTabContent').style.display = tab === 'upload' ? 'block' : 'none';
+            
+            if (tab === 'camera') {
+                initializeCamera();
+            }
+        }
+
+        function initializeCamera() {
+            if (examState.cameraStream) {
+                examState.cameraStream.getTracks().forEach(track => track.stop());
+            }
+            
+            const constraints = {
+                video: {
+                    facingMode: 'user',
+                    width: { ideal: 1280 },
+                    height: { ideal: 720 }
+                },
+                audio: false
+            };
+            
+            navigator.mediaDevices.getUserMedia(constraints)
+                .then(function(stream) {
+                    examState.cameraStream = stream;
+                    const video = document.getElementById('cameraVideo');
+                    video.srcObject = stream;
+                })
+                .catch(function(err) {
+                    console.error("Camera error: ", err);
+                    switchTab('upload');
+                    
+                    const uploadTabContent = document.getElementById('uploadTabContent');
+                    uploadTabContent.innerHTML = `
+                        <div class="camera-fallback">
+                            <p style="color: var(--danger); margin-bottom: 15px;">
+                                <i class="fas fa-exclamation-triangle"></i> 
+                                कैमरा एक्सेस अस्वीकृत या उपलब्ध नहीं है। / Camera access denied or not available.
+                            </p>
+                            <p>कृपया अपनी फोटो अपलोड करें: / Please upload your photo instead:</p>
+                            <input type="file" id="photoUpload" accept="image/*" style="display: none;">
+                            <button class="upload-btn" onclick="document.getElementById('photoUpload').click()">
+                                <i class="fas fa-upload"></i> फोटो चुनें / Choose Photo
+                            </button>
+                            <div class="camera-controls">
+                                <button class="btn btn-secondary" onclick="closeCamera()">
+                                    <i class="fas fa-times"></i> रद्द करें / Cancel
+                                </button>
+                            </div>
+                        </div>
+                    `;
+                    
+                    document.getElementById('photoUpload').addEventListener('change', handlePhotoUpload);
+                });
+        }
+
+        function handlePhotoUpload(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    examState.userPhoto = e.target.result;
+                    updatePhotoDisplay();
+                    closeCamera();
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+
+        function closeCamera() {
+            document.getElementById('cameraModal').style.display = 'none';
+            
+            if (examState.cameraStream) {
+                examState.cameraStream.getTracks().forEach(track => track.stop());
+                examState.cameraStream = null;
+            }
+        }
+
+        function capturePhoto() {
+            const video = document.getElementById('cameraVideo');
+            const canvas = document.getElementById('cameraCanvas');
+            const context = canvas.getContext('2d');
+            
+            canvas.width = video.videoWidth;
+            canvas.height = video.videoHeight;
+            
+            context.drawImage(video, 0, 0, canvas.width, canvas.height);
+            
+            const photoDataUrl = canvas.toDataURL('image/png');
+            examState.userPhoto = photoDataUrl;
+            
+            updatePhotoDisplay();
+            closeCamera();
+        }
+
+        function updatePhotoDisplay() {
+            const photoPreview = document.getElementById('photoPreview');
+            photoPreview.innerHTML = `<img src="${examState.userPhoto}" alt="User Photo">`;
+            
+            const userPhotoDisplay = document.getElementById('userPhotoDisplay');
+            userPhotoDisplay.innerHTML = `<img src="${examState.userPhoto}" alt="User Photo">`;
+            
+            const reportUserPhoto = document.getElementById('reportUserPhoto');
+            reportUserPhoto.innerHTML = `<img src="${examState.userPhoto}" alt="User Photo">`;
+        }
+
+        // Initialize the exam
+        function initExam() {
+            generateQuestionIndicators();
+            updateProgress();
+            startTimer();
+            examState.startTime = new Date();
+            
+            document.getElementById('totalQuestionsDisplay').textContent = questions.length;
+        }
+
+        // Generate question indicators
+        function generateQuestionIndicators() {
+            const grid = document.getElementById('questionGrid');
+            grid.innerHTML = '';
+            
+            questions.forEach((question, index) => {
+                const indicator = document.createElement('div');
+                indicator.className = 'question-indicator pending';
+                if (index === examState.currentQuestion) {
+                    indicator.classList.add('current');
+                }
+                indicator.textContent = index + 1;
+                indicator.onclick = () => goToQuestionNumber(index);
+                grid.appendChild(indicator);
+            });
+            
+            const summaryGrid = document.getElementById('summaryGrid');
+            summaryGrid.innerHTML = '';
+            
+            questions.forEach((question, index) => {
+                const indicator = document.createElement('div');
+                indicator.className = 'question-indicator pending';
+                indicator.textContent = index + 1;
+                indicator.onclick = () => {
+                    goToQuestionNumber(index);
+                    closeSummaryPanel();
+                };
+                summaryGrid.appendChild(indicator);
+            });
+        }
+
+        // Update progress indicators
+        function updateProgress() {
+            const answered = examState.answers.filter(answer => answer !== null).length;
+            const pending = questions.length - answered;
+            const progressPercent = Math.round((answered / questions.length) * 100);
+            
+            document.getElementById('answeredCount').textContent = answered;
+            document.getElementById('pendingCount').textContent = pending;
+            document.getElementById('progressPercent').textContent = progressPercent;
+            
+            document.getElementById('progressFill').style.width = `${progressPercent}%`;
+            
+            const indicators = document.querySelectorAll('#questionGrid .question-indicator');
+            indicators.forEach((indicator, index) => {
+                indicator.className = 'question-indicator';
+                
+                if (examState.answers[index] !== null) {
+                    indicator.classList.add('answered');
+                } else {
+                    indicator.classList.add('pending');
+                }
+                
+                if (index === examState.currentQuestion) {
+                    indicator.classList.add('current');
+                }
+            });
+            
+            const summaryIndicators = document.querySelectorAll('#summaryGrid .question-indicator');
+            summaryIndicators.forEach((indicator, index) => {
+                indicator.className = 'question-indicator';
+                
+                if (examState.answers[index] !== null) {
+                    indicator.classList.add('answered');
+                } else {
+                    indicator.classList.add('pending');
+                }
+            });
+            
+            updateScore();
+        }
+
+        // Update score display
+        function updateScore() {
+            let correctCount = 0;
+            examState.answers.forEach((answer, index) => {
+                if (answer !== null && answer === questions[index].correctAnswer) {
+                    correctCount++;
+                }
+            });
+            
+            document.getElementById('scoreDisplay').textContent = correctCount;
+        }
+
+        // Start the exam timer
+        function startTimer() {
+            updateTimerDisplay();
+            
+            examState.timerInterval = setInterval(() => {
+                examState.timeRemaining--;
+                updateTimerDisplay();
+                
+                if (examState.timeRemaining <= 0) {
+                    clearInterval(examState.timerInterval);
+                    finishExam();
+                }
+            }, 1000);
+        }
+
+        // Update timer display
+        function updateTimerDisplay() {
+            const hours = Math.floor(examState.timeRemaining / 3600);
+            const minutes = Math.floor((examState.timeRemaining % 3600) / 60);
+            const seconds = examState.timeRemaining % 60;
+            
+            document.getElementById('timer').textContent = 
+                `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+        }
+
+        // Select an option
+        function selectOption(element) {
+            const options = document.querySelectorAll('.option');
+            options.forEach(opt => opt.classList.remove('selected'));
+            element.classList.add('selected');
+            
+            const optionIndex = Array.from(element.parentNode.children).indexOf(element);
+            examState.answers[examState.currentQuestion] = optionIndex;
+            updateProgress();
+        }
+
+        // Go to previous question
+        function previousQuestion() {
+            if (examState.currentQuestion > 0) {
+                examState.currentQuestion--;
+                loadQuestion();
+            }
+        }
+
+        // Go to next question
+        function nextQuestion() {
+            if (examState.currentQuestion < questions.length - 1) {
+                examState.currentQuestion++;
+                loadQuestion();
+            }
+        }
+
+        // Reset current answer
+        function resetAnswer() {
+            examState.answers[examState.currentQuestion] = null;
+            const options = document.querySelectorAll('.option');
+            options.forEach(opt => opt.classList.remove('selected'));
+            updateProgress();
+        }
+
+        // Load current question
+        function loadQuestion() {
+            const question = questions[examState.currentQuestion];
+            document.getElementById('questionNumber').textContent = `प्र.${examState.currentQuestion + 1} / Q.${examState.currentQuestion + 1}: ${question.text}`;
+            document.getElementById('questionText').textContent = "नीचे दिए गए विकल्पों में से सही उत्तर चुनें / Select the correct answer from the options below:";
+            
+            const optionsContainer = document.getElementById('optionsContainer');
+            optionsContainer.innerHTML = '';
+            
+            question.options.forEach((option, index) => {
+                const optionElement = document.createElement('div');
+                optionElement.className = 'option';
+                if (examState.answers[examState.currentQuestion] === index) {
+                    optionElement.classList.add('selected');
+                }
+                optionElement.onclick = () => selectOption(optionElement);
+                
+                const optionLabel = document.createElement('div');
+                optionLabel.className = 'option-label';
+                optionLabel.textContent = String.fromCharCode(65 + index);
+                
+                const optionText = document.createElement('div');
+                optionText.className = 'option-text';
+                optionText.textContent = option;
+                
+                optionElement.appendChild(optionLabel);
+                optionElement.appendChild(optionText);
+                optionsContainer.appendChild(optionElement);
+            });
+            
+            document.getElementById('prevBtn').disabled = examState.currentQuestion === 0;
+            document.getElementById('nextBtn').disabled = examState.currentQuestion === questions.length - 1;
+            
+            updateProgress();
+        }
+
+        // Go to specific question number
+        function goToQuestionNumber(index) {
+            examState.currentQuestion = index;
+            loadQuestion();
+        }
+
+        // Show summary panel
+        function showSummaryPanel() {
+            document.getElementById('summaryModal').style.display = 'flex';
+        }
+
+        // Close summary panel
+        function closeSummaryPanel() {
+            document.getElementById('summaryModal').style.display = 'none';
+        }
+
+        // Show finish exam confirmation
+        function finishExam() {
+            closeSummaryPanel();
+            
+            const answered = examState.answers.filter(answer => answer !== null).length;
+            const pending = questions.length - answered;
+            
+            document.getElementById('finishAnsweredCount').textContent = answered;
+            document.getElementById('finishPendingCount').textContent = pending;
+            
+            document.getElementById('finishModal').style.display = 'flex';
+        }
+
+        // Close finish modal
+        function closeFinishModal() {
+            document.getElementById('finishModal').style.display = 'none';
+        }
+
+        // Submit exam and show report
+        function submitExam() {
+            closeFinishModal();
+            clearInterval(examState.timerInterval);
+            examState.endTime = new Date();
+            generateReport();
+            document.getElementById('reportModal').style.display = 'flex';
+        }
+
+        // Generate detailed report
+        function generateReport() {
+            let correctCount = 0;
+            let wrongCount = 0;
+            let unattemptedCount = 0;
+            const incorrectAnswers = [];
+            const unattemptedQuestions = [];
+            
+            const topicPerformance = {};
+            
+            questions.forEach((question, index) => {
+                if (!topicPerformance[question.topic]) {
+                    topicPerformance[question.topic] = {
+                        total: 0,
+                        correct: 0,
+                        wrong: 0,
+                        unattempted: 0
+                    };
+                }
+                
+                topicPerformance[question.topic].total++;
+                
+                if (examState.answers[index] === null) {
+                    unattemptedCount++;
+                    unattemptedQuestions.push(index + 1);
+                    topicPerformance[question.topic].unattempted++;
+                } else if (examState.answers[index] === question.correctAnswer) {
+                    correctCount++;
+                    topicPerformance[question.topic].correct++;
+                } else {
+                    wrongCount++;
+                    incorrectAnswers.push({
+                        questionNumber: index + 1,
+                        question: question.text,
+                        userAnswer: question.options[examState.answers[index]],
+                        correctAnswer: question.options[question.correctAnswer]
+                    });
+                    topicPerformance[question.topic].wrong++;
+                }
+            });
+            
+            const timeTakenMs = examState.endTime - examState.startTime;
+            const hours = Math.floor(timeTakenMs / (1000 * 60 * 60));
+            const minutes = Math.floor((timeTakenMs % (1000 * 60 * 60)) / (1000 * 60));
+            const timeTakenStr = `${hours > 0 ? hours + ' घंटे ' : ''}${minutes} मिनट / ${hours > 0 ? hours + 'hr ' : ''}${minutes}min`;
+            
+            const percentage = Math.round((correctCount / questions.length) * 100);
+            let grade = "अनुत्तीर्ण / FAIL";
+            if (percentage >= 90) grade = "A+";
+            else if (percentage >= 75) grade = "A";
+            else if (percentage >= 60) grade = "B";
+            else if (percentage >= 40) grade = "C";
+            
+            document.getElementById('reportUserName').textContent = examState.userName;
+            document.getElementById('reportUserEmail').textContent = examState.userEmail;
+            document.getElementById('reportUserPhone').textContent = examState.userPhone;
+            document.getElementById('reportExamDate').textContent = new Date().toLocaleDateString('hi-IN');
+            document.getElementById('reportTimeTaken').textContent = timeTakenStr;
+            document.getElementById('reportTotalQuestions').textContent = questions.length;
+            document.getElementById('reportCorrectAnswers').textContent = correctCount;
+            document.getElementById('reportWrongAnswers').textContent = wrongCount;
+            document.getElementById('reportUnattempted').textContent = unattemptedCount;
+            document.getElementById('reportFinalScore').textContent = `${correctCount}/${questions.length} (${percentage}%)`;
+            document.getElementById('reportGrade').textContent = grade;
+            
+            const incorrectAnswersBody = document.getElementById('incorrectAnswersBody');
+            incorrectAnswersBody.innerHTML = '';
+            incorrectAnswers.forEach(item => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${item.questionNumber}</td>
+                    <td>${item.question}</td>
+                    <td>${item.userAnswer}</td>
+                    <td>${item.correctAnswer}</td>
+                `;
+                incorrectAnswersBody.appendChild(row);
+            });
+            
+            document.getElementById('incorrectCount').textContent = incorrectAnswers.length;
+            
+            document.getElementById('unattemptedCount').textContent = unattemptedCount;
+            document.getElementById('unattemptedQuestionsList').textContent = 
+                unattemptedQuestions.length > 0 ? unattemptedQuestions.join(', ') : '-';
+            
+            const topicPerformanceContainer = document.getElementById('topicPerformance');
+            topicPerformanceContainer.innerHTML = '';
+            
+            for (const topic in topicPerformance) {
+                const stats = topicPerformance[topic];
+                const accuracy = stats.total > 0 ? Math.round((stats.correct / stats.total) * 100) : 0;
+                
+                const topicCard = document.createElement('div');
+                topicCard.className = 'topic-card';
+                topicCard.innerHTML = `
+                    <div class="topic-name">${topic}</div>
+                    <div class="topic-stats">
+                        <span>कुल / Total: ${stats.total}</span>
+                        <span>सही / Correct: ${stats.correct}</span>
+                    </div>
+                    <div class="topic-stats">
+                        <span>गलत / Wrong: ${stats.wrong}</span>
+                        <span>अनुत्तरित / Unattempted: ${stats.unattempted}</span>
+                    </div>
+                    <div class="topic-accuracy">${accuracy}%</div>
+                `;
+                topicPerformanceContainer.appendChild(topicCard);
+            }
+        }
+
+        // Close report
+        function closeReport() {
+            document.getElementById('reportModal').style.display = 'none';
+            document.getElementById('examScreen').style.display = 'none';
+            document.getElementById('loginScreen').style.display = 'block';
+        }
+
+        // Download report as PDF
+        function downloadReport() {
+            const element = document.getElementById('reportContent');
+            const opt = {
+                margin: 10,
+                filename: `Cyber_Rakshak_CCC_Exam_Report_${examState.userName.replace(/\s+/g, '_')}.pdf`,
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { 
+                    scale: 2, 
+                    useCORS: true,
+                    logging: true
+                },
+                jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+            };
+
+            const downloadBtn = document.querySelector('.btn-primary');
+            const originalText = downloadBtn.innerHTML;
+            downloadBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> PDF जेनरेट हो रहा है... / Generating PDF...';
+            downloadBtn.disabled = true;
+
+            html2pdf().set(opt).from(element).save().then(() => {
+                downloadBtn.innerHTML = originalText;
+                downloadBtn.disabled = false;
+                alert('रिपोर्ट सफलतापूर्वक डाउनलोड हो गई! / Report downloaded successfully!');
+            }).catch(error => {
+                console.error('PDF generation failed:', error);
+                downloadBtn.innerHTML = originalText;
+                downloadBtn.disabled = false;
+                alert('PDF डाउनलोड विफल। प्रिंटिंग के लिए नई विंडो में रिपोर्ट खोली जा रही है... / PDF download failed. Opening report in new window for printing...');
+                const reportWindow = window.open('', '_blank');
+                reportWindow.document.write(`
+                    <html>
+                        <head>
+                            <title>CCC परीक्षा रिपोर्ट - ${examState.userName} / Cyber Rakshak Institute - CCC Exam Report - ${examState.userName}</title>
+                            <style>
+                                body { font-family: Arial, sans-serif; padding: 20px; }
+                                .report-section { margin-bottom: 30px; }
+                                table { width: 100%; border-collapse: collapse; margin: 15px 0; }
+                                th, td { padding: 10px; border: 1px solid #ddd; text-align: left; }
+                                th { background: #f5f5f5; }
+                                .institute-header { text-align: center; margin-bottom: 30px; color: #1a237e; }
+                            </style>
+                        </head>
+                        <body>
+                            <div class="institute-header">
+                                <h1>CYBER RAKSHAK INSTITUTE</h1>
+                                <h3>CCC अध्याय 3 - वर्ड प्रोसेसिंग परीक्षा रिपोर्ट / CCC Chapter 3 - Word Processing Exam Report</h3>
+                            </div>
+                            ${element.innerHTML}
+                            <script>
+                                window.onload = function() {
+                                    window.print();
+                                };
+                            <\/script>
+                        </body>
+                    </html>
+                `);
+                reportWindow.document.close();
+            });
+        }
+
+        // Start exam (from login screen)
+        function startExam() {
+            const fullName = document.getElementById('fullName').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            
+            // Only name and phone are required
+            if (!fullName || !phone) {
+                alert('कृपया कम से कम नाम और फोन नंबर भरें / Please fill at least name and phone number');
+                return;
+            }
+            
+            examState.userName = fullName;
+            examState.userEmail = email || "प्रदान नहीं किया गया / Not Provided";
+            examState.userPhone = phone;
+            
+            document.getElementById('userNameDisplay').innerHTML = `<i class="fas fa-user"></i> ${fullName}`;
+            document.getElementById('userEmailDisplay').innerHTML = `<i class="fas fa-envelope"></i> ${examState.userEmail}`;
+            document.getElementById('userPhoneDisplay').innerHTML = `<i class="fas fa-phone"></i> ${phone}`;
+            
+            document.getElementById('reportUserName').textContent = fullName;
+            document.getElementById('reportUserEmail').textContent = examState.userEmail;
+            document.getElementById('reportUserPhone').textContent = phone;
+            
+            document.getElementById('reportExamId').textContent = `CRI-CCC-${new Date().getFullYear()}-${Math.floor(10000 + Math.random() * 90000)}`;
+            
+            document.getElementById('loginScreen').style.display = 'none';
+            document.getElementById('examScreen').style.display = 'block';
+            
+            initExam();
+            loadQuestion();
+        }
+
+        // Initialize file upload event listener
+        document.addEventListener('DOMContentLoaded', function() {
+            const photoUpload = document.getElementById('photoUpload');
+            if (photoUpload) {
+                photoUpload.addEventListener('change', handlePhotoUpload);
+            }
+        });
+
+        // Initialize the app
+        window.onload = function() {
+            // Any additional initialization if needed
+        };
+    </script>
+</body>
+</html>
