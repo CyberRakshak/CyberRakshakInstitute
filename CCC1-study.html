@@ -1,0 +1,1755 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to Computer MCQs CCC Exam: </title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="Exam-Prepration/CSS/CCC1-study.css">
+</head>
+<body class="min-h-screen">
+    <!-- Particle Background -->
+    <canvas class="particles"></canvas>
+
+    <!-- Overlay for enlarged photo -->
+    <div class="overlay" id="overlay" onclick="closePhoto()"></div>
+
+    <!-- Navigation Bar -->
+    <nav class="bg-gray-900 p-4 shadow-lg fixed w-full top-0 z-20">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-3xl font-bold text-pink-500" style="font-family: 'Exo 2', sans-serif;">CCC Exam Prep</h1>
+            <div class="flex space-x-6">
+                <button class="back-btn" onclick="goBack()">
+                    ← Back
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container mx-auto mt-24 p-6">
+        <h1 class="text-5xl font-extrabold text-center text-pink-500 mb-12" style="font-family: 'Exo 2', sans-serif; text-shadow: 0 0 20px rgba(0, 204, 255, 0.7);">Introduction to Computer: 150 MCQs</h1>
+
+        <!-- Progress Tracker -->
+        <div class="progress-container" id="progress-container">
+            <p class="progress-label">Progress: <span id="progress-text">0/150</span></p>
+            <div class="progress-ring">
+                <svg width="120" height="120">
+                    <circle cx="60" cy="60" r="50" stroke="#ff00cc" stroke-width="10" />
+                    <circle class="progress" cx="60" cy="60" r="50" stroke-dasharray="314" stroke-dashoffset="314" /><br>
+                    <text class="progress-text" x="50%" y="50%" text-anchor="middle" dy=".3em">0%</text>
+                </svg>
+            </div>
+        </div>
+
+        <!-- Easy Questions -->
+        <section id="easy" class="mb-16">
+            <div class="divider easy"></div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="question-card">
+                    <p class="text-lg font-medium">1. What is the brain of computer?<br>कंप्यूटर का मस्तिष्क क्या कहलाता है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="B">A) Monitor</li>
+                        <li class="option" data-answer="B">B) CPU</li>
+                        <li class="option" data-answer="B">C) Keyboard</li>
+                        <li class="option" data-answer="B">D) Mouse</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+
+                <div class="question-card">
+                    <p class="text-lg font-medium">2. Which device is used to input data into a computer?<br>कंप्यूटर में डेटा डालने के लिए कौन सा उपकरण प्रयोग होता है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="B">A) Printer</li>
+                        <li class="option" data-answer="B">B) Mouse</li>
+                        <li class="option" data-answer="B">C) Speaker</li>
+                        <li class="option" data-answer="B">D) Monitor</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+
+                <div class="question-card">
+                    <p class="text-lg font-medium">3. Full form of CPU is —<br>CPU का पूरा नाम क्या है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="B">A) Central Program Unit</li>
+                        <li class="option" data-answer="B">B) Central Processing Unit</li>
+                        <li class="option" data-answer="B">C) Control Processing Unit</li>
+                        <li class="option" data-answer="B">D) Central Print Unit</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+
+                <div class="question-card">
+                    <p class="text-lg font-medium">4. Which is an output device?<br>निम्न में से कौन आउटपुट डिवाइस है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="C">A) Keyboard</li>
+                        <li class="option" data-answer="C">B) Mouse</li>
+                        <li class="option" data-answer="C">C) Monitor</li>
+                        <li class="option" data-answer="C">D) Scanner</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+
+                <div class="question-card">
+                    <p class="text-lg font-medium">5. Which memory is volatile?<br>कौन सी मेमोरी अस्थायी होती है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="B">A) ROM</li>
+                        <li class="option" data-answer="B">B) RAM</li>
+                        <li class="option" data-answer="B">C) Hard Disk</li>
+                        <li class="option" data-answer="B">D) CD-ROM</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+
+                <div class="question-card">
+                    <p class="text-lg font-medium">6. Which of the following is not an input device?<br>निम्न में से कौन इनपुट डिवाइस नहीं है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="C">A) Keyboard</li>
+                        <li class="option" data-answer="C">B) Mouse</li>
+                        <li class="option" data-answer="C">C) Printer</li>
+                        <li class="option" data-answer="C">D) Scanner</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+
+                <div class="question-card">
+                    <p class="text-lg font-medium">7. The computer follows which system?<br>कंप्यूटर किस प्रणाली का पालन करता है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="B">A) Decimal</li>
+                        <li class="option" data-answer="B">B) Binary</li>
+                        <li class="option" data-answer="B">C) Octal</li>
+                        <li class="option" data-answer="B">D) Hexadecimal</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+
+                <div class="question-card">
+                    <p class="text-lg font-medium">8. 1 Byte = ?<br>1 बाइट = ?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="B">A) 4 bits</li>
+                        <li class="option" data-answer="B">B) 8 bits</li>
+                        <li class="option" data-answer="B">C) 16 bits</li>
+                        <li class="option" data-answer="B">D) 32 bits</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+
+                <div class="question-card">
+                    <p class="text-lg font-medium">9. Which is the smallest unit of memory?<br>मेमोरी की सबसे छोटी इकाई कौन सी है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) Bit</li>
+                        <li class="option" data-answer="A">B) Byte</li>
+                        <li class="option" data-answer="A">C) Nibble</li>
+                        <li class="option" data-answer="A">D) KB</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+
+                <div class="question-card">
+                    <p class="text-lg font-medium">10. The device which displays information —<br>जो डिवाइस सूचना प्रदर्शित करता है —</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="C">A) Mouse</li>
+                        <li class="option" data-answer="C">B) Printer</li>
+                        <li class="option" data-answer="C">C) Monitor</li>
+                        <li class="option" data-answer="C">D) Scanner</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+
+                <div class="question-card">
+                    <p class="text-lg font-medium">11. Hard disk is —<br>हार्ड डिस्क क्या है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="C">A) Input device</li>
+                        <li class="option" data-answer="C">B) Output device</li>
+                        <li class="option" data-answer="C">C) Storage device</li>
+                        <li class="option" data-answer="C">D) Processing device</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+
+                <div class="question-card">
+                    <p class="text-lg font-medium">12. Which key is used to delete characters to the right of cursor?<br>कर्सर के दाईं ओर के अक्षर मिटाने के लिए कौन सी कुंजी प्रयोग होती है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="B">A) Backspace</li>
+                        <li class="option" data-answer="B">B) Delete</li>
+                        <li class="option" data-answer="B">C) End</li>
+                        <li class="option" data-answer="B">D) Shift</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+
+                <div class="question-card">
+                    <p class="text-lg font-medium">13. The term “booting” refers to —<br>"Booting" शब्द का अर्थ है —</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="B">A) Installing a program</li>
+                        <li class="option" data-answer="B">B) Starting a computer</li>
+                        <li class="option" data-answer="B">C) Shutting down computer</li>
+                        <li class="option" data-answer="B">D) Restarting printer</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+
+                <div class="question-card">
+                    <p class="text-lg font-medium">14. Software is —<br>सॉफ्टवेयर क्या है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="B">A) Tangible</li>
+                        <li class="option" data-answer="B">B) Intangible</li>
+                        <li class="option" data-answer="B">C) Mechanical</li>
+                        <li class="option" data-answer="B">D) Peripheral</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+
+                <div class="question-card">
+                    <p class="text-lg font-medium">15. Which of the following is not hardware?<br>निम्न में से कौन हार्डवेयर नहीं है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="D">A) Mouse</li>
+                        <li class="option" data-answer="D">B) CPU</li>
+                        <li class="option" data-answer="D">C) Monitor</li>
+                        <li class="option" data-answer="D">D) Windows</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+
+                <div class="question-card">
+                    <p class="text-lg font-medium">16. The physical parts of a computer are called —<br>कंप्यूटर के भौतिक भाग कहलाते हैं —</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="B">A) Software</li>
+                        <li class="option" data-answer="B">B) Hardware</li>
+                        <li class="option" data-answer="B">C) Data</li>
+                        <li class="option" data-answer="B">D) Information</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+
+                <div class="question-card">
+                    <p class="text-lg font-medium">17. Which of the following is an example of system software?<br>निम्न में से कौन सिस्टम सॉफ्टवेयर है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="B">A) MS Word</li>
+                        <li class="option" data-answer="B">B) Operating System</li>
+                        <li class="option" data-answer="B">C) Tally</li>
+                        <li class="option" data-answer="B">D) Photoshop</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+
+                <div class="question-card">
+                    <p class="text-lg font-medium">18. Which is the brain of the computer system?<br>कंप्यूटर सिस्टम का मस्तिष्क कौन है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="B">A) ALU</li>
+                        <li class="option" data-answer="B">B) CPU</li>
+                        <li class="option" data-answer="B">C) Memory</li>
+                        <li class="option" data-answer="B">D) Monitor</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+
+                <div class="question-card">
+                    <p class="text-lg font-medium">19. The full form of ALU is —<br>ALU का पूरा नाम है —</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) Arithmetic Logic Unit</li>
+                        <li class="option" data-answer="A">B) Algorithm Logic Unit</li>
+                        <li class="option" data-answer="A">C) Arithmetic Local Unit</li>
+                        <li class="option" data-answer="A">D) None</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+
+                <div class="question-card">
+                    <p class="text-lg font-medium">20. Data means —<br>Data का मतलब है —</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) Raw facts and figures</li>
+                        <li class="option" data-answer="A">B) Processed facts</li>
+                        <li class="option" data-answer="A">C) Logical output</li>
+                        <li class="option" data-answer="A">D) None</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+
+                <div class="question-card">
+                    <p class="text-lg font-medium">21. Information means —<br>Information का अर्थ है —</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="B">A) Raw facts</li>
+                        <li class="option" data-answer="B">B) Processed data</li>
+                        <li class="option" data-answer="B">C) Input</li>
+                        <li class="option" data-answer="B">D) Output</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+
+                <div class="question-card">
+                    <p class="text-lg font-medium">22. Which is not a type of computer?<br>कौन सा कंप्यूटर का प्रकार नहीं है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="D">A) Analog</li>
+                        <li class="option" data-answer="D">B) Hybrid</li>
+                        <li class="option" data-answer="D">C) Digital</li>
+                        <li class="option" data-answer="D">D) Smartwatch</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+
+                <div class="question-card">
+                    <p class="text-lg font-medium">23. The first mechanical computer was designed by —<br>पहला यांत्रिक कंप्यूटर किसने बनाया?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) Charles Babbage</li>
+                        <li class="option" data-answer="A">B) Alan Turing</li>
+                        <li class="option" data-answer="A">C) John Von Neumann</li>
+                        <li class="option" data-answer="A">D) Bill Gates</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+
+                <div class="question-card">
+                    <p class="text-lg font-medium">24. Which device is used to convert hard copy into soft copy?<br>हार्ड कॉपी को सॉफ्ट कॉपी में बदलने के लिए कौन सा उपकरण प्रयोग होता है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="B">A) Printer</li>
+                        <li class="option" data-answer="B">B) Scanner</li>
+                        <li class="option" data-answer="B">C) Plotter</li>
+                        <li class="option" data-answer="B">D) Projector</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+
+                <div class="question-card">
+                    <p class="text-lg font-medium">25. The operating system acts as —<br>ऑपरेटिंग सिस्टम किस रूप में कार्य करता है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="B">A) User</li>
+                        <li class="option" data-answer="B">B) Interface</li>
+                        <li class="option" data-answer="B">C) Hardware</li>
+                        <li class="option" data-answer="B">D) Data</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+
+                <div class="question-card">
+                    <p class="text-lg font-medium">26. The first generation computers used —<br>पहली पीढ़ी के कंप्यूटरों में क्या प्रयोग हुआ?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="B">A) Transistor</li>
+                        <li class="option" data-answer="B">B) Vacuum tube</li>
+                        <li class="option" data-answer="B">C) IC chip</li>
+                        <li class="option" data-answer="B">D) Microprocessor</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+
+                <div class="question-card">
+                    <p class="text-lg font-medium">27. Which is the main memory of computer?<br>कंप्यूटर की मुख्य मेमोरी कौन सी है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="C">A) Hard disk</li>
+                        <li class="option" data-answer="C">B) ROM</li>
+                        <li class="option" data-answer="C">C) RAM</li>
+                        <li class="option" data-answer="C">D) CD</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+
+                <div class="question-card">
+                    <p class="text-lg font-medium">28. The speed of CPU is measured in —<br>CPU की गति किसमें मापी जाती है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="C">A) Bits</li>
+                        <li class="option" data-answer="C">B) Bytes</li>
+                        <li class="option" data-answer="C">C) Hertz</li>
+                        <li class="option" data-answer="C">D) RPM</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+
+                <div class="question-card">
+                    <p class="text-lg font-medium">29. Which is the main component of computer?<br>कंप्यूटर का मुख्य घटक कौन है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) CPU</li>
+                        <li class="option" data-answer="A">B) Mouse</li>
+                        <li class="option" data-answer="A">C) Keyboard</li>
+                        <li class="option" data-answer="A">D) Printer</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+
+                <div class="question-card">
+                    <p class="text-lg font-medium">30. Which key is used to move to the next line in a document?<br>दस्तावेज़ में अगली पंक्ति पर जाने के लिए कौन सी कुंजी प्रयोग होती है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="B">A) Tab</li>
+                        <li class="option" data-answer="B">B) Enter</li>
+                        <li class="option" data-answer="B">C) Shift</li>
+                        <li class="option" data-answer="B">D) Ctrl</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+
+                <div class="question-card">
+                    <p class="text-lg font-medium">31. Binary system uses —<br>बाइनरी प्रणाली में प्रयोग होता है —</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) 0 and 1</li>
+                        <li class="option" data-answer="A">B) 1 and 2</li>
+                        <li class="option" data-answer="A">C) 1 and 3</li>
+                        <li class="option" data-answer="A">D) 0 and 9</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+
+                <div class="question-card">
+                    <p class="text-lg font-medium">32. Full form of BIOS —<br>BIOS का पूरा नाम —</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) Basic Input Output System</li>
+                        <li class="option" data-answer="A">B) Binary Integrated Operating System</li>
+                        <li class="option" data-answer="A">C) Basic Internal Output Source</li>
+                        <li class="option" data-answer="A">D) None</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+
+                <div class="question-card">
+                    <p class="text-lg font-medium">33. One Kilobyte (KB) = ?<br>एक किलोबाइट = ?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="B">A) 100 bytes</li>
+                        <li class="option" data-answer="B">B) 1024 bytes</li>
+                        <li class="option" data-answer="B">C) 512 bytes</li>
+                        <li class="option" data-answer="B">D) 2048 bytes</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+
+                <div class="question-card">
+                    <p class="text-lg font-medium">34. Which is not an example of output device?<br>निम्न में से कौन आउटपुट डिवाइस नहीं है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="D">A) Monitor</li>
+                        <li class="option" data-answer="D">B) Printer</li>
+                        <li class="option" data-answer="D">C) Speaker</li>
+                        <li class="option" data-answer="D">D) Keyboard</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+
+                <div class="question-card">
+                    <p class="text-lg font-medium">35. Which part controls all operations of computer?<br>कंप्यूटर के सभी कार्यों को कौन नियंत्रित करता है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="B">A) ALU</li>
+                        <li class="option" data-answer="B">B) CU</li>
+                        <li class="option" data-answer="B">C) MU</li>
+                        <li class="option" data-answer="B">D) Monitor</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+
+                <div class="question-card">
+                    <p class="text-lg font-medium">36. Which of the following is secondary memory?<br>निम्न में से कौन द्वितीयक मेमोरी है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="C">A) RAM</li>
+                        <li class="option" data-answer="C">B) ROM</li>
+                        <li class="option" data-answer="C">C) Hard Disk</li>
+                        <li class="option" data-answer="C">D) Register</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+
+                <div class="question-card">
+                    <p class="text-lg font-medium">37. GUI stands for —<br>GUI का पूरा नाम —</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) Graphic User Interface</li>
+                        <li class="option" data-answer="A">B) Graphical Unit Interface</li>
+                        <li class="option" data-answer="A">C) General User Interface</li>
+                        <li class="option" data-answer="A">D) None</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+
+                <div class="question-card">
+                    <p class="text-lg font-medium">38. The first supercomputer of India is —<br>भारत का पहला सुपर कंप्यूटर कौन सा है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) PARAM 8000</li>
+                        <li class="option" data-answer="A">B) PARAM 10000</li>
+                        <li class="option" data-answer="A">C) EKA</li>
+                        <li class="option" data-answer="A">D) Shakti</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+
+                <div class="question-card">
+                    <p class="text-lg font-medium">39. The binary equivalent of decimal 5 is —<br>दशमलव 5 का बाइनरी रूप —</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) 101</li>
+                        <li class="option" data-answer="A">B) 111</li>
+                        <li class="option" data-answer="A">C) 110</li>
+                        <li class="option" data-answer="A">D) 100</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+
+                <div class="question-card">
+                    <p class="text-lg font-medium">40. 1 GB = ?<br>1 गीगाबाइट = ?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) 1024 MB</li>
+                        <li class="option" data-answer="A">B) 1000 MB</li>
+                        <li class="option" data-answer="A">C) 512 MB</li>
+                        <li class="option" data-answer="A">D) 2048 MB</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+
+                <div class="question-card">
+                    <p class="text-lg font-medium">41. MICR is used in —<br>MICR का उपयोग कहां होता है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) Bank</li>
+                        <li class="option" data-answer="A">B) Hospital</li>
+                        <li class="option" data-answer="A">C) Library</li>
+                        <li class="option" data-answer="A">D) Railway</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+
+                <div class="question-card">
+                    <p class="text-lg font-medium">42. The term ‘bit’ stands for —<br>‘bit’ शब्द का अर्थ —</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) Binary digit</li>
+                        <li class="option" data-answer="A">B) Binary term</li>
+                        <li class="option" data-answer="A">C) Binary code</li>
+                        <li class="option" data-answer="A">D) None</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+
+                <div class="question-card">
+                    <p class="text-lg font-medium">43. Which computer is used for scientific research?<br>वैज्ञानिक अनुसंधान में कौन सा कंप्यूटर प्रयोग होता है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="C">A) Mini computer</li>
+                        <li class="option" data-answer="C">B) Micro computer</li>
+                        <li class="option" data-answer="C">C) Super computer</li>
+                        <li class="option" data-answer="C">D) Mainframe</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+
+                <div class="question-card">
+                    <p class="text-lg font-medium">44. The input device used for drawing pictures —<br>चित्र बनाने के लिए प्रयुक्त इनपुट डिवाइस —</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="C">A) Mouse</li>
+                        <li class="option" data-answer="C">B) Scanner</li>
+                        <li class="option" data-answer="C">C) Plotter</li>
+                        <li class="option" data-answer="C">D) Joystick</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+
+                <div class="question-card">
+                    <p class="text-lg font-medium">45. Which unit performs calculations and comparisons?<br>गणना और तुलना कौन करता है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="B">A) CU</li>
+                        <li class="option" data-answer="B">B) ALU</li>
+                        <li class="option" data-answer="B">C) MU</li>
+                        <li class="option" data-answer="B">D) Input Unit</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+
+                <div class="question-card">
+                    <p class="text-lg font-medium">46. What is full form of CD-ROM?<br>CD-ROM का पूरा नाम क्या है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) Compact Disk Read Only Memory</li>
+                        <li class="option" data-answer="A">B) Computer Disk Read Output Memory</li>
+                        <li class="option" data-answer="A">C) Compact Data Read Output Memory</li>
+                        <li class="option" data-answer="A">D) None</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+
+                <div class="question-card">
+                    <p class="text-lg font-medium">47. A program which translates high level language into machine code —<br>जो प्रोग्राम हाई लेवल लैंग्वेज को मशीन कोड में बदलता है —</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) Compiler</li>
+                        <li class="option" data-answer="A">B) Assembler</li>
+                        <li class="option" data-answer="A">C) Translator</li>
+                        <li class="option" data-answer="A">D) Interpreter</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+
+                <div class="question-card">
+                    <p class="text-lg font-medium">48. Which is not a computer language?<br>कौन सी कंप्यूटर भाषा नहीं है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="D">A) BASIC</li>
+                        <li class="option" data-answer="D">B) FORTRAN</li>
+                        <li class="option" data-answer="D">C) C++</li>
+                        <li class="option" data-answer="D">D) MS Paint</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+
+                <div class="question-card">
+                    <p class="text-lg font-medium">49. The first computer mouse was made of —<br>पहला कंप्यूटर माउस किससे बना था?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="C">A) Plastic</li>
+                        <li class="option" data-answer="C">B) Metal</li>
+                        <li class="option" data-answer="C">C) Wood</li>
+                        <li class="option" data-answer="C">D) Steel</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+
+                <div class="question-card">
+                    <p class="text-lg font-medium">50. Which is not a storage device?<br>कौन सी स्टोरेज डिवाइस नहीं है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="C">A) Hard Disk</li>
+                        <li class="option" data-answer="C">B) Pen Drive</li>
+                        <li class="option" data-answer="C">C) Monitor</li>
+                        <li class="option" data-answer="C">D) CD-ROM</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+
+                <div class="question-card">
+                    <p class="text-lg font-medium">51. Which among the following is a pointing device?<br>निम्न में से कौन पॉइंटिंग डिवाइस है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="B">A) Keyboard</li>
+                        <li class="option" data-answer="B">B) Mouse</li>
+                        <li class="option" data-answer="B">C) Printer</li>
+                        <li class="option" data-answer="B">D) Monitor</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+
+                <div class="question-card">
+                    <p class="text-lg font-medium">52. The main function of input unit is —<br>इनपुट यूनिट का मुख्य कार्य क्या है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="C">A) Displaying data</li>
+                        <li class="option" data-answer="C">B) Processing data</li>
+                        <li class="option" data-answer="C">C) Feeding data</li>
+                        <li class="option" data-answer="C">D) Printing data</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+
+                <div class="question-card">
+                    <p class="text-lg font-medium">53. Which device is used to play audio output?<br>ऑडियो आउटपुट के लिए कौन सी डिवाइस प्रयोग होती है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="B">A) Microphone</li>
+                        <li class="option" data-answer="B">B) Speaker</li>
+                        <li class="option" data-answer="B">C) Mouse</li>
+                        <li class="option" data-answer="B">D) Keyboard</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+
+                <div class="question-card">
+                    <p class="text-lg font-medium">54. The term "Hardware" refers to —<br>"हार्डवेयर" शब्द का अर्थ है —</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) Physical parts</li>
+                        <li class="option" data-answer="A">B) Logical parts</li>
+                        <li class="option" data-answer="A">C) Software</li>
+                        <li class="option" data-answer="A">D) Programs</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+
+                <div class="question-card">
+                    <p class="text-lg font-medium">55. Which computer generation used ICs?<br>कौन सी कंप्यूटर पीढ़ी में IC का प्रयोग हुआ?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="C">A) First</li>
+                        <li class="option" data-answer="C">B) Second</li>
+                        <li class="option" data-answer="C">C) Third</li>
+                        <li class="option" data-answer="C">D) Fourth</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+
+                <div class="question-card">
+                    <p class="text-lg font-medium">56. The process of copying data from CD to computer is called —<br>CD से कंप्यूटर में डेटा कॉपी करने की प्रक्रिया क्या कहलाती है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="C">A) Uploading</li>
+                        <li class="option" data-answer="C">B) Downloading</li>
+                        <li class="option" data-answer="C">C) Ripping</li>
+                        <li class="option" data-answer="C">D) Pasting</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+
+                <div class="question-card">
+                    <p class="text-lg font-medium">57. The unit that performs logic operations —<br>जो यूनिट लॉजिकल ऑपरेशन करती है —</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="B">A) CU</li>
+                        <li class="option" data-answer="B">B) ALU</li>
+                        <li class="option" data-answer="B">C) MU</li>
+                        <li class="option" data-answer="B">D) CPU</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+
+                <div class="question-card">
+                    <p class="text-lg font-medium">58. The speed of computer is measured in —<br>कंप्यूटर की गति किसमें मापी जाती है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="B">A) RPM</li>
+                        <li class="option" data-answer="B">B) Hertz</li>
+                        <li class="option" data-answer="B">C) BPM</li>
+                        <li class="option" data-answer="B">D) Volt</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+
+                <div class="question-card">
+                    <p class="text-lg font-medium">59. The full form of ROM —<br>ROM का पूरा नाम —</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) Read Only Memory</li>
+                        <li class="option" data-answer="A">B) Read Open Memory</li>
+                        <li class="option" data-answer="A">C) Random Only Memory</li>
+                        <li class="option" data-answer="A">D) None</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+
+                <div class="question-card">
+                    <p class="text-lg font-medium">60. Which of the following is not a type of computer memory?<br>निम्न में से कौन कंप्यूटर मेमोरी का प्रकार नहीं है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="C">A) RAM</li>
+                        <li class="option" data-answer="C">B) Cache</li>
+                        <li class="option" data-answer="C">C) Hard Disk</li>
+                        <li class="option" data-answer="C">D) ROM</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+
+                <div class="question-card">
+                    <p class="text-lg font-medium">61. Computer programs are also called —<br>कंप्यूटर प्रोग्राम को क्या कहते हैं?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="B">A) Data</li>
+                        <li class="option" data-answer="B">B) Software</li>
+                        <li class="option" data-answer="B">C) Hardware</li>
+                        <li class="option" data-answer="B">D) Input</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+
+                <div class="question-card">
+                    <p class="text-lg font-medium">62. The device that converts digital signals to analog —<br>जो डिवाइस डिजिटल सिग्नल को एनालॉग में बदलती है —</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) Modem</li>
+                        <li class="option" data-answer="A">B) Router</li>
+                        <li class="option" data-answer="A">C) Switch</li>
+                        <li class="option" data-answer="A">D) Amplifier</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+
+                <div class="question-card">
+                    <p class="text-lg font-medium">63. A combination of hardware and software is called —<br>हार्डवेयर और सॉफ्टवेयर का संयोजन कहलाता है —</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) System</li>
+                        <li class="option" data-answer="A">B) Program</li>
+                        <li class="option" data-answer="A">C) Data</li>
+                        <li class="option" data-answer="A">D) Code</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+
+                <div class="question-card">
+                    <p class="text-lg font-medium">64. Which is the main circuit board of computer?<br>कंप्यूटर का मुख्य सर्किट बोर्ड कौन है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="B">A) CPU</li>
+                        <li class="option" data-answer="B">B) Motherboard</li>
+                        <li class="option" data-answer="B">C) RAM</li>
+                        <li class="option" data-answer="B">D) ROM</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+
+                <div class="question-card">
+                    <p class="text-lg font-medium">65. Which among the following is not an operating system?<br>निम्न में से कौन ऑपरेटिंग सिस्टम नहीं है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="D">A) Windows</li>
+                        <li class="option" data-answer="D">B) Linux</li>
+                        <li class="option" data-answer="D">C) Android</li>
+                        <li class="option" data-answer="D">D) MS Excel</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+
+                <div class="question-card">
+                    <p class="text-lg font-medium">66. Full form of URL —<br>URL का पूरा नाम —</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) Uniform Resource Locator</li>
+                        <li class="option" data-answer="A">B) Universal Resource Locator</li>
+                        <li class="option" data-answer="A">C) Uniform Reference Link</li>
+                        <li class="option" data-answer="A">D) Universal Record Link</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+
+                <div class="question-card">
+                    <p class="text-lg font-medium">67. Which memory is permanent?<br>कौन सी मेमोरी स्थायी होती है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) ROM</li>
+                        <li class="option" data-answer="A">B) RAM</li>
+                        <li class="option" data-answer="A">C) Cache</li>
+                        <li class="option" data-answer="A">D) Register</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+
+                <div class="question-card">
+                    <p class="text-lg font-medium">68. The smallest unit of data is —<br>डेटा की सबसे छोटी इकाई —</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="B">A) Byte</li>
+                        <li class="option" data-answer="B">B) Bit</li>
+                        <li class="option" data-answer="B">C) Nibble</li>
+                        <li class="option" data-answer="B">D) KB</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+
+                <div class="question-card">
+                    <p class="text-lg font-medium">69. Which is a primary memory?<br>कौन सी प्राथमिक मेमोरी है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="C">A) Hard Disk</li>
+                        <li class="option" data-answer="C">B) CD-ROM</li>
+                        <li class="option" data-answer="C">C) RAM</li>
+                        <li class="option" data-answer="C">D) Pen Drive</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+
+                <div class="question-card">
+                    <p class="text-lg font-medium">70. Who is known as the Father of Computer?<br>कंप्यूटर के जनक कौन हैं?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="B">A) Alan Turing</li>
+                        <li class="option" data-answer="B">B) Charles Babbage</li>
+                        <li class="option" data-answer="B">C) Bill Gates</li>
+                        <li class="option" data-answer="B">D) Steve Jobs</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+
+                <div class="question-card">
+                    <p class="text-lg font-medium">71. Which of the following is a storage device?<br>निम्न में से कौन स्टोरेज डिवाइस है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="C">A) Keyboard</li>
+                        <li class="option" data-answer="C">B) Mouse</li>
+                        <li class="option" data-answer="C">C) Hard Disk</li>
+                        <li class="option" data-answer="C">D) Monitor</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+
+                <div class="question-card">
+                    <p class="text-lg font-medium">72. A computer on a network is called —<br>नेटवर्क पर स्थित कंप्यूटर को क्या कहते हैं?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) Host</li>
+                        <li class="option" data-answer="A">B) Client</li>
+                        <li class="option" data-answer="A">C) Node</li>
+                        <li class="option" data-answer="A">D) Router</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+
+                <div class="question-card">
+                    <p class="text-lg font-medium">73. Which one is a permanent memory?<br>कौन सी मेमोरी स्थायी होती है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) ROM</li>
+                        <li class="option" data-answer="A">B) RAM</li>
+                        <li class="option" data-answer="A">C) Cache</li>
+                        <li class="option" data-answer="A">D) Register</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+
+                <div class="question-card">
+                    <p class="text-lg font-medium">74. Which computer language uses 0 and 1?<br>कौन सी भाषा 0 और 1 का उपयोग करती है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) Machine Language</li>
+                        <li class="option" data-answer="A">B) Assembly Language</li>
+                        <li class="option" data-answer="A">C) High Level Language</li>
+                        <li class="option" data-answer="A">D) C Language</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+
+                <div class="question-card">
+                    <p class="text-lg font-medium">75. Which of the following is a supercomputer made in India?<br>भारत में निर्मित सुपरकंप्यूटर कौन है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="B">A) CRAY</li>
+                        <li class="option" data-answer="B">B) PARAM</li>
+                        <li class="option" data-answer="B">C) EDSAC</li>
+                        <li class="option" data-answer="B">D) IBM Blue Gene</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+
+                <div class="question-card">
+                    <p class="text-lg font-medium">76. BIOS is stored in —<br>BIOS कहाँ संग्रहित रहता है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) ROM</li>
+                        <li class="option" data-answer="A">B) RAM</li>
+                        <li class="option" data-answer="A">C) Hard Disk</li>
+                        <li class="option" data-answer="A">D) Cache</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+
+                <div class="question-card">
+                    <p class="text-lg font-medium">77. 1 Terabyte = ?<br>1 टेराबाइट = ?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="B">A) 1024 MB</li>
+                        <li class="option" data-answer="B">B) 1024 GB</li>
+                        <li class="option" data-answer="B">C) 2048 GB</li>
+                        <li class="option" data-answer="B">D) 512 GB</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+
+                <div class="question-card">
+                    <p class="text-lg font-medium">78. A collection of 4 bits is called —<br>4 बिट का समूह कहलाता है —</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="B">A) Byte</li>
+                        <li class="option" data-answer="B">B) Nibble</li>
+                        <li class="option" data-answer="B">C) Word</li>
+                        <li class="option" data-answer="B">D) Bit</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+
+                <div class="question-card">
+                    <p class="text-lg font-medium">79. Which among the following is not a type of software?<br>निम्न में से कौन सॉफ्टवेयर का प्रकार नहीं है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="D">A) System Software</li>
+                        <li class="option" data-answer="D">B) Application Software</li>
+                        <li class="option" data-answer="D">C) Utility Software</li>
+                        <li class="option" data-answer="D">D) Computerware</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+
+                <div class="question-card">
+                    <p class="text-lg font-medium">80. Which device is used to connect computers in a network?<br>नेटवर्क में कंप्यूटर को जोड़ने के लिए कौन सी डिवाइस प्रयोग होती है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="B">A) Modem</li>
+                        <li class="option" data-answer="B">B) Router</li>
+                        <li class="option" data-answer="B">C) Plotter</li>
+                        <li class="option" data-answer="B">D) UPS</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+
+                <div class="question-card">
+                    <p class="text-lg font-medium">81. What is the full form of ASCII?<br>ASCII का पूरा नाम —</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) American Standard Code for Information Interchange</li>
+                        <li class="option" data-answer="A">B) Advanced Standard Code for Internal Integration</li>
+                        <li class="option" data-answer="A">C) American Simple Code for Internet Interface</li>
+                        <li class="option" data-answer="A">D) None</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+
+                <div class="question-card">
+                    <p class="text-lg font-medium">82. Which of the following is not a programming language?<br>निम्न में से कौन प्रोग्रामिंग भाषा नहीं है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="C">A) BASIC</li>
+                        <li class="option" data-answer="C">B) COBOL</li>
+                        <li class="option" data-answer="C">C) Oracle</li>
+                        <li class="option" data-answer="C">D) Python</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+
+                <div class="question-card">
+                    <p class="text-lg font-medium">83. The term "bit" is derived from —<br>"bit" शब्द किससे लिया गया है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) Binary digit</li>
+                        <li class="option" data-answer="A">B) Binary term</li>
+                        <li class="option" data-answer="A">C) Bitwise</li>
+                        <li class="option" data-answer="A">D) None</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+
+                <div class="question-card">
+                    <p class="text-lg font-medium">84. Which storage is temporary?<br>कौन सा स्टोरेज अस्थायी है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="B">A) ROM</li>
+                        <li class="option" data-answer="B">B) RAM</li>
+                        <li class="option" data-answer="B">C) Hard Disk</li>
+                        <li class="option" data-answer="B">D) CD-ROM</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+
+                <div class="question-card">
+                    <p class="text-lg font-medium">85. A computer that serves other computers is called —<br>जो कंप्यूटर अन्य कंप्यूटरों को सेवा देता है उसे कहते हैं —</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) Server</li>
+                        <li class="option" data-answer="A">B) Client</li>
+                        <li class="option" data-answer="A">C) Host</li>
+                        <li class="option" data-answer="A">D) Node</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+
+                <div class="question-card">
+                    <p class="text-lg font-medium">86. Which computer generation used Microprocessor?<br>कौन सी पीढ़ी में माइक्रोप्रोसेसर का प्रयोग हुआ?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="C">A) First</li>
+                        <li class="option" data-answer="C">B) Second</li>
+                        <li class="option" data-answer="C">C) Fourth</li>
+                        <li class="option" data-answer="C">D) Fifth</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+
+                <div class="question-card">
+                    <p class="text-lg font-medium">87. Who invented the Analytical Engine?<br>Analytical Engine किसने बनाया?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) Charles Babbage</li>
+                        <li class="option" data-answer="A">B) Ada Lovelace</li>
+                        <li class="option" data-answer="A">C) John Napier</li>
+                        <li class="option" data-answer="A">D) Pascal</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+
+                <div class="question-card">
+                    <p class="text-lg font-medium">88. A computer that fits on a desk is called —<br>जो कंप्यूटर डेस्क पर रखा जा सके, उसे कहते हैं —</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="B">A) Laptop</li>
+                        <li class="option" data-answer="B">B) Desktop</li>
+                        <li class="option" data-answer="B">C) Mainframe</li>
+                        <li class="option" data-answer="B">D) Notebook</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+
+                <div class="question-card">
+                    <p class="text-lg font-medium">89. Which key is used to refresh a webpage?<br>वेबपेज को रिफ्रेश करने के लिए कौन सी कुंजी प्रयोग होती है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) F5</li>
+                        <li class="option" data-answer="A">B) F2</li>
+                        <li class="option" data-answer="A">C) F10</li>
+                        <li class="option" data-answer="A">D) Esc</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+
+                <div class="question-card">
+                    <p class="text-lg font-medium">90. A light pen is used for —<br>लाइट पेन का उपयोग किसके लिए होता है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="B">A) Printing</li>
+                        <li class="option" data-answer="B">B) Drawing on screen</li>
+                        <li class="option" data-answer="B">C) Scanning</li>
+                        <li class="option" data-answer="B">D) Copying</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+
+                <div class="question-card">
+                    <p class="text-lg font-medium">91. The device used to store data permanently —<br>जो डिवाइस डेटा को स्थायी रूप से स्टोर करती है —</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) Hard Disk</li>
+                        <li class="option" data-answer="A">B) RAM</li>
+                        <li class="option" data-answer="A">C) Cache</li>
+                        <li class="option" data-answer="A">D) Register</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+
+                <div class="question-card">
+                    <p class="text-lg font-medium">92. The process of dividing data into small packets is called —<br>डेटा को छोटे पैकेट्स में बांटने की प्रक्रिया —</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) Packet Switching</li>
+                        <li class="option" data-answer="A">B) Circuit Switching</li>
+                        <li class="option" data-answer="A">C) Routing</li>
+                        <li class="option" data-answer="A">D) Data Flow</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+
+                <div class="question-card">
+                    <p class="text-lg font-medium">93. Which is the smallest computer?<br>सबसे छोटा कंप्यूटर कौन है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) Micro Computer</li>
+                        <li class="option" data-answer="A">B) Mini Computer</li>
+                        <li class="option" data-answer="A">C) Mainframe</li>
+                        <li class="option" data-answer="A">D) Super Computer</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+
+                <div class="question-card">
+                    <p class="text-lg font-medium">94. The unit of measurement for printer speed —<br>प्रिंटर की गति मापने की इकाई —</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) PPM</li>
+                        <li class="option" data-answer="A">B) BPS</li>
+                        <li class="option" data-answer="A">C) DPI</li>
+                        <li class="option" data-answer="A">D) CPM</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+
+                <div class="question-card">
+                    <p class="text-lg font-medium">95. The device that connects computer to internet —<br>कंप्यूटर को इंटरनेट से जोड़ने वाली डिवाइस —</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) Modem</li>
+                        <li class="option" data-answer="A">B) Router</li>
+                        <li class="option" data-answer="A">C) Hub</li>
+                        <li class="option" data-answer="A">D) Switch</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+
+                <div class="question-card">
+                    <p class="text-lg font-medium">96. Which computer part performs calculation and comparison?<br>कौन सा भाग गणना और तुलना करता है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) ALU</li>
+                        <li class="option" data-answer="A">B) CU</li>
+                        <li class="option" data-answer="A">C) MU</li>
+                        <li class="option" data-answer="A">D) Memory</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+
+                <div class="question-card">
+                    <p class="text-lg font-medium">97. Which component temporarily stores data and programs?<br>जो घटक अस्थायी रूप से डेटा और प्रोग्राम रखता है —</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) RAM</li>
+                        <li class="option" data-answer="A">B) ROM</li>
+                        <li class="option" data-answer="A">C) Cache</li>
+                        <li class="option" data-answer="A">D) Hard Disk</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+
+                <div class="question-card">
+                    <p class="text-lg font-medium">98. The first electronic computer was named —<br>पहला इलेक्ट्रॉनिक कंप्यूटर कहलाया —</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) ENIAC</li>
+                        <li class="option" data-answer="A">B) UNIVAC</li>
+                        <li class="option" data-answer="A">C) EDSAC</li>
+                        <li class="option" data-answer="A">D) EDVAC</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+
+                <div class="question-card">
+                    <p class="text-lg font-medium">99. Which key is used to open Task Manager?<br>टास्क मैनेजर खोलने की कुंजी —</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) Ctrl + Shift + Esc</li>
+                        <li class="option" data-answer="A">B) Alt + F4</li>
+                        <li class="option" data-answer="A">C) Ctrl + C</li>
+                        <li class="option" data-answer="A">D) Ctrl + Tab</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+
+                <div class="question-card">
+                    <p class="text-lg font-medium">100. Which one is a portable computer?<br>कौन सा पोर्टेबल कंप्यूटर है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="B">A) Desktop</li>
+                        <li class="option" data-answer="B">B) Laptop</li>
+                        <li class="option" data-answer="B">C) Mainframe</li>
+                        <li class="option" data-answer="B">D) Server</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+                <div class="question-card">
+                    <p class="text-lg font-medium">101. Which computer is mainly used in banks?<br>कंप्यूटर मुख्य रूप से बैंकों में किसका उपयोग होता है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) Mainframe</li>
+                        <li class="option" data-answer="A">B) Microcomputer</li>
+                        <li class="option" data-answer="A">C) Laptop</li>
+                        <li class="option" data-answer="A">D) Supercomputer</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+
+                <div class="question-card">
+                    <p class="text-lg font-medium">102. Which key is used to copy selected text?<br>चयनित टेक्स्ट को कॉपी करने के लिए कौन सी कुंजी प्रयोग होती है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="B">A) Ctrl + V</li>
+                        <li class="option" data-answer="B">B) Ctrl + C</li>
+                        <li class="option" data-answer="B">C) Ctrl + X</li>
+                        <li class="option" data-answer="B">D) Alt + C</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+
+                <div class="question-card">
+                    <p class="text-lg font-medium">103. Which key is used to paste copied text?<br>कॉपी किए गए टेक्स्ट को पेस्ट करने के लिए कौन सी कुंजी प्रयोग होती है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="B">A) Ctrl + P</li>
+                        <li class="option" data-answer="B">B) Ctrl + V</li>
+                        <li class="option" data-answer="B">C) Ctrl + X</li>
+                        <li class="option" data-answer="B">D) Alt + V</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+
+                <div class="question-card">
+                    <p class="text-lg font-medium">104. The process of turning on a computer is called —<br>कंप्यूटर को चालू करने की प्रक्रिया को क्या कहते हैं?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="B">A) Loading</li>
+                        <li class="option" data-answer="B">B) Booting</li>
+                        <li class="option" data-answer="B">C) Installing</li>
+                        <li class="option" data-answer="B">D) Formatting</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+
+                <div class="question-card">
+                    <p class="text-lg font-medium">105. Which device is used for scanning barcodes?<br>बारकोड स्कैन करने के लिए कौन सी डिवाइस प्रयोग होती है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="B">A) Printer</li>
+                        <li class="option" data-answer="B">B) Barcode Scanner</li>
+                        <li class="option" data-answer="B">C) Monitor</li>
+                        <li class="option" data-answer="B">D) Mouse</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+
+                <div class="question-card">
+                    <p class="text-lg font-medium">106. The full form of UPS is —<br>UPS का पूरा नाम क्या है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) Uninterruptible Power Supply</li>
+                        <li class="option" data-answer="A">B) Universal Power Source</li>
+                        <li class="option" data-answer="A">C) Unique Power Supply</li>
+                        <li class="option" data-answer="A">D) None</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+
+                <div class="question-card">
+                    <p class="text-lg font-medium">107. Which device is used to input voice in a computer?<br>कंप्यूटर में आवाज इनपुट करने के लिए कौन सी डिवाइस प्रयोग होती है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="B">A) Speaker</li>
+                        <li class="option" data-answer="B">B) Microphone</li>
+                        <li class="option" data-answer="B">C) Headphone</li>
+                        <li class="option" data-answer="B">D) Joystick</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+
+                <div class="question-card">
+                    <p class="text-lg font-medium">108. Which of the following is a high-level language?<br>निम्न में से कौन सी हाई-लेवल भाषा है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="C">A) Machine Language</li>
+                        <li class="option" data-answer="C">B) Assembly Language</li>
+                        <li class="option" data-answer="C">C) Python</li>
+                        <li class="option" data-answer="C">D) None</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+
+                <div class="question-card">
+                    <p class="text-lg font-medium">109. The term ‘byte’ refers to —<br>‘बाइट’ शब्द का अर्थ है —</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="B">A) 4 bits</li>
+                        <li class="option" data-answer="B">B) 8 bits</li>
+                        <li class="option" data-answer="B">C) 16 bits</li>
+                        <li class="option" data-answer="B">D) 32 bits</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+
+                <div class="question-card">
+                    <p class="text-lg font-medium">110. Which is the smallest storage unit?<br>सबसे छोटी स्टोरेज इकाई कौन सी है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="B">A) Byte</li>
+                        <li class="option" data-answer="B">B) Bit</li>
+                        <li class="option" data-answer="B">C) Nibble</li>
+                        <li class="option" data-answer="B">D) KB</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+
+                <div class="question-card">
+                    <p class="text-lg font-medium">111. Which component controls the communication between CPU and memory?<br>CPU और मेमोरी के बीच संचार को कौन नियंत्रित करता है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) Control Unit</li>
+                        <li class="option" data-answer="A">B) ALU</li>
+                        <li class="option" data-answer="A">C) Register</li>
+                        <li class="option" data-answer="A">D) Cache</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+
+                <div class="question-card">
+                    <p class="text-lg font-medium">112. The full form of HTTP is —<br>HTTP का पूरा नाम क्या है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) HyperText Transfer Protocol</li>
+                        <li class="option" data-answer="A">B) HyperText Transmission Protocol</li>
+                        <li class="option" data-answer="A">C) HighText Transfer Protocol</li>
+                        <li class="option" data-answer="A">D) None</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+
+                <div class="question-card">
+                    <p class="text-lg font-medium">113. Which device is used for gaming input?<br>गेमिंग इनपुट के लिए कौन सी डिवाइस प्रयोग होती है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="B">A) Mouse</li>
+                        <li class="option" data-answer="B">B) Joystick</li>
+                        <li class="option" data-answer="B">C) Scanner</li>
+                        <li class="option" data-answer="B">D) Printer</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+
+                <div class="question-card">
+                    <p class="text-lg font-medium">114. Which generation of computers used transistors?<br>कौन सी पीढ़ी के कंप्यूटरों में ट्रांजिस्टर का उपयोग हुआ?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="B">A) First</li>
+                        <li class="option" data-answer="B">B) Second</li>
+                        <li class="option" data-answer="B">C) Third</li>
+                        <li class="option" data-answer="B">D) Fourth</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+
+                <div class="question-card">
+                    <p class="text-lg font-medium">115. Which is not a type of computer network?<br>निम्न में से कौन कंप्यूटर नेटवर्क का प्रकार नहीं है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="D">A) LAN</li>
+                        <li class="option" data-answer="D">B) WAN</li>
+                        <li class="option" data-answer="D">C) MAN</li>
+                        <li class="option" data-answer="D">D) CPU</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+
+                <div class="question-card">
+                    <p class="text-lg font-medium">116. The full form of LAN is —<br>LAN का पूरा नाम क्या है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) Local Area Network</li>
+                        <li class="option" data-answer="A">B) Large Area Network</li>
+                        <li class="option" data-answer="A">C) Logical Area Network</li>
+                        <li class="option" data-answer="A">D) None</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+
+                <div class="question-card">
+                    <p class="text-lg font-medium">117. Which key is used to cut selected text?<br>चयनित टेक्स्ट को काटने के लिए कौन सी कुंजी प्रयोग होती है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="B">A) Ctrl + V</li>
+                        <li class="option" data-answer="B">B) Ctrl + X</li>
+                        <li class="option" data-answer="B">C) Ctrl + C</li>
+                        <li class="option" data-answer="B">D) Alt + X</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+
+                <div class="question-card">
+                    <p class="text-lg font-medium">118. The process of removing errors from a program is called —<br>प्रोग्राम से त्रुटियों को हटाने की प्रक्रिया को क्या कहते हैं?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="B">A) Compiling</li>
+                        <li class="option" data-answer="B">B) Debugging</li>
+                        <li class="option" data-answer="B">C) Executing</li>
+                        <li class="option" data-answer="B">D) Formatting</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+
+                <div class="question-card">
+                    <p class="text-lg font-medium">119. Which device is used to produce high-quality graphics?<br>उच्च गुणवत्ता वाले ग्राफिक्स उत्पन्न करने के लिए कौन सी डिवाइस प्रयोग होती है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="B">A) Printer</li>
+                        <li class="option" data-answer="B">B) Plotter</li>
+                        <li class="option" data-answer="B">C) Scanner</li>
+                        <li class="option" data-answer="B">D) Monitor</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+
+                <div class="question-card">
+                    <p class="text-lg font-medium">120. The full form of WAN is —<br>WAN का पूरा नाम क्या है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) Wide Area Network</li>
+                        <li class="option" data-answer="A">B) Wireless Area Network</li>
+                        <li class="option" data-answer="A">C) Web Area Network</li>
+                        <li class="option" data-answer="A">D) None</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+
+                <div class="question-card">
+                    <p class="text-lg font-medium">121. Which is used to protect a computer from viruses?<br>कंप्यूटर को वायरस से बचाने के लिए क्या प्रयोग होता है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="B">A) Firewall</li>
+                        <li class="option" data-answer="B">B) Antivirus</li>
+                        <li class="option" data-answer="B">C) Router</li>
+                        <li class="option" data-answer="B">D) Modem</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+
+                <div class="question-card">
+                    <p class="text-lg font-medium">122. The binary equivalent of decimal 10 is —<br>दशमलव 10 का बाइनरी रूप —</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="B">A) 1000</li>
+                        <li class="option" data-answer="B">B) 1010</li>
+                        <li class="option" data-answer="B">C) 1100</li>
+                        <li class="option" data-answer="B">D) 1110</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+
+                <div class="question-card">
+                    <p class="text-lg font-medium">123. Which of the following is a secondary storage device?<br>निम्न में से कौन सा द्वितीयक स्टोरेज डिवाइस है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="B">A) RAM</li>
+                        <li class="option" data-answer="B">B) Hard Disk</li>
+                        <li class="option" data-answer="B">C) Cache</li>
+                        <li class="option" data-answer="B">D) Register</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+
+                <div class="question-card">
+                    <p class="text-lg font-medium">124. The full form of RAM is —<br>RAM का पूरा नाम क्या है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) Random Access Memory</li>
+                        <li class="option" data-answer="A">B) Read Access Memory</li>
+                        <li class="option" data-answer="A">C) Rapid Access Memory</li>
+                        <li class="option" data-answer="A">D) None</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+
+                <div class="question-card">
+                    <p class="text-lg font-medium">125. Which device is used to print text and images?<br>टेक्स्ट और इमेज प्रिंट करने के लिए कौन सी डिवाइस प्रयोग होती है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="B">A) Scanner</li>
+                        <li class="option" data-answer="B">B) Printer</li>
+                        <li class="option" data-answer="B">C) Monitor</li>
+                        <li class="option" data-answer="B">D) Plotter</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+
+                <div class="question-card">
+                    <p class="text-lg font-medium">126. The term ‘debugging’ refers to —<br>‘डिबगिंग’ शब्द का अर्थ है —</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="B">A) Compiling a program</li>
+                        <li class="option" data-answer="B">B) Finding and fixing errors</li>
+                        <li class="option" data-answer="B">C) Running a program</li>
+                        <li class="option" data-answer="B">D) Writing a program</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+
+                <div class="question-card">
+                    <p class="text-lg font-medium">127. Which of the following is a volatile memory?<br>निम्न में से कौन सी अस्थायी मेमोरी है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="B">A) ROM</li>
+                        <li class="option" data-answer="B">B) RAM</li>
+                        <li class="option" data-answer="B">C) Hard Disk</li>
+                        <li class="option" data-answer="B">D) CD-ROM</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+
+                <div class="question-card">
+                    <p class="text-lg font-medium">128. Which key is used to save a file?<br>फाइल को सेव करने के लिए कौन सी कुंजी प्रयोग होती है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="B">A) Ctrl + C</li>
+                        <li class="option" data-answer="B">B) Ctrl + S</li>
+                        <li class="option" data-answer="B">C) Ctrl + V</li>
+                        <li class="option" data-answer="B">D) Ctrl + X</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+
+                <div class="question-card">
+                    <p class="text-lg font-medium">129. The full form of CPU is —<br>CPU का पूरा नाम क्या है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="B">A) Central Programming Unit</li>
+                        <li class="option" data-answer="B">B) Central Processing Unit</li>
+                        <li class="option" data-answer="B">C) Control Processing Unit</li>
+                        <li class="option" data-answer="B">D) None</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+
+                <div class="question-card">
+                    <p class="text-lg font-medium">130. Which device is used to connect multiple computers in a LAN?<br>LAN में कई कंप्यूटरों को जोड़ने के लिए कौन सी डिवाइस प्रयोग होती है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="B">A) Modem</li>
+                        <li class="option" data-answer="B">B) Switch</li>
+                        <li class="option" data-answer="B">C) Router</li>
+                        <li class="option" data-answer="B">D) Firewall</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+
+                <div class="question-card">
+                    <p class="text-lg font-medium">131. Which is the main output device of a computer?<br>कंप्यूटर का मुख्य आउटपुट डिवाइस कौन है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="B">A) Keyboard</li>
+                        <li class="option" data-answer="B">B) Monitor</li>
+                        <li class="option" data-answer="B">C) Mouse</li>
+                        <li class="option" data-answer="B">D) Scanner</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+
+                <div class="question-card">
+                    <p class="text-lg font-medium">132. The process of converting source code into machine code is called —<br>सोर्स कोड को मशीन कोड में बदलने की प्रक्रिया को क्या कहते हैं?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="B">A) Debugging</li>
+                        <li class="option" data-answer="B">B) Compilation</li>
+                        <li class="option" data-answer="B">C) Execution</li>
+                        <li class="option" data-answer="B">D) Interpretation</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+
+                <div class="question-card">
+                    <p class="text-lg font-medium">133. Which of the following is a system software?<br>निम्न में से कौन सा सिस्टम सॉफ्टवेयर है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="B">A) MS Word</li>
+                        <li class="option" data-answer="B">B) Windows</li>
+                        <li class="option" data-answer="B">C) Photoshop</li>
+                        <li class="option" data-answer="B">D) Tally</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+
+                <div class="question-card">
+                    <p class="text-lg font-medium">134. The full form of GUI is —<br>GUI का पूरा नाम क्या है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) Graphical User Interface</li>
+                        <li class="option" data-answer="A">B) General User Interface</li>
+                        <li class="option" data-answer="A">C) Graphic Utility Interface</li>
+                        <li class="option" data-answer="A">D) None</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+
+                <div class="question-card">
+                    <p class="text-lg font-medium">135. Which device is used to input data by clicking?<br>क्लिक करके डेटा इनपुट करने के लिए कौन सी डिवाइस प्रयोग होती है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="B">A) Keyboard</li>
+                        <li class="option" data-answer="B">B) Mouse</li>
+                        <li class="option" data-answer="B">C) Scanner</li>
+                        <li class="option" data-answer="B">D) Printer</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+
+                <div class="question-card">
+                    <p class="text-lg font-medium">136. The binary system is based on —<br>बाइनरी सिस्टम किस पर आधारित है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="B">A) Base 8</li>
+                        <li class="option" data-answer="B">B) Base 2</li>
+                        <li class="option" data-answer="B">C) Base 10</li>
+                        <li class="option" data-answer="B">D) Base 16</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+
+                <div class="question-card">
+                    <p class="text-lg font-medium">137. Which of the following is a permanent storage device?<br>निम्न में से कौन सा स्थायी स्टोरेज डिवाइस है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="B">A) RAM</li>
+                        <li class="option" data-answer="B">B) Hard Disk</li>
+                        <li class="option" data-answer="B">C) Cache</li>
+                        <li class="option" data-answer="B">D) Register</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+
+                <div class="question-card">
+                    <p class="text-lg font-medium">138. The full form of IP is —<br>IP का पूरा नाम क्या है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) Internet Protocol</li>
+                        <li class="option" data-answer="A">B) Internal Protocol</li>
+                        <li class="option" data-answer="A">C) Integrated Protocol</li>
+                        <li class="option" data-answer="A">D) None</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+
+                <div class="question-card">
+                    <p class="text-lg font-medium">139. Which key is used to undo an action?<br>किसी कार्य को पूर्ववत करने के लिए कौन सी कुंजी प्रयोग होती है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="B">A) Ctrl + C</li>
+                        <li class="option" data-answer="B">B) Ctrl + Z</li>
+                        <li class="option" data-answer="B">C) Ctrl + V</li>
+                        <li class="option" data-answer="B">D) Ctrl + X</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+
+                <div class="question-card">
+                    <p class="text-lg font-medium">140. Which device is used to capture images directly into a computer?<br>छवियों को सीधे कंप्यूटर में कैप्चर करने के लिए कौन सी डिवाइस प्रयोग होती है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="B">A) Printer</li>
+                        <li class="option" data-answer="B">B) Webcam</li>
+                        <li class="option" data-answer="B">C) Monitor</li>
+                        <li class="option" data-answer="B">D) Mouse</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+
+                <div class="question-card">
+                    <p class="text-lg font-medium">141. The full form of BIOS is —<br>BIOS का पूरा नाम क्या है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) Basic Input Output System</li>
+                        <li class="option" data-answer="A">B) Binary Input Output System</li>
+                        <li class="option" data-answer="A">C) Basic Internal Output System</li>
+                        <li class="option" data-answer="A">D) None</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+
+                <div class="question-card">
+                    <p class="text-lg font-medium">142. Which of the following is an input device?<br>निम्न में से कौन सा इनपुट डिवाइस है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="B">A) Printer</li>
+                        <li class="option" data-answer="B">B) Scanner</li>
+                        <li class="option" data-answer="B">C) Monitor</li>
+                        <li class="option" data-answer="B">D) Speaker</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+
+                <div class="question-card">
+                    <p class="text-lg font-medium">143. The process of starting a computer is called —<br>कंप्यूटर शुरू करने की प्रक्रिया को क्या कहते हैं?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="B">A) Loading</li>
+                        <li class="option" data-answer="B">B) Booting</li>
+                        <li class="option" data-answer="B">C) Formatting</li>
+                        <li class="option" data-answer="B">D) Installing</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+
+                <div class="question-card">
+                    <p class="text-lg font-medium">144. Which of the following is a permanent memory?<br>निम्न में से कौन सी स्थायी मेमोरी है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) ROM</li>
+                        <li class="option" data-answer="A">B) RAM</li>
+                        <li class="option" data-answer="A">C) Cache</li>
+                        <li class="option" data-answer="A">D) Register</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+
+                <div class="question-card">
+                    <p class="text-lg font-medium">145. The full form of URL is —<br>URL का पूरा नाम क्या है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) Uniform Resource Locator</li>
+                        <li class="option" data-answer="A">B) Universal Resource Locator</li>
+                        <li class="option" data-answer="A">C) Uniform Reference Locator</li>
+                        <li class="option" data-answer="A">D) None</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+
+                <div class="question-card">
+                    <p class="text-lg font-medium">146. Which device is used to print large maps and drawings?<br>बड़े नक्शे और चित्र प्रिंट करने के लिए कौन सी डिवाइस प्रयोग होती है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="B">A) Printer</li>
+                        <li class="option" data-answer="B">B) Plotter</li>
+                        <li class="option" data-answer="B">C) Scanner</li>
+                        <li class="option" data-answer="B">D) Monitor</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+
+                <div class="question-card">
+                    <p class="text-lg font-medium">147. Which of the following is a type of software?<br>निम्न में से कौन सा सॉफ्टवेयर का प्रकार है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="B">A) CPU</li>
+                        <li class="option" data-answer="B">B) Operating System</li>
+                        <li class="option" data-answer="B">C) Monitor</li>
+                        <li class="option" data-answer="B">D) Keyboard</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+
+                <div class="question-card">
+                    <p class="text-lg font-medium">148. The binary equivalent of decimal 15 is —<br>दशमलव 15 का बाइनरी रूप —</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="B">A) 1010</li>
+                        <li class="option" data-answer="B">B) 1111</li>
+                        <li class="option" data-answer="B">C) 1100</li>
+                        <li class="option" data-answer="B">D) 1000</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+
+                <div class="question-card">
+                    <p class="text-lg font-medium">149. Which key is used to select all text in a document?<br>दस्तावेज में सभी टेक्स्ट को चुनने के लिए कौन सी कुंजी प्रयोग होती है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="B">A) Ctrl + S</li>
+                        <li class="option" data-answer="B">B) Ctrl + A</li>
+                        <li class="option" data-answer="B">C) Ctrl + C</li>
+                        <li class="option" data-answer="B">D) Ctrl + V</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+
+                <div class="question-card">
+                    <p class="text-lg font-medium">150. Which device is used to protect a computer from power fluctuations?<br>कंप्यूटर को बिजली के उतार-चढ़ाव से बचाने के लिए कौन सी डिवाइस प्रयोग होती है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) UPS</li>
+                        <li class="option" data-answer="A">B) Router</li>
+                        <li class="option" data-answer="A">C) Modem</li>
+                        <li class="option" data-answer="A">D) Switch</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+                
+                <!-- Add remaining questions as needed -->
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 p-8 text-center">
+        <div class="container mx-auto">
+            <div class="flex flex-col md:flex-row items-center justify-center gap-8 mb-6">
+                <div class="relative">
+                    <img src="https://www.cyberrakshakinstitute.com/IMAGE/kuldeep.jpg" 
+                         alt="Kuldeep Chauhan" 
+                         class="profile-photo" 
+                         id="profile-photo"
+                         onclick="enlargePhoto()">
+                </div>
+                <div class="text-left max-w-2xl">
+                    <h3 class="text-3xl font-bold text-pink-500 mb-2" style="font-family: 'Exo 2', sans-serif;">Kuldeep Chauhan</h3>
+                    <p class="text-cyan-300 text-xl mb-3 font-semibold">Senior Cybersecurity Expert & Ethical Hacker</p>
+                    <p class="text-cyan-200 mb-4">Kuldeep is a seasoned cybersecurity professional with over 3 years of experience in ethical hacking, penetration testing, and security consulting. He has worked with numerous Fortune 6 companies to strengthen their security posture and has trained hundreds of students in the art of ethical hacking.</p>
+                    <!-- 
+                    <div class="mb-4">
+                        <h4 class="text-pink-400 font-bold mb-2">Certifications:</h4>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="cert-badge">Certified Ethical Hacker</span>
+                            <span class="cert-badge"></span>
+                            <span class="cert-badge"></span>
+                        </div>
+                    </div>
+                    -->
+                    <div class="flex space-x-4 mt-4">
+                        <a href="https://www.instagram.com/ku1d33p_b14ck_h4t" class="social-icon">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.facebook.com/b14ck00" class="social-icon">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fas fa-globe"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 pt-6">
+                <p class="text-lg text-pink-500" style="font-family: 'Exo 2', sans-serif;">Designed for CCC Exam Preparation | 2025</p>
+                <p class="text-sm text-cyan-300 mt-2">UI Designed By Kuldeep Chauhan</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="Exam-Prepration/JS/CCC1-study.js"></script>
+</body>
+</html>

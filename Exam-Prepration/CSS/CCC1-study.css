@@ -1,0 +1,274 @@
+        body {
+            background: linear-gradient(135deg, #1a0033, #330066);
+            color: #e0e7ff;
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+            position: relative;
+        }
+        .divider {
+            height: 4px;
+            border-radius: 2px;
+            margin: 2rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+        .divider.easy { background: #10b981; }
+        .divider.medium { background: #3b82f6; }
+        .divider.hard { background: #a855f7; }
+        .divider::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+            animation: shine 2s infinite;
+        }
+        @keyframes shine {
+            0% { left: -100%; }
+            50% { left: 100%; }
+            100% { left: 100%; }
+        }
+        .question-card {
+            background: rgba(30, 0, 51, 0.8);
+            border: 2px solid #ff00cc;
+            border-radius: 1rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            backdrop-filter: blur(8px);
+            transition: all 0.3s ease;
+        }
+        .question-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 25px rgba(0, 204, 255, 0.8);
+        }
+        .option {
+            padding: 0.5rem;
+            border-radius: 0.5rem;
+            transition: all 0.3s ease;
+        }
+        .option.correct {
+            background: #10b981;
+            color: #1a0033;
+            font-weight: bold;
+            box-shadow: 0 0 15px rgba(16, 185, 129, 0.8);
+            animation: glow 1s ease;
+        }
+        .option.wrong {
+            opacity: 0.3;
+        }
+        @keyframes glow {
+            0% { box-shadow: 0 0 10px rgba(16, 185, 129, 0.8); }
+            50% { box-shadow: 0 0 20px rgba(16, 185, 129, 1); }
+            100% { box-shadow: 0 0 10px rgba(16, 185, 129, 0.8); }
+        }
+        .answer-text {
+            cursor: pointer;
+            color: #00ccff;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+        .answer-text:hover {
+            color: #ff00cc;
+        }
+        .progress-container {
+            margin-bottom: 3rem;
+            padding: 2rem 0;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        .progress-container.sticky {
+            position: fixed;
+            top: 80px;
+            right: 20px;
+            z-index: 10;
+            margin-bottom: 0;
+            padding: 1rem;
+            background: rgba(30, 0, 51, 0.9);
+            border-radius: 1rem;
+            border: 2px solid #00ccff;
+            box-shadow: 0 0 20px rgba(0, 204, 255, 0.5);
+            transform: scale(0.8);
+            transform-origin: top right;
+        }
+        .progress-ring {
+            width: 120px;
+            height: 120px;
+            position: relative;
+            margin: 0 auto;
+        }
+        .progress-ring circle {
+            fill: none;
+            stroke: #ff00cc;
+            stroke-width: 10;
+            stroke-linecap: round;
+            transform: rotate(-90deg);
+            transform-origin: 50% 50%;
+        }
+        .progress-ring .progress {
+            stroke: #00ccff;
+            transition: stroke-dashoffset 0.5s ease;
+        }
+        .progress-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-family: 'Exo 2', sans-serif;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #00ccff;
+            text-shadow: 0 0 5px rgba(0, 204, 255, 0.8);
+            background: rgba(30, 0, 51, 0.8);
+            border-radius: 50%;
+            padding: 0.5rem;
+        }
+        .progress-label {
+            font-family: 'Exo 2', sans-serif;
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #00ccff;
+            text-shadow: 0 0 10px rgba(0, 204, 255, 0.7);
+            margin-bottom: 1.5rem;
+        }
+        .progress-container.sticky .progress-label {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+        .nav-link {
+            position: relative;
+            font-family: 'Exo 2', sans-serif;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: #00ccff;
+            transition: width 0.4s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        .back-btn {
+            background: linear-gradient(135deg, #ff00cc, #00ccff);
+            color: white;
+            border: none;
+            padding: 0.5rem 1.5rem;
+            border-radius: 2rem;
+            font-family: 'Exo 2', sans-serif;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 15px rgba(255, 0, 204, 0.5);
+        }
+        .back-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 0 25px rgba(0, 204, 255, 0.8);
+        }
+        .profile-photo {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            border: 3px solid #00ccff;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            object-fit: cover;
+            box-shadow: 0 0 20px rgba(0, 204, 255, 0.5);
+        }
+        .profile-photo:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 30px rgba(255, 0, 204, 0.7);
+        }
+        .profile-photo.enlarged {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(2);
+            width: 200px;
+            height: 200px;
+            z-index: 1000;
+            box-shadow: 0 0 50px rgba(0, 204, 255, 0.8);
+            border: 4px solid #ff00cc;
+        }
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 999;
+            display: none;
+        }
+        .cert-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #ff00cc, #00ccff);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 1rem;
+            font-size: 0.8rem;
+            margin: 0.2rem;
+            font-weight: bold;
+        }
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            color: #00ccff;
+        }
+        .social-icon:hover {
+            background: #00ccff;
+            color: #1a0033;
+            transform: translateY(-3px);
+        }
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+        @media print {
+            body {
+                background: white;
+                color: black;
+            }
+            .question-card {
+                border: 1px solid black;
+                background: white;
+                backdrop-filter: none;
+            }
+            .divider {
+                background: black;
+            }
+            .divider::before {
+                display: none;
+            }
+            .option.correct {
+                background: none;
+                color: black;
+                font-weight: bold;
+            }
+            .option.wrong {
+                opacity: 1;
+            }
+            .particles, .progress-ring {
+                display: none;
+            }
+            .progress-label, .progress-text {
+                color: black;
+                text-shadow: none;
+                background: none;
+            }
+        }
