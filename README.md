@@ -41,8 +41,8 @@
 
 ## 🧭 Quick Links
 
-* 🔗 **Website:** https\://YOUR\_WEBSITE\_URL
-* 📄 **Docs/Help:** https\://YOUR\_WEBSITE\_URL/docs
+* 🔗 **Website:** https\://cyberrakshakinstitute.com
+* 📄 **Docs/Help:** https\://cyberrakshakinstitute.com
 * 🗺️ **Roadmap:** [Issues → Roadmap label](https://github.com/YOUR_GITHUB_USERNAME/YOUR_REPO/labels/roadmap)
 * 🐞 **Bug Report:** [Open an issue](https://github.com/YOUR_GITHUB_USERNAME/YOUR_REPO/issues/new?template=bug_report.md)
 * 💡 **Feature Request:** [Suggest an idea](https://github.com/YOUR_GITHUB_USERNAME/YOUR_REPO/discussions)
