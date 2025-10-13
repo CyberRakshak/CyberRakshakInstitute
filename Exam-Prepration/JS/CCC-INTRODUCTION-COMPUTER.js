@@ -1000,12 +1000,12 @@
         }
 
         // Reset current answer
-        function resetAnswer() {
-            examState.answers[examState.currentQuestion] = null;
-            const options = document.querySelectorAll('.option');
-            options.forEach(opt => opt.classList.remove('selected'));
-            updateProgress();
-        }
+        //function resetAnswer() {
+            //examState.answers[examState.currentQuestion] = null;
+            //const options = document.querySelectorAll('.option');
+            //options.forEach(opt => opt.classList.remove('selected'));
+           //updateProgress();
+        //}
 
         // Load current question
         function loadQuestion() {
@@ -1274,4 +1274,5 @@
         // Initialize the app
         window.onload = function() {
             // Any additional initialization if needed
+
         };
