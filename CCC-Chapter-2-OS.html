@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CYBER RAKSHAK INSTITUTE - OS EXAM PORTAL</title>
+    <title>CYBER RAKSHAK INSTITUTE - EXAM PORTAL</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
-    <link rel="stylesheet" href="CSS/CCC-Chapter-2-OS.css">
+    <link rel="stylesheet" href="Exam-Prepration/CSS/CCC-INTRODUCTION-COMPUTER.css">
 </head>
 <body>
     <!-- Login/Registration Screen -->
@@ -14,13 +14,13 @@
         <div class="header">
             <div class="institute-name">
                 <h1><i class="fas fa-shield-alt"></i> CYBER RAKSHAK INSTITUTE</h1>
-                <p>Secure Your Future in Cybersecurity</p>
+                <p>Chapter : 2 Operating System</p>
             </div>
         </div>
         <div class="login-container">
             <div class="login-header">
-                <h1>Register & Start Exam</h1>
-                <p>Complete your registration to begin the assessment</p>
+                <h1>Enter Details & Start Exam</h1>
+                <p>Give your best all the best Dear Students</p>
             </div>
             
             <div class="photo-container">
@@ -38,18 +38,22 @@
             </div>
             
             <div class="form-group">
-                <label for="email"><i class="fas fa-envelope"></i> Email (Optional)</label>
-                <input type="email" id="email" class="form-control" placeholder="Enter your email (optional)">
-            </div>
-            
-            <div class="form-group">
                 <label for="phone"><i class="fas fa-phone"></i> Phone Number *</label>
                 <input type="tel" id="phone" class="form-control" placeholder="Enter your phone number" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email"><i class="fas fa-envelope"></i> Email (Optional)</label>
+                <input type="email" id="email" class="form-control" placeholder="Enter your email (optional)">
             </div>
             
             <button class="btn btn-primary" style="width: 100%;" onclick="startExam()">
                 <i class="fas fa-play-circle"></i> REGISTER & START EXAM
             </button>
+
+            <p style="text-align: center; margin-top: 15px; font-size: 12px; color: var(--gray);">
+                * Required fields
+            </p>
         </div>
     </div>
 
@@ -114,7 +118,6 @@
                     <span id="userNameDisplay"><i class="fas fa-user"></i> </span>
                     <span id="userEmailDisplay"><i class="fas fa-envelope"></i> </span>
                     <span id="userPhoneDisplay"><i class="fas fa-phone"></i> </span>
-                    <span><i class="fas fa-star"></i> Score: <span id="scoreDisplay">0</span>/<span id="totalQuestionsDisplay">0</span></span>
                     <span class="timer"><i class="fas fa-clock"></i> <span id="timer">01:30:00</span></span>
                 </div>
             </div>
@@ -150,7 +153,7 @@
             
             <div class="progress-container">
                 <div class="progress-status">
-                    <span>✅ Answered: <span id="answeredCount">0</span></span>
+                    <span>✅ Attempted: <span id="answeredCount">0</span></span>
                     <span>⏰ Pending: <span id="pendingCount">0</span></span>
                     <span>Progress: <span id="progressPercent">0</span>%</span>
                 </div>
@@ -176,7 +179,7 @@
                 <div class="status-legend">
                     <div class="status-item">
                         <div class="status-color status-answered"></div>
-                        <span>✅ Answered</span>
+                        <span>✅ Attempted</span>
                     </div>
                     <div class="status-item">
                         <div class="status-color status-pending"></div>
@@ -210,13 +213,13 @@
                 <div class="report-section" style="margin-top: 20px;">
                     <h3>📊 Current Status:</h3>
                     <ul style="padding-left: 20px;">
-                        <li>✅ Answered: <span id="finishAnsweredCount">0</span> questions</li>
-                        <li>⏰ Not Answered: <span id="finishPendingCount">0</span> questions</li>
+                        <li>✅ Attempted: <span id="finishAnsweredCount">0</span> questions</li>
+                        <li>⏰ Not Attempted: <span id="finishPendingCount">0</span> questions</li>
                     </ul>
                 </div>
                 
                 <p style="margin-top: 20px; color: var(--danger); font-weight: bold;">
-                    <i class="fas fa-exclamation-circle"></i> एक बार submit करने पे वापस exam पे नहीं जा पाएंगे !
+                    <i class="fas fa-exclamation-circle"></i> Once submitted, you cannot re-attempt!
                 </p>
                 
                 <div class="controls" style="margin-top: 30px; justify-content: center;">
@@ -350,6 +353,6 @@
         </div>
     </div>
 
-    <script src="JS/CCC-Chapter-2-OS.js"></script>
+    <script src="Exam-Prepration/JS/CCC-Chapter-2-OS.js"></script>
 </body>
 </html>
