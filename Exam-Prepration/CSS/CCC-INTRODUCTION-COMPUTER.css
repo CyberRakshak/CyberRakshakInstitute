@@ -20,7 +20,7 @@
         }
 
         body {
-            background: linear-gradient(135deg, #1a237e 0%, #283593 100%);
+            background: linear-gradient(135deg, #d817c8 0%, #12df2d 100%);
             min-height: 100vh;
             display: flex;
             justify-content: center;
@@ -38,7 +38,7 @@
         }
 
         .header {
-            background: linear-gradient(to right, var(--cyber-blue), var(--cyber-dark));
+            background: linear-gradient(to right, #d32f2f, #0d47a1);
             color: white;
             padding: 20px;
             display: flex;
@@ -65,7 +65,7 @@
         }
 
         .institute-name h1 i {
-            color: #ff9800;
+            color: #070707;
             font-size: 32px;
         }
 
@@ -92,7 +92,7 @@
             color: var(--dark);
             font-size: 20px;
             overflow: hidden;
-            border: 2px solid #ff9800;
+            border: 2px solid #00ffaa;
         }
 
         .user-photo img {
@@ -121,10 +121,10 @@
         }
 
         .question-container {
-            background: #f8f9fa;
+            background: #85db82;
             border-radius: 10px;
             padding: 20px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 5px 15px rgba(212, 5, 5, 0.05);
             border-left: 4px solid var(--cyber-blue);
         }
 
@@ -152,11 +152,11 @@
             align-items: center;
             gap: 10px;
             padding: 12px 15px;
-            background: white;
+            background: rgb(252, 252, 252);
             border-radius: 8px;
             cursor: pointer;
             transition: all 0.3s;
-            border: 2px solid #e9ecef;
+            border: 0.8px solid #b63007;
         }
 
         .option:hover {
@@ -165,7 +165,7 @@
         }
 
         .option.selected {
-            background: #e3f2fd;
+            background: #fc7ccbfa;
             border-color: var(--info);
         }
 
@@ -188,7 +188,7 @@
         .option.selected .option-label {
             background: var(--info);
             border-color: var(--info);
-            color: white;
+            color: rgb(255, 255, 255);
         }
 
         .controls {
