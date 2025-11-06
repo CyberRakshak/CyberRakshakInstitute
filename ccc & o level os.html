@@ -1,0 +1,1711 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to Computer MCQs CCC Exam: </title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="Exam-Prepration/CSS/CCC1-study.css">
+</head>
+<body class="min-h-screen">
+    <!-- Particle Background -->
+    <canvas class="particles"></canvas>
+
+    <!-- Overlay for enlarged photo -->
+    <div class="overlay" id="overlay" onclick="closePhoto()"></div>
+
+    <!-- Navigation Bar -->
+    <nav class="bg-gray-900 p-4 shadow-lg fixed w-full top-0 z-20">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-3xl font-bold text-pink-500" style="font-family: 'Exo 2', sans-serif;">CCC Exam Prep</h1>
+            <div class="flex space-x-6">
+                <button class="back-btn" onclick="goBack()">
+                    ← Back
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container mx-auto mt-24 p-6">
+        <h1 class="text-5xl font-extrabold text-center text-pink-500 mb-12" style="font-family: 'Exo 2', sans-serif; text-shadow: 0 0 20px rgba(0, 204, 255, 0.7);">Introduction to Computer: 150 MCQs</h1>
+
+        <!-- Progress Tracker -->
+        <div class="progress-container" id="progress-container">
+            <p class="progress-label">Progress: <span id="progress-text">0/150</span></p>
+            <div class="progress-ring">
+                <svg width="120" height="120">
+                    <circle cx="60" cy="60" r="50" stroke="#ff00cc" stroke-width="10" />
+                    <circle class="progress" cx="60" cy="60" r="50" stroke-dasharray="314" stroke-dashoffset="314" /><br>
+                    <text class="progress-text" x="50%" y="50%" text-anchor="middle" dy=".3em">0%</text>
+                </svg>
+            </div>
+        </div>
+
+        <!-- Easy Questions -->
+        <section id="easy" class="mb-16">
+            <div class="divider easy"></div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <div class="question-card">
+                    <p class="text-lg font-medium">1. The main purpose of an Operating System is:<br>ऑपरेटिंग सिस्टम का मुख्य उद्देश्य क्या है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="B">A) Entertainment</li>
+                        <li class="option" data-answer="B">B) Resource Management</li>
+                        <li class="option" data-answer="B">C) Typing Documents</li>
+                        <li class="option" data-answer="B">D) Internet Browsing</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+                
+                <div class="question-card">
+                    <p class="text-lg font-medium">2. Which of the following is not an operating system?<br>निम्नसिखित में से कौन-सा ऑपरेटिंग सिस्टम नहीं है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="C">A) Linux</li>
+                        <li class="option" data-answer="C">B) Windows</li>
+                        <li class="option" data-answer="C">C) Oracle</li>
+                        <li class="option" data-answer="C">D) macOS</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+                
+                <div class="question-card">
+                    <p class="text-lg font-medium">3. Which part of the OS remains in main memory all the time?<br>ऑपरेटिंग सिस्टम का कौन-सा भाग हमेशा मेमोरी में रहता है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="B">A) Shell</li>
+                        <li class="option" data-answer="B">B) Kernel</li>
+                        <li class="option" data-answer="B">C) Command Interpreter</li>
+                        <li class="option" data-answer="B">D) Utility</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+                
+                <div class="question-card">
+                    <p class="text-lg font-medium">4. The operating system acts as an interface between:<br>ऑपरेटिंग सिस्टम किनके बीच इंटरफेस का काम करता है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) User and Hardware</li>
+                        <li class="option" data-answer="A">B) Software and Network</li>
+                        <li class="option" data-answer="A">C) Hardware and Printer</li>
+                        <li class="option" data-answer="A">D) User and Applications</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+                
+                <div class="question-card">
+                    <p class="text-lg font-medium">5. Which of the following is a single-user OS?<br>निम्नसिखित में से कौन-सा एकल उपयोगकर्ता वाला OS है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) MS-DOS</li>
+                        <li class="option" data-answer="A">B) UNIX</li>
+                        <li class="option" data-answer="A">C) Linux</li>
+                        <li class="option" data-answer="A">D) Windows Server</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+                
+                <div class="question-card">
+                    <p class="text-lg font-medium">6. Which operating system is developed by Apple?<br>Apple द्वारा विकसित ऑपरेटिंग सिस्टम कौन-सा है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="B">A) Windows</li>
+                        <li class="option" data-answer="B">B) macOS</li>
+                        <li class="option" data-answer="B">C) Linux</li>
+                        <li class="option" data-answer="B">D) Android</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+                
+                <div class="question-card">
+                    <p class="text-lg font-medium">7. What is the full form of GUI?<br>GUI का पूरा नाम क्या है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) Graphical User Interface</li>
+                        <li class="option" data-answer="A">B) Global User Internet</li>
+                        <li class="option" data-answer="A">C) General Utility Interface</li>
+                        <li class="option" data-answer="A">D) Graphical Utility Instruction</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+                
+                <div class="question-card">
+                    <p class="text-lg font-medium">8. Which of these is an open-source OS?<br>इनमें से कौन-सा ओपन-सोर्स OS है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="B">A) Windows</li>
+                        <li class="option" data-answer="B">B) Linux</li>
+                        <li class="option" data-answer="B">C) macOS</li>
+                        <li class="option" data-answer="B">D) ChromeOS</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+                
+                <div class="question-card">
+                    <p class="text-lg font-medium">9. Which OS is used in mobile phones?<br>मोबाइल फोन में कौन-सा OS प्रयोग होता है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) Android</li>
+                        <li class="option" data-answer="A">B) Linux Server</li>
+                        <li class="option" data-answer="A">C) Windows 10</li>
+                        <li class="option" data-answer="A">D) Ubuntu</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+                
+                <div class="question-card">
+                    <p class="text-lg font-medium">10. Which command is used to display files in MS-DOS?<br>MS-DOS में फाइलें दिखाने के लिए कौन-सा कमांड प्रयोग होता है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) DIR</li>
+                        <li class="option" data-answer="A">B) CD</li>
+                        <li class="option" data-answer="A">C) COPY</li>
+                        <li class="option" data-answer="A">D) DEL</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+                
+                <div class="question-card">
+                    <p class="text-lg font-medium">11. What is multitasking?<br>Multitasking क्या है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="B">A) Doing one job at a time</li>
+                        <li class="option" data-answer="B">B) Doing multiple jobs at the same time</li>
+                        <li class="option" data-answer="B">C) Doing jobs one after another</li>
+                        <li class="option" data-answer="B">D) None</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+                
+                <div class="question-card">
+                    <p class="text-lg font-medium">12. Linux is based on which OS?<br>Linux किस ऑपरेटिंग सिस्टम पर आधारित है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="B">A) Windows</li>
+                        <li class="option" data-answer="B">B) UNIX</li>
+                        <li class="option" data-answer="B">C) MS-DOS</li>
+                        <li class="option" data-answer="B">D) ChromeOS</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+                
+                <div class="question-card">
+                    <p class="text-lg font-medium">13. Which of these is a real-time OS?<br>इनमें से कौन-सा रियल टाइम OS है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="B">A) Windows 11</li>
+                        <li class="option" data-answer="B">B) VxWorks</li>
+                        <li class="option" data-answer="B">C) Ubuntu</li>
+                        <li class="option" data-answer="B">D) Android</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+                
+                <div class="question-card">
+                    <p class="text-lg font-medium">14. Which OS uses the command line interface?<br>कौन-सा OS कमांड लाइन इंटरफेस का प्रयोग करता है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) MS-DOS</li>
+                        <li class="option" data-answer="A">B) Windows</li>
+                        <li class="option" data-answer="A">C) Android</li>
+                        <li class="option" data-answer="A">D) macOS</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+                
+                <div class="question-card">
+                    <p class="text-lg font-medium">15. What is the function of the kernel?<br>Kernel का कार्य क्या है?</p>
+                    /ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+                
+                <div class="question-card">
+                    <p class="text-lg font-medium">20. What is booting?<br>Booting क्या है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="B">A) Shutting down computer</li>
+                        <li class="option" data-answer="B">B) Starting the computer</li>
+                        <li class="option" data-answer="B">C) Deleting files</li>
+                        <li class="option" data-answer="B">D) Restarting printer</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+                
+                <div class="question-card">
+                    <p class="text-lg font-medium">21. The core of operating system is called:<br>ऑपरेटिंग सिस्टम के कोर को क्या कहा जाता है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) Kernel</li>
+                        <li class="option" data-answer="A">B) BIOS</li>
+                        <li class="option" data-answer="A">C) Shell</li>
+                        <li class="option" data-answer="A">D) Processor</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+                
+                <div class="question-card">
+                    <p class="text-lg font-medium">22. Which OS is used in Apple mobile phones?<br>Apple मोबाइल फोन में कौन-सा OS प्रयोग होता है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="B">A) Android</li>
+                        <li class="option" data-answer="B">B) iOS</li>
+                        <li class="option" data-answer="B">C) Symbian</li>
+                        <li class="option" data-answer="B">D) KaiOS</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+                
+                <div class="question-card">
+                    <p class="text-lg font-medium">23. MS-DOS is an example of:<br>MS-DOS किसका उदाहरण है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="B">A) Multi-user OS</li>
+                        <li class="option" data-answer="B">B) Single-user OS</li>
+                        <li class="option" data-answer="B">C) Distributed OS</li>
+                        <li class="option" data-answer="B">D) GUI OS</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+                
+                <div class="question-card">
+                    <p class="text-lg font-medium">24. Which OS was first developed?<br>पहले कौन-सा OS विकसित हुआ था?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) UNIX</li>
+                        <li class="option" data-answer="A">B) Windows</li>
+                        <li class="option" data-answer="A">C) Linux</li>
+                        <li class="option" data-answer="A">D) Android</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+                
+                <div class="question-card">
+                    <p class="text-lg font-medium">25. What is process management?<br>Process Management क्या है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="B">A) Managing memory</li>
+                        <li class="option" data-answer="B">B) Managing CPU processes</li>
+                        <li class="option" data-answer="B">C) Managing keyboard</li>
+                        <li class="option" data-answer="B">D) Managing storage</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+                
+                <div class="question-card">
+                    <p class="text-lg font-medium">26. Which component is responsible for allocating memory to processes?<br>कौन-सा घटक प्रोसेस को मेमोरी आवंटित करता है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) Kernel</li>
+                        <li class="option" data-answer="A">B) Shell</li>
+                        <li class="option" data-answer="A">C) BIOS</li>
+                        <li class="option" data-answer="A">D) Scheduler</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+                
+                <div class="question-card">
+                    <p class="text-lg font-medium">27. Which is not a type of operating system?<br>निम्नसिखित में से कौन-सा OS का प्रकार नहीं है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="D">A) Batch OS</li>
+                        <li class="option" data-answer="D">B) Time-sharing OS</li>
+                        <li class="option" data-answer="D">C) Multiprogramming OS</li>
+                        <li class="option" data-answer="D">D) Compiler OS</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+                
+                <div class="question-card">
+                    <p class="text-lg font-medium">28. Which OS is most commonly used in servers?<br>सर्वर में सबसे अधिक प्रयोग होने वाला OS कौन-सा है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) Linux</li>
+                        <li class="option" data-answer="A">B) Android</li>
+                        <li class="option" data-answer="A">C) Windows 11</li>
+                        <li class="option" data-answer="A">D) MS-DOS</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+                
+                <div class="question-card">
+                    <p class="text-lg font-medium">29. What is the main function of the scheduler?<br>Scheduler का मुख्य कार्य क्या है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) Process Scheduling</li>
+                        <li class="option" data-answer="A">B) Memory Allocation</li>
+                        <li class="option" data-answer="A">C) Device Input</li>
+                        <li class="option" data-answer="A">D) File Management</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+                
+                <div class="question-card">
+                    <p class="text-lg font-medium">30. Which of the following is an example of a batch operating system?<br>निम्न में से कौन-सा Batch OS है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) Payroll System</li>
+                        <li class="option" data-answer="A">B) Android</li>
+                        <li class="option" data-answer="A">C) Windows</li>
+                        <li class="option" data-answer="A">D) macOS</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+                
+                <div class="question-card">
+                    <p class="text-lg font-medium">31. The interface between user and hardware is:<br>उपयोगकर्ता और हार्डवेयर के बीच का इंटरफेस क्या है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) Operating System</li>
+                        <li class="option" data-answer="A">B) Compiler</li>
+                        <li class="option" data-answer="A">C) Application Software</li>
+                        <li class="option" data-answer="A">D) Device Driver</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+                
+                <div class="question-card">
+                    <p class="text-lg font-medium">32. In MS-DOS, which command is used to copy files?<br>MS-DOS में फाइल कॉपी करने का कमांड क्या है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) COPY</li>
+                        <li class="option" data-answer="A">B) MOVE</li>
+                        <li class="option" data-answer="A">C) PASTE</li>
+                        <li class="option" data-answer="A">D) EDIT</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+                
+                <div class="question-card">
+                    <p class="text-lg font-medium">33. What is the main memory also called?<br>मुख्य मेमोरी को और क्या कहा जाता है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) RAM</li>
+                        <li class="option" data-answer="A">B) ROM</li>
+                        <li class="option" data-answer="A">C) Hard Disk</li>
+                        <li class="option" data-answer="A">D) Cache</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+                
+                <div class="question-card">
+                    <p class="text-lg font-medium">34. Which OS supports GUI interface?<br>कौन-सा OS GUI इंटरफेस सपोर्ट करता है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) Windows</li>
+                        <li class="option" data-answer="A">B) MS-DOS</li>
+                        <li class="option" data-answer="A">C) UNIX (CLI only)</li>
+                        <li class="option" data-answer="A">D) FreeDOS</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+                
+                <div class="question-card">
+                    <p class="text-lg font-medium">35. What is virtual memory?<br>Virtual Memory क्या है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) Secondary storage used as main memory</li>
+                        <li class="option" data-answer="A">B) Temporary ROM</li>
+                        <li class="option" data-answer="A">C) External storage</li>
+                        <li class="option" data-answer="A">D) Cache</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+                
+                <div class="question-card">
+                    <p class="text-lg font-medium">36. Which is the first program run when computer starts?<br>कंप्यूटर शुरू होने पर सबसे पहले कौन-सा प्रोग्राम चलता है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) BIOS</li>
+                        <li class="option" data-answer="A">B) Kernel</li>
+                        <li class="option" data-answer="A">C) Bootloader</li>
+                        <li class="option" data-answer="A">D) Scheduler</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+                
+                <div class="question-card">
+                    <p class="text-lg font-medium">37. Which of the following is not a function of OS?<br>निम्न में से कौन-सा OS का कार्य नहीं है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="C">A) File Management</li>
+                        <li class="option" data-answer="C">B) Process Management</li>
+                        <li class="option" data-answer="C">C) Typing Documents</li>
+                        <li class="option" data-answer="C">D) Memory Management</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+                
+                <div class="question-card">
+                    <p class="text-lg font-medium">38. Which file system is used in Windows?<br>Windows में कौन-सा फाइल सिस्टम प्रयोग होता है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) FAT32</li>
+                        <li class="option" data-answer="A">B) EXT4</li>
+                        <li class="option" data-answer="A">C) HFS</li>
+                        <li class="option" data-answer="A">D) NT</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+                
+                <div class="question-card">
+                    <p class="text-lg font-medium">39. Which is a Linux distribution?<br>कौन-सा Linux वितरण है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) Ubuntu</li>
+                        <li class="option" data-answer="A">B) Windows XP</li>
+                        <li class="option" data-answer="A">C) macOS</li>
+                        <li class="option" data-answer="A">D) Solaris</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+                
+                <div class="question-card">
+                    <p class="text-lg font-medium">40. Which command is used to change directory in DOS?<br>DOS में directory बदलने का कमांड क्या है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) CD</li>
+                        <li class="option" data-answer="A">B) DIR</li>
+                        <li class="option" data-answer="A">C) COPY</li>
+                        <li class="option" data-answer="A">D) PATH</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+                
+                <div class="question-card">
+                    <p class="text-lg font-medium">41. Which OS is based on UNIX?<br>कौन-सा OS UNIX पर आधारित है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) macOS</li>
+                        <li class="option" data-answer="A">B) Windows</li>
+                        <li class="option" data-answer="A">C) ChromeOS</li>
+                        <li class="option" data-answer="A">D) Symbian</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+                
+                <div class="question-card">
+                    <p class="text-lg font-medium">42. What is a shell in OS?<br>OS में Shell क्या है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) Command interpreter</li>
+                        <li class="option" data-answer="A">B) Hardware</li>
+                        <li class="option" data-answer="A">C) Memory</li>
+                        <li class="option" data-answer="A">D) Driver</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+                
+                <div class="question-card">
+                    <p class="text-lg font-medium">43. Which of these is not a Linux command?<br>इनमें से कौन-सा Linux कमांड नहीं है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="C">A) LS</li>
+                        <li class="option" data-answer="C">B) CD</li>
+                        <li class="option" data-answer="C">C) DIR</li>
+                        <li class="option" data-answer="C">D) RM</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+                
+                <div class="question-card">
+                    <p class="text-lg font-medium">44. What is meant by ‘Booting’?<br>‘Booting’ का मतलब क्या है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="B">A) System shutdown</li>
+                        <li class="option" data-answer="B">B) System startup</li>
+                        <li class="option" data-answer="B">C) File deletion</li>
+                        <li class="option" data-answer="B">D) Disk formatting</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+                
+                <div class="question-card">
+                    <p class="text-lg font-medium">45. Which OS was developed by Microsoft?<br>Microsoft द्वारा कौन-सा OS बनाया गया?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) Windows</li>
+                        <li class="option" data-answer="A">B) Linux</li>
+                        <li class="option" data-answer="A">C) macOS</li>
+                        <li class="option" data-answer="A">D) ChromeOS</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+                
+                <div class="question-card">
+                    <p class="text-lg font-medium">46. Which command is used to rename a file in DOS?<br>फाइल का नाम बदलने के लिए DOS कमांड क्या है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) REN</li>
+                        <li class="option" data-answer="A">B) NAME</li>
+                        <li class="option" data-answer="A">C) MV</li>
+                        <li class="option" data-answer="A">D) REFILE</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+                
+                <div class="question-card">
+                    <p class="text-lg font-medium">47. What is deadlock?<br>Deadlock क्या है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) Two or more processes waiting forever</li>
+                        <li class="option" data-answer="A">B) File is deleted</li>
+                        <li class="option" data-answer="A">C) System crash</li>
+                        <li class="option" data-answer="A">D) Memory overflow</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+                
+                <div class="question-card">
+                    <p class="text-lg font-medium">48. What is a device driver?<br>Device Driver क्या होता है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) Software to control hardware device</li>
+                        <li class="option" data-answer="A">B) Hardware chip</li>
+                        <li class="option" data-answer="A">C) Input device</li>
+                        <li class="option" data-answer="A">D) Network system</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+                
+                <div class="question-card">
+                    <p class="text-lg font-medium">49. Which is not a mobile operating system?<br>कौन-सा मोबाइल OS नहीं है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="C">A) iOS</li>
+                        <li class="option" data-answer="C">B) Android</li>
+                        <li class="option" data-answer="C">C) Linux</li>
+                        <li class="option" data-answer="C">D) Symbian</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+                
+                <div class="question-card">
+                    <p class="text-lg font-medium">50. Which operating system uses command prompt?<br>कौन-सा OS कमांड प्रॉम्प्ट का प्रयोग करता है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) MS-DOS</li>
+                        <li class="option" data-answer="A">B) Android</li>
+                        <li class="option" data-answer="A">C) iOS</li>
+                        <li class="option" data-answer="A">D) macOS</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+                
+                <div class="question-card">
+                    <p class="text-lg font-medium">51. Paging is related to:<br>Paging किसके संबंधित है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) Memory Management</li>
+                        <li class="option" data-answer="A">B) Process Scheduling</li>
+                        <li class="option" data-answer="A">C) Device Management</li>
+                        <li class="option" data-answer="A">D) File Handling</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+                
+                <div class="question-card">
+                    <p class="text-lg font-medium">52. What is the extension of batch files in DOS?<br>DOS में बैच फाइल का एक्सटेंशन क्या होता है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) .BAT</li>
+                        <li class="option" data-answer="A">B) .DOC</li>
+                        <li class="option" data-answer="A">C) .EXE</li>
+                        <li class="option" data-answer="A">D) .CMD</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+                
+                <div class="question-card">
+                    <p class="text-lg font-medium">53. In Windows, which key opens Task Manager?<br>Windows में Task Manager खोलने की कुंजी क्या है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) Ctrl + Shift + Esc</li>
+                        <li class="option" data-answer="A">B) Alt + F4</li>
+                        <li class="option" data-answer="A">C) Ctrl + C</li>
+                        <li class="option" data-answer="A">D) Shift + Delete</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+                
+                <div class="question-card">
+                    <p class="text-lg font-medium">54. Which of these is a multitasking OS?<br>इनमें से कौन-सा मल्ट टास्किंग OS है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) Windows</li>
+                        <li class="option" data-answer="A">B) MS-DOS</li>
+                        <li class="option" data-answer="A">C) CP/M</li>
+                        <li class="option" data-answer="A">D) BASIC</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+                
+                <div class="question-card">
+                    <p class="text-lg font-medium">55. Which part of OS interacts with hardware?<br>OS का कौन-सा भाग हार्डवेयर से संपर्क करता है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) Kernel</li>
+                        <li class="option" data-answer="A">B) Shell</li>
+                        <li class="option" data-answer="A">C) GUI</li>
+                        <li class="option" data-answer="A">D) Application</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+                
+                <div class="question-card">
+                    <p class="text-lg font-medium">56. Which command shows date in DOS?<br>DOS में तारीख दिखाने का कमांड क्या है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) DATE</li>
+                        <li class="option" data-answer="A">B) TIME</li>
+                        <li class="option" data-answer="A">C) SHOWDATE</li>
+                        <li class="option" data-answer="A">D) CAL</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+                
+                <div class="question-card">
+                    <p class="text-lg font-medium">57. Which is not a system software?<br>निम्न में से कौन-सा सिस्टम सॉफ्टवेयर नहीं है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="C">A) Operating System</li>
+                        <li class="option" data-answer="C">B) Compiler</li>
+                        <li class="option" data-answer="C">C) MS Word</li>
+                        <li class="option" data-answer="C">D) Device Driver</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+                
+                <div class="question-card">
+                    <p class="text-lg font-medium">58. Which command removes directory in DOS?<br>DOS में directory हटाने का कमांड क्या है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) RMDIR</li>
+                        <li class="option" data-answer="A">B) DELDIR</li>
+                        <li class="option" data-answer="A">C) ERASE</li>
+                        <li class="option" data-answer="A">D) RM</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+                
+                <div class="question-card">
+                    <p class="text-lg font-medium">59. Which file stores OS configuration?<br>कौन-सी फाइल OS कॉन्फिगरेशन रखती है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) CONFIG.SYS</li>
+                        <li class="option" data-answer="A">B) AUTO.EXE</li>
+                        <li class="option" data-answer="A">C) COMMAND.COM</li>
+                        <li class="option" data-answer="A">D) SYSINFO</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+                
+                <div class="question-card">
+                    <p class="text-lg font-medium">60. Which OS introduced start menu?<br>कौन-से OS ने स्टार्ट मेनू शुरू किया था?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) Windows 95</li>
+                        <li class="option" data-answer="A">B) Windows 3.1</li>
+                        <li class="option" data-answer="A">C) MS-DOS</li>
+                        <li class="option" data-answer="A">D) Windows XP</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+                
+                <div class="question-card">
+                    <p class="text-lg font-medium">61. Which is not an example of application software?<br>कौन-सा ऐप्लिकेशन सॉफ्टवेयर का उदाहरण नहीं है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) Windows</li>
+                        <li class="option" data-answer="A">B) MS Excel</li>
+                        <li class="option" data-answer="A">C) Photoshop</li>
+                        <li class="option" data-answer="A">D) Tally</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+                
+                <div class="question-card">
+                    <p class="text-lg font-medium">62. Which OS can handle multiple users at once?<br>कौन-सा OS एक साथ कई उपयोगकर्ताओं को संभालता है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) UNIX</li>
+                        <li class="option" data-answer="A">B) MS-DOS</li>
+                        <li class="option" data-answer="A">C) Android</li>
+                        <li class="option" data-answer="A">D) Windows XP</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+                
+                <div class="question-card">
+                    <p class="text-lg font-medium">63. What is swapping in OS?<br>OS में Swapping क्या है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) Moving process between RAM and disk</li>
+                        <li class="option" data-answer="A">B) Copying file</li>
+                        <li class="option" data-answer="A">C) Deleting process</li>
+                        <li class="option" data-answer="A">D) Renaming file</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+                
+                <div class="question-card">
+                    <p class="text-lg font-medium">64. What is semaphore used for?<br>Semaphore का उपयोग किसके लिए होता है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) Process Synchronization</li>
+                        <li class="option" data-answer="A">B) Memory allocation</li>
+                        <li class="option" data-answer="A">C) Input handling</li>
+                        <li class="option" data-answer="A">D) Disk management</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+                
+                <div class="question-card">
+                    <p class="text-lg font-medium">65. Which OS allows files to be stored hierarchically?<br>कौन-सा OS फाइलों को हायरार्किकल तरीके से रखता है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) UNIX</li>
+                        <-option data-answer="A">B) MS-DOS</li>
+                        <li class="option" data-answer="A">C) Windows XP</li>
+                        <li class="option" data-answer="A">D) Android</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+                
+                <div class="question-card">
+                    <p class="text-lg font-medium">66. Which of the following is a type of system call?<br>निम्न में से कौन-सा एक System Call का प्रकार है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) File Control</li>
+                        <li class="option" data-answer="A">B) Game Control</li>
+                        <li class="option" data-answer="A">C) App Control</li>
+                        <li class="option" data-answer="A">D) Audio Control</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+                
+                <div class="question-card">
+                    <p class="text-lg font-medium">67. Which command is used to view current directory in Linux?<br>Linux में वर्तमान directory देखने का कमांड क्या है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) pwd</li>
+                        <li class="option" data-answer="A">B) dir</li>
+                        <li class="option" data-answer="A">C) ls</li>
+                        <li class="option" data-answer="A">D) whoami</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+                
+                <div class="question-card">
+                    <p class="text-lg font-medium">68. What is the meaning of ‘Time Sharing’?<br>Time Sharing का अर्थ क्या है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) Sharing CPU time among multiple users</li>
+                        <li class="option" data-answer="A">B) Sharing time online</li>
+                        <li class="option" data-answer="A">C) File saving</li>
+                        <li class="option" data-answer="A">D) Backup creation</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+                
+                <div class="question-card">
+                    <p class="text-lg font-medium">69. In operating systems, a process is:<br>Operating system में Process क्या है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) A program in execution</li>
+                        <li class="option" data-answer="A">B) A system software</li>
+                        <li class="option" data-answer="A">C) A file</li>
+                        <li class="option" data-answer="A">D) An application</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+                
+                <div class="question-card">
+                    <p class="text-lg font-medium">70. Which of the following is not a function of OS?<br>निम्न में से कौन-सा OS का कार्य नहीं है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="C">A) Memory management</li>
+                        <li class="option" data-answer="C">B) Process management</li>
+                        <li class="option" data-answer="C">C) Compilation</li>
+                        <li class="option" data-answer="C">D) File management</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+                
+                <div class="question-card">
+                    <p class="text-lg font-medium">71. Which is not a multitasking OS?<br>निम्न में से कौन-सा मल्ट टास्किंग OS नहीं है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="C">A) Windows</li>
+                        <li class="option" data-answer="C">B) UNIX</li>
+                        <li class="option" data-answer="C">C) MS-DOS</li>
+                        <li class="option" data-answer="C">D) Linux</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+                
+                <div class="question-card">
+                    <p class="text-lg font-medium">72. Which scheduling algorithm gives first come first serve basis?<br>कौन-सा Scheduling Algorithm पहले आने वाले को पहले सेवा देता है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) FCFS</li>
+                        <li class="option" data-answer="A">B) SJF</li>
+                        <li class="option" data-answer="A">C) Round Robin</li>
+                        <li class="option" data-answer="A">D) Priority</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+                
+                <div class="question-card">
+                    <p class="text-lg font-medium">73. Round Robin scheduling is mainly used in:<br>Round Robin Scheduling का उपयोग कहाँ होता है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) Time sharing systems</li>
+                        <li class="option" data-answer="A">B) Batch systems</li>
+                        <li class="option" data-answer="A">C) Real time systems</li>
+                        <li class="option" data-answer="A">D) Embedded systems</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+                
+                <div class="question-card">
+                    <p class="text-lg font-medium">74. The file extension of system file in DOS is:<br>DOS में System File का एक्सटेंशन क्या होता है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) .SYS</li>
+                        <li class="option" data-answer="A">B) .TXT</li>
+                        <li class="option" data-answer="A">C) .EXE</li>
+                        <li class="option" data-answer="A">D) .BAT</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+                
+                <div class="question-card">
+                    <p class="text-lg font-medium">75. Which of the following memory is non-volatile?<br>निम्न में से कौन-सी मेमोरी Non-Volatile होती है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) ROM</li>
+                        <li class="option" data-answer="A">B) RAM</li>
+                        <li class="option" data-answer="A">C) Cache</li>
+                        <li class="option" data-answer="A">D) Register</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+                
+                <div class="question-card">
+                    <p class="text-lg font-medium">76. Which command is used to clear the screen in DOS?<br>DOS में स्क्रीन साफ करने का कमांड क्या है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) CLS</li>
+                        <li class="option" data-answer="A">B) CLR</li>
+                        <li class="option" data-answer="A">C) DEL</li>
+                        <li class="option" data-answer="A">D) CLEAN</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+                
+                <div class="question-card">
+                    <p class="text-lg font-medium">77. Which of these is an example of command-based OS?<br>इनमें से कौन-सा Command आधारित OS है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) MS-DOS</li>
+                        <li class="option" data-answer="A">B) Windows 10</li>
+                        <li class="option" data-answer="A">C) Android</li>
+                        <li class="option" data-answer="A">D) macOS</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+                
+                <div class="question-card">
+                    <p class="text-lg font-medium">78. What is the function of BIOS?<br>BIOS का कार्य क्या है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) Initialize hardware and load OS</li>
+                        <li class="option" data-answer="A">B) Display wallpaper</li>
+                        <li class="option" data-answer="A">C) Store files</li>
+                        <li class="option" data-answer="A">D) Control CPU</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+                
+                <div class="question-card">
+                    <p class="text-lg font-medium">79. Which memory is used to increase performance?<br>प्रदर्शन बढ़ाने के लिए कौन-सी मेमोरी प्रयोग होती है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) Cache</li>
+                        <li class="option" data-answer="A">B) ROM</li>
+                        <li class="option" data-answer="A">C) Pen Drive</li>
+                        <li class="option" data-answer="A">D) Hard Disk</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+                
+                <div class="question-card">
+                    <p class="text-lg font-medium">80. Which file system is used in Linux?<br>Linux में कौन-सा फाइल सिस्टम प्रयोग होता है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) EXT4</li>
+                        <li class="option" data-answer="A">B) FAT32</li>
+                        <li class="option" data-answer="A">C) NTFS</li>
+                        <li class="option" data-answer="A">D) HFS</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+                
+                <div class="question-card">
+                    <p class="text-lg font-medium">81. What is fragmentation?<br>Fragmentation क्या है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) Breaking memory into pieces</li>
+                        <li class="option" data-answer="A">B) File compression</li>
+                        <li class="option" data-answer="A">C) Booting process</li>
+                        <li class="option" data-answer="A">D) File deletion</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+                
+                <div class="question-card">
+                    <p class="text-lg font-medium">82. Which of the following is not related to process scheduling?<br>निम्न में से कौन-सा Process Scheduling से संबंधित नहीं है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="C">A) Dispatcher</li>
+                        <li class="option" data-answer="C">B) PCB</li>
+                        <li class="option" data-answer="C">C) Spooling</li>
+                        <li class="option" data-answer="C">D) Queue</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+                
+                <div class="question-card">
+                    <p class="text-lg font-medium">83. What is spooling?<br>Spooling क्या है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) Simultaneous Peripheral Operation On-Line</li>
+                        <li class="option" data-answer="A">B) System Pooling</li>
+                        <li class="option" data-answer="A">C) Speeding process</li>
+                        <li class="option" data-answer="A">D) File saving</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+                
+                <div class="question-card">
+                    <p class="text-lg font-medium">84. Which OS is used in ATMs?<br>ATM में कौन-सा OS प्रयोग होता है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) Windows XP Embedded</li>
+                        <li class="option" data-answer="A">B) Linux Server</li>
+                        <li class="option" data-answer="A">C) Android</li>
+                        <li class="option" data-answer="A">D) UNIX</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+                
+                <div class="question-card">
+                    <p class="text-lg font-medium">85. What is command interpreter called?<br>Command Interpreter को क्या कहा जाता है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) Shell</li>
+                        <li class="option" data-answer="A">B) Kernel</li>
+                        <li class="option" data-answer="A">C) Driver</li>
+                        <li class="option" data-answer="A">D) BIOS</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+                
+                <div class="question-card">
+                    <p class="text-lg font-medium">86. Which is a single-user, single-task OS?<br>कौन-सा OS Single User और Single Task दोनों है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) MS-DOS</li>
+                        <li class="option" data-answer="A">B) UNIX</li>
+                        <li class="option" data-answer="A">C) Linux</li>
+                        <li class="option" data-answer="A">D) Android</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+                
+                <div class="question-card">
+                    <p class="text-lg font-medium">87. Which of these is not an input device?<br>इनमें से कौन-सा Input Device नहीं है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="C">A) Keyboard</li>
+                        <li class="option" data-answer="C">B) Mouse</li>
+                        <li class="option" data-answer="C">C) Printer</li>
+                        <li class="option" data-answer="C">D) Scanner</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+                
+                <div class="question-card">
+                    <p class="text-lg font-medium">88. What is meant by real-time system?<br>Real-time System का मतलब क्या है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) Provides immediate response</li>
+                        <li class="option" data-answer="A">B) Works offline</li>
+                        <li class="option" data-answer="A">C) File backup</li>
+                        <li class="option" data-answer="A">D) Memory sharing</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+                
+                <div class="question-card">
+                    <p class="text-lg font-medium">89. Which of the following is not a layer of OS?<br>निम्न में से कौन-सा OS की लेयर नहीं है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="C">A) Application</li>
+                        <li class="option" data-answer="C">B) Kernel</li>
+                        <li class="option" data-answer="C">C) Compiler</li>
+                        <li class="option" data-answer="C">D) Device Driver</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+                
+                <div class="question-card">
+                    <p class="text-lg font-medium">90. Which command shows system date and time in Linux?<br>Linux में तारीख और समय दिखाने का कमांड क्या है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) date</li>
+                        <li class="option" data-answer="A">B) time</li>
+                        <li class="option" data-answer="A">C) showtime</li>
+                        <li class="option" data-answer="A">D) clock</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+                
+                <div class="question-card">
+                    <p class="text-lg font-medium">91. What is the smallest unit of memory?<br>मेमोरी की सबसे छोटी इकाई क्या है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) Bit</li>
+                        <li class="option" data-answer="A">B) Byte</li>
+                        <li class="option" data-answer="A">C) KB</li>
+                        <li class="option" data-answer="A">D) MB</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+                
+                <div class="question-card">
+                    <p class="text-lg font-medium">92. Which of these is not an example of OS?<br>इनमें से कौन-सा OS का उदाहरण नहीं है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="C">A) UNIX</li>
+                        <li class="option" data-answer="C">B) Windows</li>
+                        <li class="option" data-answer="C">C) Tally</li>
+                        <li class="option" data-answer="C">D) Linux</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+                
+                <div class="question-card">
+                    <p class="text-lg font-medium">93. What is the extension of executable files in Windows?<br>Windows में Executable फाइल का एक्सटेंशन क्या है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) .EXE</li>
+                        <li class="option" data-answer="A">B) .TXT</li>
+                        <li class="option" data-answer="A">C) .DOC</li>
+                        <li class="option" data-answer="A">D) .BAT</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+                
+                <div class="question-card">
+                    <p class="text-lg font-medium">94. Which OS is used for embedded systems?<br>Embedded systems के लिए कौन-सा OS प्रयोग होता है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) RTOS</li>
+                        <li class="option" data-answer="A">B) UNIX</li>
+                        <li class="option" data-answer="A">C) Linux</li>
+                        <li class="option" data-answer="A">D) Android</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+                
+                <div class="question-card">
+                    <p class="text-lg font-medium">95. Which process runs in background continuously?<br>कौन-सी प्रक्रिया लगातार बैकग्राउंड में चलती रहती है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) Daemon</li>
+                        <li class="option" data-answer="A">B) Thread</li>
+                        <li class="option" data-answer="A">C) Job</li>
+                        <li class="option" data-answer="A">D) Shell</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+                
+                <div class="question-card">
+                    <p class="text-lg font-medium">96. Which file contains boot information in Windows?<br>Windows में Boot Information कौन-सी फाइल में होती है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) BOOT.INI</li>
+                        <li class="option" data-answer="A">B) WIN.COM</li>
+                        <li class="option" data-answer="A">C) SYSTEM32</li>
+                        <li class="option" data-answer="A">D) CONFIG.SYS</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+                
+                <div class="question-card">
+                    <p class="text-lg font-medium">97. Which type of OS allows more than one user to use computer simultaneously?<br>कौन-सा OS एक साथ कई यूज़र्स को कंप्यूटर उपयोग करने देता है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) Multi-user OS</li>
+                        <li class="option" data-answer="A">B) Single-user OS</li>
+                        <li class="option" data-answer="A">C) Distributed OS</li>
+                        <li class="option" data-answer="A">D) Batch OS</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+                
+                <div class="question-card">
+                    <p class="text-lg font-medium">98. What is the full form of FAT?<br>FAT का पूरा नाम क्या है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) File Allocation Table</li>
+                        <li class="option" data-answer="A">B) Fast Access Technique</li>
+                        <li class="option" data-answer="A">C) File Access Tool</li>
+                        <li class="option" data-answer="A">D) Folder Allocation Type</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+                
+                <div class="question-card">
+                    <p class="text-lg font-medium">99. Which OS is mainly used in supercomputers?<br>Supercomputers में कौन-सा OS प्रयोग होता है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) UNIX</li>
+                        <li class="option" data-answer="A">B) Android</li>
+                        <li class="option" data-answer="A">C) Windows XP</li>
+                        <li class="option" data-answer="A">D) iOS</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+                
+                <div class="question-card">
+                    <p class="text-lg font-medium">100. What is meant by thread?<br>Thread का अर्थ क्या है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) Smallest unit of a process</li>
+                        <li class="option" data-answer="A">B) File</li>
+                        <li class="option" data-answer="A">C) Folder</li>
+                        <li class="option" data-answer="A">D) Device</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+                
+                <div class="question-card">
+                    <p class="text-lg font-medium">101. What is meant by multitasking OS?<br>Multitasking OS क्या होता है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) Handles multiple tasks at once</li>
+                        <li class="option" data-answer="A">B) Only one task</li>
+                        <li class="option" data-answer="A">C) Only one user</li>
+                        <li class="option" data-answer="A">D) Only one file</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+                
+                <div class="question-card">
+                    <p class="text-lg font-medium">102. Which is the first operating system for PC?<br>PC के लिए पहला OS कौन-सा था?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) MS-DOS</li>
+                        <li class="option" data-answer="A">B) UNIX</li>
+                        <li class="option" data-answer="A">C) Linux</li>
+                        <li class="option" data-answer="A">D) Windows 95</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+                
+                <div class="question-card">
+                    <p class="text-lg font-medium">103. Which OS can work on servers as well as desktops?<br>कौन-सा OS Server और Desktop दोनों पर काम करता है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) Linux</li>
+                        <li class="option" data-answer="A">B) Android</li>
+                        <li class="option" data-answer="A">C) Windows XP</li>
+                        <li class="option" data-answer="A">D) iOS</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+                
+                <div class="question-card">
+                    <p class="text-lg font-medium">104. The main purpose of an Operating System is:<br>ऑपरेटिंग सिस्टम का मुख्य उद्देश्य क्या है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="B">A) Entertainment</li>
+                        <li class="option" data-answer="B">B) Resource Management</li>
+                        <li class="option" data-answer="B">C) Typing Documents</li>
+                        <li class="option" data-answer="B">D) Internet Browsing</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+                
+                <div class="question-card">
+                    <p class="text-lg font-medium">105. Which of the following is not an operating system?<br>निम्नलिखित में से कौन-सा ऑपरेटिंग सिस्टम नहीं है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="C">A) Linux</li>
+                        <li class="option" data-answer="C">B) Windows</li>
+                        <li class="option" data-answer="C">C) Oracle</li>
+                        <li class="option" data-answer="C">D) macOS</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+                
+                <div class="question-card">
+                    <p class="text-lg font-medium">106. Which part of the OS remains in main memory all the time?<br>ऑपरेटिंग सिस्टम का कौन-सा भाग हमेशा मेमोरी में रहता है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="B">A) Shell</li>
+                        <li class="option" data-answer="B">B) Kernel</li>
+                        <li class="option" data-answer="B">C) Command Interpreter</li>
+                        <li class="option" data-answer="B">D) Utility</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+                
+                <div class="question-card">
+                    <p class="text-lg font-medium">107. The operating system acts as an interface between:<br>ऑपरेटिंग सिस्टम किनके बीच इंटरफेस का काम करता है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) User and Hardware</li>
+                        <li class="option" data-answer="A">B) Software and Network</li>
+                        <li class="option" data-answer="A">C) Hardware and Printer</li>
+                        <li class="option" data-answer="A">D) User and Applications</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+                
+                <div class="question-card">
+                    <p class="text-lg font-medium">108. Which of the following is a single-user OS?<br>निम्नलिखित में से कौन-सा एकल उपयोगकर्ता वाला OS है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) MS-DOS</li>
+                        <li class="option" data-answer="A">B) UNIX</li>
+                        <li class="option" data-answer="A">C) Linux</li>
+                        <li class="option" data-answer="A">D) Windows Server</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+                
+                <div class="question-card">
+                    <p class="text-lg font-medium">109. Which operating system is developed by Apple?<br>Apple द्वारा विकसित ऑपरेटिंग सिस्टम कौन-सा है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="B">A) Windows</li>
+                        <li class="option" data-answer="B">B) macOS</li>
+                        <li class="option" data-answer="B">C) Linux</li>
+                        <li class="option" data-answer="B">D) Android</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+                
+                <div class="question-card">
+                    <p class="text-lg font-medium">110. What is the full form of GUI?<br>GUI का पूरा नाम क्या है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) Graphical User Interface</li>
+                        <li class="option" data-answer="A">B) Global User Internet</li>
+                        <li class="option" data-answer="A">C) General Utility Interface</li>
+                        <li class="option" data-answer="A">D) Graphical Utility Instruction</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+                
+                <div class="question-card">
+                    <p class="text-lg font-medium">111. Which of these is an open-source OS?<br>इनमें से कौन-सा ओपन-सोर्स OS है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="B">A) Windows</li>
+                        <li class="option" data-answer="B">B) Linux</li>
+                        <li class="option" data-answer="B">C) macOS</li>
+                        <li class="option" data-answer="B">D) ChromeOS</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+                
+                <div class="question-card">
+                    <p class="text-lg font-medium">112. Which OS is used in mobile phones?<br>मोबाइल फोन में कौन-सा OS प्रयोग होता है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) Android</li>
+                        <li class="option" data-answer="A">B) Linux Server</li>
+                        <li class="option" data-answer="A">C) Windows 10</li>
+                        <li class="option" data-answer="A">D) Ubuntu</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+                
+                <div class="question-card">
+                    <p class="text-lg font-medium">113. Which command is used to display files in MS-DOS?<br>MS-DOS में फाइलें दिखाने के लिए कौन-सा कमांड प्रयोग होता है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) DIR</li>
+                        <li class="option" data-answer="A">B) CD</li>
+                        <li class="option" data-answer="A">C) COPY</li>
+                        <li class="option" data-answer="A">D) DEL</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+                
+                <div class="question-card">
+                    <p class="text-lg font-medium">114. What is multitasking?<br>Multitasking क्या है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="B">A) Doing one job at a time</li>
+                        <li class="option" data-answer="B">B) Doing multiple jobs at the same time</li>
+                        <li class="option" data-answer="B">C) Doing jobs one after another</li>
+                        <li class="option" data-answer="B">D) None</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+                
+                <div class="question-card">
+                    <p class="text-lg font-medium">115. Linux is based on which OS?<br>Linux किस ऑपरेटिंग सिस्टम पर आधारित है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="B">A) Windows</li>
+                        <li class="option" data-answer="B">B) UNIX</li>
+                        <li class="option" data-answer="B">C) MS-DOS</li>
+                        <li class="option" data-answer="B">D) ChromeOS</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+                
+                <div class="question-card">
+                    <p class="text-lg font-medium">116. Which of these is a real-time OS?<br>इनमें से कौन-सा रियल टाइम OS है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="B">A) Windows 11</li>
+                        <li class="option" data-answer="B">B) VxWorks</li>
+                        <li class="option" data-answer="B">C) Ubuntu</li>
+                        <li class="option" data-answer="B">D) Android</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+                
+                <div class="question-card">
+                    <p class="text-lg font-medium">117. Which OS uses the command line interface?<br>कौन-सा OS कमांड लाइन इंटरफेस का प्रयोग करता है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) MS-DOS</li>
+                        <li class="option" data-answer="A">B) Windows</li>
+                        <li class="option" data-answer="A">C) Android</li>
+                        <li class="option" data-answer="A">D) macOS</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+                
+                <div class="question-card">
+                    <p class="text-lg font-medium">118. What is the function of the kernel?<br>Kernel का कार्य क्या है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) Manage hardware and processes</li>
+                        <li class="option" data-answer="A">B) Display graphics</li>
+                        <li class="option" data-answer="A">C) Send emails</li>
+                        <li class="option" data-answer="A">D) Connect internet</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+                
+                <div class="question-card">
+                    <p class="text-lg font-medium">119. Windows XP is a type of:<br>Windows XP किस प्रकार का OS है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="C">A) Network OS</li>
+                        <li class="option" data-answer="C">B) Batch OS</li>
+                        <li class="option" data-answer="C">C) Multiprogramming OS</li>
+                        <li class="option" data-answer="C">D) Real-Time OS</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+                
+                <div class="question-card">
+                    <p class="text-lg font-medium">120. Which of the following is a network operating system?<br>निम्नलिखित में से कौन-सा नेटवर्क OS है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) Windows Server</li>
+                        <li class="option" data-answer="A">B) MS-DOS</li>
+                        <li class="option" data-answer="A">C) Android</li>
+                        <li class="option" data-answer="A">D) macOS</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+                
+                <div class="question-card">
+                    <p class="text-lg font-medium">121. Which of the following is an example of a distributed OS?<br>वितरित OS का उदाहरण कौन-सा है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="B">A) Windows</li>
+                        <li class="option" data-answer="B">B) LOCUS</li>
+                        <li class="option" data-answer="B">C) DOS</li>
+                        <li class="option" data-answer="B">D) macOS</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+                
+                <div class="question-card">
+                    <p class="text-lg font-medium">122. Which command is used to delete a file in DOS?<br>DOS में फाइल को हटाने का कमांड क्या है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) DEL</li>
+                        <li class="option" data-answer="A">B) ERASE</li>
+                        <li class="option" data-answer="A">C) REMOVE</li>
+                        <li class="option" data-answer="A">D) DELETE</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+                
+                <div class="question-card">
+                    <p class="text-lg font-medium">123. What is booting?<br>Booting क्या है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="B">A) Shutting down computer</li>
+                        <li class="option" data-answer="B">B) Starting the computer</li>
+                        <li class="option" data-answer="B">C) Deleting files</li>
+                        <li class="option" data-answer="B">D) Restarting printer</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+                
+                <div class="question-card">
+                    <p class="text-lg font-medium">124. The core of operating system is called:<br>ऑपरेटिंग सिस्टम के कोर को क्या कहा जाता है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) Kernel</li>
+                        <li class="option" data-answer="A">B) BIOS</li>
+                        <li class="option" data-answer="A">C) Shell</li>
+                        <li class="option" data-answer="A">D) Processor</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+                
+                <div class="question-card">
+                    <p class="text-lg font-medium">125. Which OS is used in Apple mobile phones?<br>Apple मोबाइल फोन में कौन-सा OS प्रयोग होता है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="B">A) Android</li>
+                        <li class="option" data-answer="B">B) iOS</li>
+                        <li class="option" data-answer="B">C) Symbian</li>
+                        <li class="option" data-answer="B">D) KaiOS</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+                
+                <div class="question-card">
+                    <p class="text-lg font-medium">126. MS-DOS is an example of:<br>MS-DOS किसका उदाहरण है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="B">A) Multi-user OS</li>
+                        <li class="option" data-answer="B">B) Single-user OS</li>
+                        <li class="option" data-answer="B">C) Distributed OS</li>
+                        <li class="option" data-answer="B">D) GUI OS</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+                
+                <div class="question-card">
+                    <p class="text-lg font-medium">127. Which OS was first developed?<br>पहले कौन-सा OS विकसित हुआ था?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) UNIX</li>
+                        <li class="option" data-answer="A">B) Windows</li>
+                        <li class="option" data-answer="A">C) Linux</li>
+                        <li class="option" data-answer="A">D) Android</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+                
+                <div class="question-card">
+                    <p class="text-lg font-medium">128. What is process management?<br>Process Management क्या है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="B">A) Managing memory</li>
+                        <li class="option" data-answer="B">B) Managing CPU processes</li>
+                        <li class="option" data-answer="B">C) Managing keyboard</li>
+                        <li class="option" data-answer="B">D) Managing storage</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+                
+                <div class="question-card">
+                    <p class="text-lg font-medium">129. Which component is responsible for allocating memory to processes?<br>कौन-सा घटक प्रोसेस को मेमोरी आवंटित करता है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) Kernel</li>
+                        <li class="option" data-answer="A">B) Shell</li>
+                        <li class="option" data-answer="A">C) BIOS</li>
+                        <li class="option" data-answer="A">D) Scheduler</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+                
+                <div class="question-card">
+                    <p class="text-lg font-medium">130. Which is not a type of operating system?<br>निम्नलिखित में से कौन-सा OS का प्रकार नहीं है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="D">A) Batch OS</li>
+                        <li class="option" data-answer="D">B) Time-sharing OS</li>
+                        <li class="option" data-answer="D">C) Multiprogramming OS</li>
+                        <li class="option" data-answer="D">D) Compiler OS</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+                
+                <!-- Continuing similarly for remaining questions up to 150 -->
+                
+                <div class="question-card">
+                    <p class="text-lg font-medium">131. Which OS is most commonly used in servers?<br>सर्वर में सबसे अधिक प्रयोग होने वाला OS कौन-सा है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) Linux</li>
+                        <li class="option" data-answer="A">B) Android</li>
+                        <li class="option" data-answer="A">C) Windows 11</li>
+                        <li class="option" data-answer="A">D) MS-DOS</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+                
+                <div class="question-card">
+                    <p class="text-lg font-medium">132. What is the main function of the scheduler?<br>Scheduler का मुख्य कार्य क्या है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) Process Scheduling</li>
+                        <li class="option" data-answer="A">B) Memory Allocation</li>
+                        <li class="option" data-answer="A">C) Device Input</li>
+                        <li class="option" data-answer="A">D) File Management</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+                
+                <div class="question-card">
+                    <p class="text-lg font-medium">133. Which of the following is an example of a batch operating system?<br>निम्न में से कौन-सा Batch OS है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) Payroll System</li>
+                        <li class="option" data-answer="A">B) Android</li>
+                        <li class="option" data-answer="A">C) Windows</li>
+                        <li class="option" data-answer="A">D) macOS</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+                
+                <div class="question-card">
+                    <p class="text-lg font-medium">134. The interface between user and hardware is:<br>उपयोगकर्ता और हार्डवेयर के बीच का इंटरफेस क्या है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) Operating System</li>
+                        <li class="option" data-answer="A">B) Compiler</li>
+                        <li class="option" data-answer="A">C) Application Software</li>
+                        <li class="option" data-answer="A">D) Device Driver</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+                
+                <div class="question-card">
+                    <p class="text-lg font-medium">135. In MS-DOS, which command is used to copy files?<br>MS-DOS में फाइल कॉपी करने का कमांड क्या है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) COPY</li>
+                        <li class="option" data-answer="A">B) MOVE</li>
+                        <li class="option" data-answer="A">C) PASTE</li>
+                        <li class="option" data-answer="A">D) EDIT</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+                
+                <div class="question-card">
+                    <p class="text-lg font-medium">136. What is the main memory also called?<br>मुख्य मेमोरी को और क्या कहा जाता है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) RAM</li>
+                        <li class="option" data-answer="A">B) ROM</li>
+                        <li class="option" data-answer="A">C) Hard Disk</li>
+                        <li class="option" data-answer="A">D) Cache</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+                
+                <div class="question-card">
+                    <p class="text-lg font-medium">137. Which OS supports GUI interface?<br>कौन-सा OS GUI इंटरफेस सपोर्ट करता है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) Windows</li>
+                        <li class="option" data-answer="A">B) MS-DOS</li>
+                        <li class="option" data-answer="A">C) UNIX (CLI only)</li>
+                        <li class="option" data-answer="A">D) FreeDOS</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+                
+                <div class="question-card">
+                    <p class="text-lg font-medium">138. What is virtual memory?<br>Virtual Memory क्या है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) Secondary storage used as main memory</li>
+                        <li class="option" data-answer="A">B) Temporary ROM</li>
+                        <li class="option" data-answer="A">C) External storage</li>
+                        <li class="option" data-answer="A">D) Cache</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+                
+                <div class="question-card">
+                    <p class="text-lg font-medium">139. Which is the first program run when computer starts?<br>कंप्यूटर शुरू होने पर सबसे पहले कौन-सा प्रोग्राम चलता है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) BIOS</li>
+                        <li class="option" data-answer="A">B) Kernel</li>
+                        <li class="option" data-answer="A">C) Bootloader</li>
+                        <li class="option" data-answer="A">D) Scheduler</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+                
+                <div class="question-card">
+                    <p class="text-lg font-medium">140. Which of the following is not a function of OS?<br>निम्न में से कौन-सा OS का कार्य नहीं है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="C">A) File Management</li>
+                        <li class="option" data-answer="C">B) Process Management</li>
+                        <li class="option" data-answer="C">C) Typing Documents</li>
+                        <li class="option" data-answer="C">D) Memory Management</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+                
+                <div class="question-card">
+                    <p class="text-lg font-medium">141. Which file system is used in Windows?<br>Windows में कौन-सा फाइल सिस्टम प्रयोग होता है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) FAT32</li>
+                        <li class="option" data-answer="A">B) EXT4</li>
+                        <li class="option" data-answer="A">C) HFS</li>
+                        <li class="option" data-answer="A">D) NT</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+                
+                <div class="question-card">
+                    <p class="text-lg font-medium">142. Which is a Linux distribution?<br>कौन-सा Linux वितरण है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) Ubuntu</li>
+                        <li class="option" data-answer="A">B) Windows XP</li>
+                        <li class="option" data-answer="A">C) macOS</li>
+                        <li class="option" data-answer="A">D) Solaris</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+                
+                <div class="question-card">
+                    <p class="text-lg font-medium">143. Which command is used to change directory in DOS?<br>DOS में directory बदलने का कमांड क्या है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) CD</li>
+                        <li class="option" data-answer="A">B) DIR</li>
+                        <li class="option" data-answer="A">C) COPY</li>
+                        <li class="option" data-answer="A">D) PATH</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+                
+                <div class="question-card">
+                    <p class="text-lg font-medium">144. Which OS is based on UNIX?<br>कौन-सा OS UNIX पर आधारित है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) macOS</li>
+                        <li class="option" data-answer="A">B) Windows</li>
+                        <li class="option" data-answer="A">C) ChromeOS</li>
+                        <li class="option" data-answer="A">D) Symbian</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+                
+                <div class="question-card">
+                    <p class="text-lg font-medium">145. What is a shell in OS?<br>OS में Shell क्या है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) Command interpreter</li>
+                        <li class="option" data-answer="A">B) Hardware</li>
+                        <li class="option" data-answer="A">C) Memory</li>
+                        <li class="option" data-answer="A">D) Driver</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+                
+                <div class="question-card">
+                    <p class="text-lg font-medium">146. Which of these is not a Linux command?<br>इनमें से कौन-सा Linux कमांड नहीं है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="C">A) LS</li>
+                        <li class="option" data-answer="C">B) CD</li>
+                        <li class="option" data-answer="C">C) DIR</li>
+                        <li class="option" data-answer="C">D) RM</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+                
+                <div class="question-card">
+                    <p class="text-lg font-medium">147. What is meant by ‘Booting’?<br>‘Booting’ का मतलब क्या है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="B">A) System shutdown</li>
+                        <li class="option" data-answer="B">B) System startup</li>
+                        <li class="option" data-answer="B">C) File deletion</li>
+                        <li class="option" data-answer="B">D) Disk formatting</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+                
+                <div class="question-card">
+                    <p class="text-lg font-medium">148. Which OS was developed by Microsoft?<br>Microsoft द्वारा कौन-सा OS बनाया गया?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) Windows</li>
+                        <li class="option" data-answer="A">B) Linux</li>
+                        <li class="option" data-answer="A">C) macOS</li>
+                        <li class="option" data-answer="A">D) ChromeOS</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+                
+                <div class="question-card">
+                    <p class="text-lg font-medium">149. Which command is used to rename a file in DOS?<br>फाइल का नाम बदलने के लिए DOS कमांड क्या है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) REN</li>
+                        <li class="option" data-answer="A">B) NAME</li>
+                        <li class="option" data-answer="A">C) MV</li>
+                        <li class="option" data-answer="A">D) REFILE</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+                
+                <div class="question-card">
+                    <p class="text-lg font-medium">150. What is deadlock?<br>Deadlock क्या है?</p>
+                    <ul class="list-disc pl-5">
+                        <li class="option" data-answer="A">A) Two or more processes waiting forever</li>
+                        <li class="option" data-answer="A">B) File is deleted</li>
+                        <li class="option" data-answer="A">C) System crash</li>
+                        <li class="option" data-answer="A">D) Memory overflow</li>
+                    </ul>
+                    <p class="answer-text" onclick="showAnswer(this)">Answer Dekho</p>
+                </div>
+                
+                <!-- Add remaining questions as needed -->
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 p-8 text-center">
+        <div class="container mx-auto">
+            <div class="flex flex-col md:flex-row items-center justify-center gap-8 mb-6">
+                <div class="relative">
+                    <img src="https://www.cyberrakshakinstitute.com/IMAGE/kuldeep.jpg" 
+                         alt="Kuldeep Chauhan" 
+                         class="profile-photo" 
+                         id="profile-photo"
+                         onclick="enlargePhoto()">
+                </div>
+                <div class="text-left max-w-2xl">
+                    <h3 class="text-3xl font-bold text-pink-500 mb-2" style="font-family: 'Exo 2', sans-serif;">Kuldeep Chauhan</h3>
+                    <p class="text-cyan-300 text-xl mb-3 font-semibold">Senior Cybersecurity Expert & Ethical Hacker</p>
+                    <p class="text-cyan-200 mb-4">Kuldeep is a seasoned cybersecurity professional with over 3 years of experience in ethical hacking, penetration testing, and security consulting. He has worked with numerous Fortune 6 companies to strengthen their security posture and has trained hundreds of students in the art of ethical hacking.</p>
+                    <!-- 
+                    <div class="mb-4">
+                        <h4 class="text-pink-400 font-bold mb-2">Certifications:</h4>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="cert-badge">Certified Ethical Hacker</span>
+                            <span class="cert-badge"></span>
+                            <span class="cert-badge"></span>
+                        </div>
+                    </div>
+                    -->
+                    <div class="flex space-x-4 mt-4">
+                        <a href="https://www.instagram.com/ku1d33p_b14ck_h4t" class="social-icon">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.facebook.com/b14ck00" class="social-icon">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fas fa-globe"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 pt-6">
+                <p class="text-lg text-pink-500" style="font-family: 'Exo 2', sans-serif;">Designed for CCC Exam Preparation | 2025</p>
+                <p class="text-sm text-cyan-300 mt-2">UI Designed By Kuldeep Chauhan</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="Exam-Prepration/JS/CCC1-study.js"></script>
+</body>
+
+</html>
