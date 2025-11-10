@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -212,7 +213,7 @@
                 return;
             }
 
-            // Hacking animation
+            // Hacking animation (same as before)
             outputDiv.innerHTML = `<span class="yellow bold">🔥 Initializing KHATARNAK Breach Protocol for Aadhaar: ${aadhaar}... 🔥</span>`;
             plainTextOutput = `Initializing KHATARNAK Breach Protocol for Aadhaar: ${aadhaar}...\n`;
             await sleep(1500);
@@ -247,19 +248,20 @@
             plainTextOutput += `Breach Successful! Data Extraction Complete...\n`;
             await sleep(2000);
 
-            // Fetch Aadhaar data
+            // Fetch Aadhaar data with CORS proxy
             const apiKey = 'fxt';
-            const url = `https://addartofamily.vercel.app/fetch?aadhaar=${aadhaar}&key=${apiKey}`;
+            const originalUrl = `https://addartofamily.vercel.app/fetch?aadhaar=${aadhaar}&key=${apiKey}`;
+            const proxyUrl = `https://api.allorigins.win/raw?url=${encodeURIComponent(originalUrl)}`;
             let data;
             try {
-                const response = await fetch(url, { method: 'GET' });
+                const response = await fetch(proxyUrl, { method: 'GET' });
                 if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
                 data = await response.json();
             } catch (error) {
-                data = { error: `Failed to fetch data: ${error.message}` };
+                data = { error: `Failed to fetch data: ${error.message} (Check console for CORS details)` };
             }
 
-            // Display results
+            // Display results (same as before)
             outputDiv.innerHTML = '';
             const ghostBanner = `
 ╔═══════════════════════════════════════════════════════╗
@@ -299,7 +301,7 @@
 <span class="cyan bold">📋 AADHAAR DATA OUTPUT:</span>
 <span class="white">{</span>
 `;
-            plainTextOutput += `AADHAAR DATA SUCCESSFULLY EX extracted\n════════════════════════════════════════════════════\nAADHAAR DATA OUTPUT:\n{\n`;
+            plainTextOutput += `AADHAAR DATA SUCCESSFULLY EXTRACTED\n════════════════════════════════════════════════════\nAADHAAR DATA OUTPUT:\n{\n`;
 
             // Simple fields
             for (const [key, value] of Object.entries(data)) {
