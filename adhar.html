@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Khatarnak Aadhaar Breacher</title>
     <style>
-        /* Cyberpunk background with spooky ghost image (स्पूकी बैकग्राउंड) */
+        /* Cyberpunk background with spooky ghost image */
         body {
             background: linear-gradient(rgba(26, 26, 46, 0.8), rgba(22, 33, 62, 0.8)), url('https://images.unsplash.com/photo-1544376798-6aa6f2cfff76?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80') no-repeat center center fixed;
             background-size: cover;
@@ -147,7 +147,7 @@
 </head>
 <body>
     <div class="container">
-        <!-- Main Banner (मुख्य बैनर) -->
+        <!-- Main Banner -->
         <div class="banner">
             <pre class="ascii-art">
 ╔════════════════════════════════════════════════════════════════════════════╗
@@ -168,30 +168,29 @@
 ╚════════════════════════════════════════════════════════════════════════════╝
             </pre>
         </div>
-        <!-- Input Section (इनपुट सेक्शन) -->
+        <!-- Input Section -->
         <div class="input-section">
             <input type="text" id="aadhaarInput" placeholder="Enter Aadhaar Number (12 digits, or empty for demo: 658014451208)">
             <button id="fetchButton">🔥 Breach Aadhaar 🔥</button>
         </div>
-        <!-- Output Section (आउटपुट सेक्शन) -->
+        <!-- Output Section -->
         <div class="output-section" id="output"></div>
         <button id="copyButton" class="copy-button" style="display: none;">📋 Copy Data</button>
         <button id="newSearchButton" class="new-search-button" style="display: none;">🔄 New Search</button>
     </div>
-    <!-- Audio for laughing effect (हंसी का ऑडियो) -->
-    <audio id="laughAudio" src="https://freesound.org/data/previews/245/245645_4284968-lq.mp3"></audio>
+    <!-- Audio for laughing effect -->
+    <audio id="laughAudio" src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"></audio>
     <script>
-        // Variable to store plain text output for copying (कॉपी करने के लिए टेक्स्ट)
+        // Variable to store plain text output for copying
         let plainTextOutput = '';
-        const laughAudio = document.getElementById('laughAudio');
 
-        // Function to handle button click for fetching Aadhaar data (डेटा फेच करने का फंक्शन)
+        // Function to handle button click for fetching Aadhaar data
         document.getElementById('fetchButton').addEventListener('click', async () => {
-            // Play laughing audio (हंसी का साउंड प्ले करें)
-            laughAudio.currentTime = 0; // Reset audio to start (ऑडियो रीस्टार्ट करें)
+            // Play laughing audio (साउंड प्ले करें)
+            const laughAudio = document.getElementById('laughAudio');
             laughAudio.play().catch(err => console.error('Audio playback failed:', err));
 
-            // Get input and elements (इनपुट और एलिमेंट्स लें)
+            // Get input and elements (इनपुट और आउटपुट एलिमेंट्स लें)
             const aadhaarInput = document.getElementById('aadhaarInput').value.trim();
             const outputDiv = document.getElementById('output');
             const copyButton = document.getElementById('copyButton');
@@ -211,7 +210,7 @@
                 return;
             }
 
-            // Hacking animation (हैकिंग एनिमेशन)
+            // Hacking animation (हैकिंग एनिमेशन दिखाएं)
             outputDiv.innerHTML = `<span class="yellow bold">🔥 Initializing KHATARNAK Breach Protocol for Aadhaar: ${aadhaar}... 🔥</span>`;
             plainTextOutput = `Initializing KHATARNAK Breach Protocol for Aadhaar: ${aadhaar}...\n`;
             await sleep(1500);
@@ -246,17 +245,17 @@
             plainTextOutput += `Breach Successful! Data Extraction Complete...\n`;
             await sleep(2000);
 
-            // Fetch Aadhaar data with CORS proxy (API कॉल करें)
+            // Fetch Aadhaar data with reliable CORS proxy (API कॉल करें)
             const apiKey = 'fxt';
             const originalUrl = `https://addartofamily.vercel.app/fetch?aadhaar=${aadhaar}&key=${apiKey}`;
-            const proxyUrl = `https://cors-anywhere.herokuapp.com/${originalUrl}`;
+            const proxyUrl = `https://corsproxy.io/?${encodeURIComponent(originalUrl)}`;
             let data;
             try {
                 const response = await fetch(proxyUrl, { method: 'GET' });
-                if (!response.ok) throw new Error(`HTTP error! Status: ${response.status} (Check if API key is valid or proxy access is granted)`);
+                if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
                 data = await response.json();
             } catch (error) {
-                data = { error: `Failed to fetch data: ${error.message} (Visit https://cors-anywhere.herokuapp.com to request access or check API key)` };
+                data = { error: `Failed to fetch data: ${error.message} (Check console for details)` };
             }
 
             // Display results with ghost banner (रिजल्ट्स दिखाएं)
@@ -302,7 +301,7 @@
 `;
             plainTextOutput += `AADHAAR DATA SUCCESSFULLY EXTRACTED\n════════════════════════════════════════════════════\nAADHAAR DATA OUTPUT:\n{\n`;
 
-            // Simple fields (साधारण डेटा)
+            // Simple fields (साधारण डेटा दिखाएं)
             for (const [key, value] of Object.entries(data)) {
                 if (key !== 'memberDetailsList') {
                     output += `<span class="cyan">  "${key}"</span>: <span class="yellow">"${value}"</span>,
@@ -311,7 +310,7 @@
                 }
             }
 
-            // Member details list (मेंबर डिटेल्स)
+            // Member details list (मेंबर डिटेल्स दिखाएं)
             output += `<span class="cyan">  "memberDetailsList":</span> [
 `;
             plainTextOutput += `  "memberDetailsList": [\n`;
@@ -351,10 +350,8 @@
             });
         });
 
-        // New Search button to reset page (पेज रीसेट करें)
+        // New Search button to reset input (नया सर्च शुरू करें)
         document.getElementById('newSearchButton').addEventListener('click', () => {
-            laughAudio.pause(); // Stop audio (गाना बंद करें)
-            laughAudio.currentTime = 0; // Reset audio (ऑडियो रीस्टार्ट पॉइंट पर)
             document.getElementById('aadhaarInput').value = '';
             document.getElementById('output').innerHTML = '';
             document.getElementById('copyButton').style.display = 'none';
@@ -367,7 +364,7 @@
             element.innerHTML = '';
             let tempDiv = document.createElement('div');
             tempDiv.innerHTML = html;
-            let text = tempDiv.innerText;
+            let text = tempDiv.innerText; // Get plain text for typing
             let currentHtml = '';
             let htmlIndex = 0;
 
@@ -379,7 +376,7 @@
                 element.innerHTML = currentHtml;
                 await sleep(20);
             }
-            element.innerHTML = html;
+            element.innerHTML = html; // Ensure final HTML is set correctly
         }
 
         // Sleep function for delays (डिले के लिए)
