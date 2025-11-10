@@ -27,39 +27,47 @@
         }
 
         .banner {
-            background: rgba(0, 0, 0, 0.85);
-            border: 3px solid #ff00ff;
-            border-radius: 10px;
-            padding: 15px;
-            box-shadow: 0 0 20px #ff00ff, 0 0 40px #00ffff;
-            margin-bottom: 15px;
-            animation: pulse 2s infinite;
+            background: rgba(0, 0, 0, 0.9);
+            border: 4px double #ff00ff;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 0 25px #ff00ff, 0 0 50px #00ffff;
+            margin-bottom: 20px;
+            animation: pulse 1.5s infinite;
         }
 
         .ascii-art {
             color: #00ffff;
             font-size: 12px;
             line-height: 1.2;
-            text-align: left;
+            text-align: center;
             white-space: pre;
             animation: glow 1s ease-in-out infinite alternate;
         }
 
+        .developer-details {
+            color: #ffff00;
+            font-size: 14px;
+            margin-top: 10px;
+            animation: fadeInDetails 2s ease-in;
+            text-shadow: 0 0 10px #ffff00;
+        }
+
         .input-section {
-            margin: 15px 0;
+            margin: 20px 0;
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
         }
 
         input[type="text"] {
-            padding: 8px;
+            padding: 10px;
             font-size: 14px;
             width: 80%;
-            max-width: 300px;
+            max-width: 320px;
             border: 2px solid #ff00ff;
-            border-radius: 5px;
+            border-radius: 6px;
             background: #0f0f23;
             color: #e0e0e0;
             outline: none;
@@ -71,15 +79,15 @@
         }
 
         button {
-            padding: 8px 16px;
+            padding: 10px 20px;
             font-size: 14px;
             background: #ff00ff;
             color: #0f0f23;
             border: none;
-            border-radius: 5px;
+            border-radius: 6px;
             cursor: pointer;
             transition: transform 0.2s, box-shadow 0.3s;
-            box-shadow: 0 0 10px #ff00ff;
+            box-shadow: 0 0 12px #ff00ff;
         }
 
         button:hover {
@@ -88,7 +96,7 @@
         }
 
         .output-section {
-            background: rgba(0, 0, 0, 0.85);
+            background: rgba(0, 0, 0, 0.9);
             border: 3px solid #00ffff;
             border-radius: 10px;
             padding: 15px;
@@ -103,7 +111,7 @@
         }
 
         .copy-button, .new-search-button {
-            margin-top: 10px;
+            margin-top: 12px;
             background: #00ff00;
             color: #0f0f23;
         }
@@ -118,14 +126,19 @@
         }
 
         @keyframes pulse {
-            0% { box-shadow: 0 0 20px #ff00ff, 0 0 40px #00ffff; }
-            50% { box-shadow: 0 0 30px #ff00ff, 0 0 50px #00ffff; }
-            100% { box-shadow: 0 0 20px #ff00ff, 0 0 40px #00ffff; }
+            0% { box-shadow: 0 0 25px #ff00ff, 0 0 50px #00ffff; }
+            50% { box-shadow: 0 0 35px #ff00ff, 0 0 60px #00ffff; }
+            100% { box-shadow: 0 0 25px #ff00ff, 0 0 50px #00ffff; }
         }
 
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
+        }
+
+        @keyframes fadeInDetails {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         .error { color: #ff5555; }
@@ -138,35 +151,37 @@
 
         @media (max-width: 600px) {
             .ascii-art { font-size: 10px; }
-            input[type="text"] { width: 90%; font-size: 12px; padding: 6px; }
-            button { font-size: 12px; padding: 6px 12px; }
+            .developer-details { font-size: 12px; }
+            input[type="text"] { width: 90%; font-size: 12px; padding: 8px; }
+            button { font-size: 12px; padding: 8px 16px; }
             .output-section { font-size: 10px; padding: 10px; }
-            .banner { padding: 10px; }
+            .banner { padding: 12px; }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <!-- Main Banner -->
+        <!-- Main Banner with Enhanced Design -->
         <div class="banner">
             <pre class="ascii-art">
-╔════════════════════════════════════════════════════════════════════════════╗
-║                                                                            ║
-║  ██████╗██╗  ██╗ █████╗ ████████╗ █████╗ ██████╗  █████╗  ██████╗         ║
-║ ██╔════╝██║  ██║██╔══██╗╚══██╔══╝██╔══██╗██╔══██╗██╔══██╗██╔═══██╗        ║
-║ ██║     ███████║███████║   ██║   ███████║██████╔╝███████║██║   ██║        ║
-║ ██║     ██╔══██║██╔══██║   ██║   ██╔══██║██╔══██╗██╔══██║██║   ██║        ║
-║ ╚██████╗██║  ██║██║  ██║   ██║   ██║  ██║██║  ██║██║  ██║╚██████╔╝        ║
-║  ╚═════╝╚═╝  ╚═╝╚═╝  ╚═╝   ╚═╝   ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝         ║
-║                                                                            ║
-║        🚨 KHATARNAK AADHAAR BREACHER v3.0 - SUSPENSE MODE 🚨             ║
-║        🔒 Developed by: Kuldeep Chauhan (Ghost Cyber Warrior Admin) 🔒     ║
-║        📞 Contact: 7398926485 📞                                         ║
-║        💻 Powered by xAI - Optimized for Web 💻                           ║
-║        ⚠️ FOR EDUCATIONAL PURPOSES ONLY - USE RESPONSIBLY ⚠️             ║
-║                                                                            ║
-╚════════════════════════════════════════════════════════════════════════════╝
+┌────────────────────────────────────────────────────────────────────────────┐
+│                                                                            │
+│  ██████╗██╗  ██╗ █████╗ ████████╗ █████╗ ██████╗  █████╗  ██████╗         │
+│ ██╔════╝██║  ██║██╔══██╗╚══██╔══╝██╔══██╗██╔══██╗██╔══██╗██╔═══██╗        │
+│ ██║     ███████║███████║   ██║   ███████║██████╔╝███████║██║   ██║        │
+│ ██║     ██╔══██║██╔══██║   ██║   ██╔══██║██╔══██╗██╔══██║██║   ██║        │
+│ ╚██████╗██║  ██║██║  ██║   ██║   ██║  ██║██║  ██║██║  ██║╚██████╔╝        │
+│  ╚═════╝╚═╝  ╚═╝╚═╝  ╚═╝   ╚═╝   ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝         │
+│                                                                            │
+│        🚨 KHATARNAK AADHAAR BREACHER v3.0 - SUSPENSE MODE 🚨             │
+│                                                                            │
+└────────────────────────────────────────────────────────────────────────────┘
             </pre>
+            <div class="developer-details">
+                🔒 Developed by: Kuldeep Chauhan (Ghost Cyber Warrior Admin) 📞 7398926485
+                <br>💻 Powered by xAI - Optimized for Web 💻
+                <br>⚠️ FOR EDUCATIONAL PURPOSES ONLY - USE RESPONSIBLY ⚠️
+            </div>
         </div>
         <!-- Input Section -->
         <div class="input-section">
@@ -179,15 +194,16 @@
         <button id="newSearchButton" class="new-search-button" style="display: none;">🔄 New Search</button>
     </div>
     <!-- Audio for laughing effect -->
-    <audio id="laughAudio" src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"></audio>
+    <audio id="laughAudio" src="https://freesound.org/data/previews/245/245645_4284968-lq.mp3"></audio>
     <script>
-        // Variable to store plain text output for copying
+        // Variable to store plain text output for copying (कॉपी करने के लिए टेक्स्ट स्टोर करें)
         let plainTextOutput = '';
+        const laughAudio = document.getElementById('laughAudio');
 
-        // Function to handle button click for fetching Aadhaar data
+        // Function to handle button click for fetching Aadhaar data (डेटा फेच करने के लिए बटन)
         document.getElementById('fetchButton').addEventListener('click', async () => {
-            // Play laughing audio (साउंड प्ले करें)
-            const laughAudio = document.getElementById('laughAudio');
+            // Play laughing audio (हंसी का साउंड प्ले करें)
+            laughAudio.currentTime = 0; // Reset audio to start
             laughAudio.play().catch(err => console.error('Audio playback failed:', err));
 
             // Get input and elements (इनपुट और आउटपुट एलिमेंट्स लें)
@@ -245,10 +261,10 @@
             plainTextOutput += `Breach Successful! Data Extraction Complete...\n`;
             await sleep(2000);
 
-            // Fetch Aadhaar data with reliable CORS proxy (API कॉल करें)
+            // Fetch Aadhaar data with CORS proxy (API कॉल करें)
             const apiKey = 'fxt';
             const originalUrl = `https://addartofamily.vercel.app/fetch?aadhaar=${aadhaar}&key=${apiKey}`;
-            const proxyUrl = `https://corsproxy.io/?${encodeURIComponent(originalUrl)}`;
+            const proxyUrl = `https://cors-anywhere.herokuapp.com/${originalUrl}`;
             let data;
             try {
                 const response = await fetch(proxyUrl, { method: 'GET' });
@@ -350,8 +366,10 @@
             });
         });
 
-        // New Search button to reset input (नया सर्च शुरू करें)
+        // New Search button to reset page (पेज रीसेट करें)
         document.getElementById('newSearchButton').addEventListener('click', () => {
+            laughAudio.pause(); // Stop audio (गाना बंद करें)
+            laughAudio.currentTime = 0; // Reset audio to start
             document.getElementById('aadhaarInput').value = '';
             document.getElementById('output').innerHTML = '';
             document.getElementById('copyButton').style.display = 'none';
@@ -364,7 +382,7 @@
             element.innerHTML = '';
             let tempDiv = document.createElement('div');
             tempDiv.innerHTML = html;
-            let text = tempDiv.innerText; // Get plain text for typing
+            let text = tempDiv.innerText;
             let currentHtml = '';
             let htmlIndex = 0;
 
@@ -376,7 +394,7 @@
                 element.innerHTML = currentHtml;
                 await sleep(20);
             }
-            element.innerHTML = html; // Ensure final HTML is set correctly
+            element.innerHTML = html;
         }
 
         // Sleep function for delays (डिले के लिए)
