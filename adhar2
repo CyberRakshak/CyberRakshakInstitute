@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khatarnak Aadhaar Breacher</title>
+    <style>
+        body {
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            color: #e0e0e0;
+            font-family: 'Courier New', monospace;
+            margin: 0;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        .container {
+            max-width: 90vw;
+            width: 100%;
+            text-align: center;
+        }
+        .banner {
+            background: rgba(0, 0, 0, 0.8);
+            border: 2px solid #ff00ff;
+            border-radius: 10px;
+            padding: 15px;
+            box-shadow: 0 0 15px #ff00ff, 0 0 30px #00ffff;
+            margin-bottom: 15px;
+        }
+        .ascii-art {
+            color: #00ffff;
+            font-size: 12px;
+            line-height: 1.2;
+            text-align: left;
+            white-space: pre;
+            animation: glow 1.5s ease-in-out infinite alternate;
+        }
+        .input-section {
+            margin: 15px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+        input[type="text"] {
+            padding: 8px;
+            font-size: 14px;
+            width: 80%;
+            max-width: 300px;
+            border: 2px solid #ff00ff;
+            border-radius: 5px;
+            background: #0f0f23;
+            color: #e0e0e0;
+            outline: none;
+            transition: box-shadow 0.3s;
+        }
+        input[type="text"]:focus {
+            box-shadow: 0 0 10px #ff00ff;
+        }
+        button {
+            padding: 8px 16px;
+            font-size: 14px;
+            background: #ff00ff;
+            color: #0f0f23;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.3s;
+            box-shadow: 0 0 8px #ff00ff;
+        }
+        button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 15px #ff00ff, 0 0 25px #00ffff;
+        }
+        .output-section {
+            background: rgba(0, 0, 0, 0.8);
+            border: 2px solid #00ffff;
+            border-radius: 10px;
+            padding: 15px;
+            min-height: 150px;
+            text-align: left;
+            font-size: 12px;
+            white-space: pre-wrap;
+            color: #e0e0e0;
+            box-shadow: 0 0 15px #00ffff;
+            animation: fadeIn 1s ease-in;
+            word-wrap: break-word;
+        }
+        .copy-button {
+            margin-top: 10px;
+            background: #00ff00;
+            color: #0f0f23;
+        }
+        .copy-button:hover {
+            box-shadow: 0 0 15px #00ff00, 0 0 25px #00ffff;
+        }
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 8px #00ffff, 0 0 15px #ff00ff;
+            }
+            to {
+                text-shadow: 0 0 15px #00ffff, 0 0 25px #ff00ff;
+            }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .error { color: #ff5555; }
+        .cyan { color: #00ffff; }
+        .yellow { color: #ffff00; }
+        .green { color: #00ff00; }
+        .white { color: #ffffff; }
+        .purple { color: #ff00ff; }
+        .bold { font-weight: bold; }
+        @media (max-width: 600px) {
+            .ascii-art {
+                font-size: 10px;
+            }
+            input[type="text"] {
+                width: 90%;
+                font-size: 12px;
+                padding: 6px;
+            }
+            button {
+                font-size: 12px;
+                padding: 6px 12px;
+            }
+            .output-section {
+                font-size: 10px;
+                padding: 10px;
+            }
+            .banner {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="banner">
+            <pre class="ascii-art">
+╔═══════════════════════════════════════════════╗
+║ ██████╗ ██╗ ██╗ ██████╗ ███████╗████████╗ ║
+║██╔════╝ ██║ ██║██╔═══██╗██╔════╝╚══██╔══╝ ║
+║██║ ███╗███████║██║ ██║███████╗ ██║ ║
+║██║ ██║██╔══██║██║ ██║╚════██║ ██║ ║
+║╚██████╔╝██║ ██║╚██████╔╝███████║ ██║ ║
+║ ╚═════╝ ╚═╝ ╚═╝ ╚═════╝ ╚══════╝ ╚═╝ ║
+║ ║
+║ 🚨 KHATARNAK AADHAAR BREACHER v1.0 🚨 ║
+║ 🔒 Developed by: Kuldeep Chauhan ║
+║ (Ghost Cyber Warrior Admin) 🔒 ║
+║ 📞 Contact: 7398926485 📞 ║
+║ 💻 Powered by Ghost - Optimized for Web 💻 ║
+║ ⚠️ FOR EDUCATIONAL PURPOSES ONLY ⚠️ ║
+╚═══════════════════════════════════════════════╝
+            </pre>
+        </div>
+        <div class="input-section">
+            <input type="text" id="aadhaarInput" placeholder="Enter Aadhaar Number (12 digits, or empty for demo: 658014451208)">
+            <button id="fetchButton">🔥 Breach Aadhaar 🔥</button>
+        </div>
+        <div class="output-section" id="output"></div>
+        <button id="copyButton" class="copy-button" style="display: none;">📋 Copy Data</button>
+    </div>
+    <audio id="laughAudio" src="audio/laugh.mp3"></audio>
+    <audio id="dangerousAudio" src="audio/dangerous.mp3" loop></audio>
+    <script>
+        let plainTextOutput = ''; // Store plain text for copying
+        document.getElementById('fetchButton').addEventListener('click', async () => {
+            // Play laughing audio
+            const laughAudio = document.getElementById('laughAudio');
+            laughAudio.play().catch(err => console.error('Laugh audio playback failed:', err));
+            // Play dangerous background music
+            const dangerousAudio = document.getElementById('dangerousAudio');
+            dangerousAudio.play().catch(err => console.error('Dangerous audio playback failed:', err));
+            const aadhaarInput = document.getElementById('aadhaarInput').value.trim();
+            const outputDiv = document.getElementById('output');
+            const copyButton = document.getElementById('copyButton');
+            outputDiv.innerHTML = '';
+            copyButton.style.display = 'none';
+            plainTextOutput = '';
+            // Validate Aadhaar number
+            const aadhaar = aadhaarInput || '658014451208';
+            if (!/^\d{12}$/.test(aadhaar)) {
+                outputDiv.innerHTML = `<span class="error">❌ Invalid Aadhaar number! Must be 12 digits. ❌</span>`;
+                plainTextOutput = 'Invalid Aadhaar number! Must be 12 digits.';
+                copyButton.style.display = 'block';
+                dangerousAudio.pause();
+                dangerousAudio.currentTime = 0; // Reset audio to start
+                return;
+            }
+            // Hacking animation
+            outputDiv.innerHTML = `<span class="yellow bold">🔥 Initializing KHATARNAK Breach Protocol for Aadhaar: ${aadhaar}... 🔥</span>`;
+            plainTextOutput = `Initializing KHATARNAK Breach Protocol for Aadhaar: ${aadhaar}...\n`;
+            await sleep(1500);
+            outputDiv.innerHTML += `<br><span class="red">⚡ Probing UIDAI Dark Web Servers...</span>`;
+            plainTextOutput += `Probing UIDAI Dark Web Servers...\n`;
+            for (let i = 0; i < 7; i++) {
+                outputDiv.innerHTML += `<span class="green">█</span>`;
+                plainTextOutput += '█';
+                await sleep(400);
+            }
+            outputDiv.innerHTML += `<br><span class="purple">🔒 Establishing Quantum Tunnel to Database...</span>`;
+            plainTextOutput += `\nEstablishing Quantum Tunnel to Database...\n`;
+            await sleep(1500);
+            outputDiv.innerHTML += `<br><span class="cyan">🚨 FIREWALL DETECTED! Deploying Advanced Bypass Matrix... 🚨</span>`;
+            plainTextOutput += `FIREWALL DETECTED! Deploying Advanced Bypass Matrix...\n`;
+            for (let i = 0; i < 12; i++) {
+                outputDiv.innerHTML += `<span class="red">🔥</span>`;
+                plainTextOutput += '🔥';
+                await sleep(250);
+            }
+            outputDiv.innerHTML += `<br><span class="yellow">🔓 FIREWALL OBLITERATED! Fiber Ko Tod Diya Gaya! 🔓</span>`;
+            plainTextOutput += `\nFIREWALL OBLITERATED! Fiber Ko Tod Diya Gaya!\n`;
+            await sleep(1500);
+            outputDiv.innerHTML += `<br><span class="cyan">⚙️ Infiltrating Aadhaar Vault...</span>`;
+            plainTextOutput += `Infiltrating Aadhaar Vault...\n`;
+            for (let i = 0; i < 4; i++) {
+                outputDiv.innerHTML += `<br><span class="purple">⚡ Hacking Progress: ${i * 25}% 🔍</span>`;
+                plainTextOutput += `Hacking Progress: ${i * 25}%\n`;
+                await sleep(1200);
+            }
+            outputDiv.innerHTML += `<br><span class="green">✅ Breach Successful! Data Extraction Complete... 😈</span>`;
+            plainTextOutput += `Breach Successful! Data Extraction Complete...\n`;
+            await sleep(2000);
+            // Fetch Aadhaar data with CORS proxy
+            const apiKey = 'fxt'; // Note: Hardcoding API key is insecure; move to backend for production
+            const originalUrl = `https://addartofamily.vercel.app/fetch?aadhaar=${aadhaar}&key=${apiKey}`;
+            const proxyUrl = `https://corsproxy.io/?${encodeURIComponent(originalUrl)}`;
+            let data;
+            try {
+                const response = await fetch(proxyUrl, {
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                });
+                console.log('Response status:', response.status);
+                console.log('Response headers:', [...response.headers]);
+                const text = await response.text();
+                console.log('Raw response:', text);
+                if (!response.ok) {
+                    let errorMessage = `HTTP error! Status: ${response.status}`;
+                    if (response.status === 403) errorMessage = 'Access forbidden: Invalid API key or server restrictions';
+                    else if (response.status === 404) errorMessage = 'API endpoint not found';
+                    else if (response.status === 500) errorMessage = 'Server error: Try again later';
+                    throw new Error(errorMessage);
+                }
+                data = JSON.parse(text);
+            } catch (error) {
+                console.error('Fetch error:', error);
+                if (aadhaar === '658014451208') {
+                    // Fallback mock data for demo
+                    data = {
+                        aadhaar: '658014451208',
+                        name: 'John Doe',
+                        address: '123 Demo Street, India',
+                        dob: '01-01-1980',
+                        gender: 'Male',
+                        memberDetailsList: [
+                            { name: 'Jane Doe', relation: 'Spouse', dob: '01-01-1985' },
+                            { name: 'Baby Doe', relation: 'Child', dob: '01-01-2010' }
+                        ]
+                    };
+                    console.warn('Using mock data for demo mode due to API failure');
+                } else {
+                    data = { error: `Failed to fetch data: ${error.message}` };
+                }
+            }
+            // Display results
+            outputDiv.innerHTML = '';
+            const ghostBanner = `
+╔═══════════════════════════════════════════════════════╗
+║ ║
+║ 👻 GHOST CYBER WARRIOR DATA VAULT 👻 ║
+║ ║
+        .-""""""""-.
+      .' '.
+    / ʕ ˵• ₒ •˵ ʔ /:'
+  : , .-' :
+  : : , : : :
+   : : , : : :
+    : : , : : :
+     : : : : :
+     : : : : , :
+     :_: :_:_______:
+║ ⚡ AADHAAR DATA BREACHED BY GHOST WARRIOR ⚡ ║
+╚═══════════════════════════════════════════════════════╝
+`;
+            let output = `<span class="purple bold">${ghostBanner}</span>
+<span class="purple bold">🎉 KHATARNAK DATA BREACH RESULT 🎉</span>
+<span class="yellow">Developed by: Kuldeep Chauhan (Ghost Cyber Warrior Admin) 📞 7398926485</span>
+<span class="cyan">════════════════════════════════════════════════════</span>
+`;
+            plainTextOutput = ghostBanner + `\nKHATARNAK DATA BREACH RESULT\nDeveloped by: Kuldeep Chauhan (Ghost Cyber Warrior Admin) 📞 7398926485\n════════════════════════════════════════════════════\n`;
+            if (data.error) {
+                output += `<span class="error">❌ BREACH FAILED: ${data.error} ❌</span>`;
+                plainTextOutput += `BREACH FAILED: ${data.error}\n`;
+                await typeWriter(output, outputDiv);
+                copyButton.style.display = 'block';
+                dangerousAudio.pause();
+                dangerousAudio.currentTime = 0; // Reset audio to start
+                return;
+            }
+            output += `<span class="green">✅ AADHAAR DATA SUCCESSFULLY EXTRACTED ✅</span>
+<span class="cyan">════════════════════════════════════════════════════</span>
+<span class="cyan bold">📋 AADHAAR DATA OUTPUT:</span>
+<span class="white">{</span>
+`;
+            plainTextOutput += `AADHAAR DATA SUCCESSFULLY EXTRACTED\n════════════════════════════════════════════════════\nAADHAAR DATA OUTPUT:\n{\n`;
+            // Simple fields
+            for (const [key, value] of Object.entries(data)) {
+                if (key !== 'memberDetailsList') {
+                    output += `<span class="cyan"> "${key}"</span>: <span class="yellow">"${value}"</span>,
+`;
+                    plainTextOutput += ` "${key}": "${value}",\n`;
+                }
+            }
+            // Member details list
+            output += `<span class="cyan"> "memberDetailsList":</span> [
+`;
+            plainTextOutput += ` "memberDetailsList": [\n`;
+            data.memberDetailsList?.forEach((member, index) => {
+                output += `<span class="white"> {</span>
+`;
+                plainTextOutput += ` {\n`;
+                for (const [k, v] of Object.entries(member)) {
+                    output += `<span class="white"> "${k}"</span>: <span class="green">"${v}"</span>,
+`;
+                    plainTextOutput += ` "${k}": "${v}",\n`;
+                }
+                output += `<span class="white"> }${index < data.memberDetailsList.length - 1 ? ',' : ''}</span>
+`;
+                plainTextOutput += ` }${index < data.memberDetailsList.length - 1 ? ',' : ''}\n`;
+            });
+            output += `<span class="cyan"> ]</span>
+<span class="white">}</span>
+<span class="cyan">════════════════════════════════════════════════════</span>
+<span class="yellow">⚠️ SECURITY NOTICE: Handle sensitive data securely. Delete after use. ⚠️</span>
+<span class="green">💻 Powered by Ghost Cyber Warrior - Contact: 7398926485 💻</span>
+`;
+            plainTextOutput += ` ]\n}\n════════════════════════════════════════════════════\nSECURITY NOTICE: Handle sensitive data securely. Delete after use.\nPowered by Ghost Cyber Warrior - Contact: 7398926485\n`;
+            await typeWriter(output, outputDiv);
+            copyButton.style.display = 'block';
+            dangerousAudio.pause();
+            dangerousAudio.currentTime = 0; // Reset audio to start
+        });
+        document.getElementById('copyButton').addEventListener('click', () => {
+            navigator.clipboard.writeText(plainTextOutput).then(() => {
+                alert('Aadhaar data copied to clipboard!');
+            }).catch(err => {
+                console.error('Failed to copy:', err);
+                alert('Failed to copy data!');
+            });
+        });
+        async function typeWriter(html, element) {
+            element.innerHTML = '';
+            let tempDiv = document.createElement('div');
+            tempDiv.innerHTML = html;
+            let text = tempDiv.innerText; // Get plain text for typing
+            let currentHtml = '';
+            let htmlIndex = 0;
+            for (let i = 0; i < text.length; i++) {
+                while (htmlIndex < html.length && currentHtml.length < i + 1) {
+                    currentHtml += html[htmlIndex];
+                    htmlIndex++;
+                }
+                element.innerHTML = currentHtml;
+                await sleep(20);
+            }
+            element.innerHTML = html; // Ensure final HTML is set correctly
+        }
+        function sleep(ms) {
+            return new Promise(resolve => setTimeout(resolve, ms));
+        }
+    </script>
+</body>
+</html>
